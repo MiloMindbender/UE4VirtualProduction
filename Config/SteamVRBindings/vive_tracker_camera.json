@@ -1,0 +1,72 @@
+{
+   "action_manifest_version" : 0,
+   "alias_info" : {},
+   "app_key" : "application.generated.ue.third-person-bp-game-template-10757647.ue4editor.exe",
+   "bindings" : {
+      "/actions/main" : {
+         "poses" : [
+            {
+               "output" : "/actions/main/in/special1",
+               "path" : "/user/hand/left/pose/back",
+               "requirement" : "optional"
+            },
+            {
+               "output" : "/actions/main/in/special2",
+               "path" : "/user/hand/right/pose/back",
+               "requirement" : "optional"
+            },
+            {
+               "output" : "/actions/main/in/special3",
+               "path" : "/user/hand/left/pose/front",
+               "requirement" : "optional"
+            },
+            {
+               "output" : "/actions/main/in/special4",
+               "path" : "/user/hand/right/pose/front",
+               "requirement" : "optional"
+            },
+            {
+               "output" : "/actions/main/in/special5",
+               "path" : "/user/hand/left/pose/frontandrolled",
+               "requirement" : "optional"
+            },
+            {
+               "output" : "/actions/main/in/special6",
+               "path" : "/user/hand/right/pose/frontandrolled",
+               "requirement" : "optional"
+            },
+            {
+               "output" : "/actions/main/in/special7",
+               "path" : "/user/hand/left/pose/pistolgrip",
+               "requirement" : "optional"
+            },
+            {
+               "output" : "/actions/main/in/special8",
+               "path" : "/user/hand/right/pose/pistolgrip",
+               "requirement" : "optional"
+            },
+            {
+               "output" : "/actions/main/in/special1",
+               "path" : "/user/camera/pose/raw"
+            }
+         ],
+         "sources" : [
+            {
+               "inputs" : {
+                  "click" : {
+                     "output" : "/actions/main/in/ResetVR"
+                  }
+               },
+               "mode" : "button",
+               "path" : "/user/hand/left/input/grip"
+            }
+         ]
+      }
+   },
+   "category" : "steamvr_input",
+   "controller_type" : "vive_tracker_camera",
+   "description" : "Third Person BP Game Template-10757647",
+   "name" : "My Third Person BP Game Template-10757647 [UE Editor] configuration for Vive Tracker on Camera",
+   "options" : {},
+   "simulated_actions" : []
+}

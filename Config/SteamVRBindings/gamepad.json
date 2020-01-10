@@ -1,0 +1,25 @@
+{
+	"name": "Default bindings for Gamepads",
+	"controller_type": "gamepad",
+	"last_edited_by": "UnrealEngine",
+	"bindings":
+	{
+		"/actions/main":
+		{
+			"sources": [
+				{
+					"mode": "button",
+					"path": "/user/hand/left/input/grip",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/ResetVR"
+						}
+					}
+				}
+			]
+		}
+	},
+	"description": "Third Person BP Game Template-10757647"
+}
