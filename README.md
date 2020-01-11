@@ -4,11 +4,15 @@ This example shows how to create a Virtual set, where live video of your "talent
 
 The example only uses the 3rd person starter project assets so it is small and easy to download.  You can migrate the assets from this project into any other map so you can use an unreal sample level or your own creation as a virtual set.
 
-# DOCUMENTATION IS COMING
+# Tutorial video is on Youtube
 
-I am writing a guide for how to setup the whole Virtual Production studio.  I'd suggest you wait for that guide before buying anything unless you are experienced with Unreal.  You can see examples on my YouTube channel https://www.youtube.com/user/GregCorson The full setup for this project was a Vive PRO VR setup, two VIVE tracking pucks, a camera, a green-screen and an AJA Kona-HDMI video capture card.  But don't panic! You don't have to have all this stuff, you can do quite a lot with just a cheap webcam!  You can also modify the project to use other VR tracking gear you might already have.
+Instead of a printed guide I put a video up on youtube, you can find it on my channel https://www.youtube.com/user/GregCorson along with other demo videos.  There are also some playlists with a lot of Virtual Production and mixed reality videos from other creators.
 
-This may look complicated but you can get some great results from a very simple setup and since everything her runs in real-time, you can even use this setup for livestreaming!
+This may look complicated but you can get some great results from a very simple setup and since everything here runs in real-time, you can even use this setup for livestreaming!
 
-# MORE INFO COMING SOON
+# Problems with Unreal 4.24.1 and steam 1.10.1
+
+There are some new setup requirements for UE 4.24.1 and some problems with Steam 1.10.1
+
+See "readme_2" in this github for details on how to set things up.  This is still in progress because Steam was just updated and the issues are still being worked out.  The current repository SHOULD work with UE 4.24.1 and steam 1.9.16 (the current "release" non beta).  If you want to stay on UE 4.23.1 use one of the older versions.
 
