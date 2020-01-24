@@ -1,19 +1,22 @@
 # How to install in your own project and fix UE/Steam issues in 4.24.1
 
-This is a quick guide that explains how to move the Virtual Production stuff from this sample project into your own.  Also in UE 4.24.1 the steam input system was changed which caused the trackers to stop working.  There is a fix for that here too.  This will be replaced by a video guide soon, but since many people were asking about this I though I would write a quick document.
+This is a quick guide that explains how to move the Virtual Production stuff from this sample project into your own.  In UE 4.24.1 and SteamVR 1.9.16 the input system was changed and some extra steam setup is required to trackers work.  Also the SteamVR 1.10.1 update currently breaks trackers so until this is fixed you should stay with the SteamVR release build at 1.9.16.  I will be doing a video version of this guide but a number of people were asking about it so I thought I would do a quick description here so they can use it.
 
-# How to install my Virtual Production setup in your own Project.
+# Hardware Required
 
-* Go into your target project where you want to install virtual production.
-* Go to the plugins section and make sure all these plugins are enabled Aja, Composure and all the media framework plugins
-* Go into project settings post processing->alpha channel support and set to linear
-* Restart UE, these changes may require a rebuild of a lot of your shaders, so the load may take a bit.
+This template is setup to use 2 VIVE tracking pucks and a 1080P camera attached to an Aja Kona HDMI card.  If you have different hardware some modifications will be needed that you will have to figure out yourself.  I will try to make the project more compatible as time goes by, but for now I only have this hardware to test with.  It should be possible to adapt this project to work with any camera and Unreal compatible video capture device, even webcams.  It should also work with any unreal compatible tracking system.  If you don't want to move the camera while doing a video, you don't even need the trackers, but they do make setup much easer!  
 
-* Now open up my Virtual Production sample project
-* Duplicate the level and rename it to something like "EmptyStudio"
-* Open EmptyStudio and delete everything in the level except for what is in the "comp elements" folder
-* Test to make sure it is still working, video is coming in...etc.
-* select EmptyStudio level in the content browser and do asset actions->migrate to the the content folder in your target project
+# How to use my Virtual Production template in your own Project.
+
+* Edit your target project where you want to install Virtual Production.
+* Go to the plugins section and make sure all these Aja, Composure and all the media framework plugins are enabled.  These must be enabled before you try to do a migrate or some of the assets will fail to work.
+* Go into project settings post processing->alpha channel support and set to linear.  If this is not set the compositing may fail or look funny.
+* Restart UE, these changes may require a rebuild of your shaders, so the load may take a bit.
+
+* Now edit my Virtual Production sample project
+* Open the level "EmptyStudio"
+* select the EmptyStudio level in the content browser and do asset actions->migrate to the the content folder in your target project
+* you will also need to migrate the "ajagenlock" asset over to the same location.
 
 * Open up your target project
 * Switch to the EmptyStudio level
@@ -21,24 +24,30 @@ This is a quick guide that explains how to move the Virtual Production stuff fro
 * Switch to the level you want to do virtual production in
 * Paste into that level
 * Select the "talent marker separate" object you just pasted in and move it to wherever in your level you want your live talent to stand
-* In Project Settings->maps & modes->game instance set to "globals" which should have come in with the migration
+* In Project Settings->maps & modes set game instance to "globals" which should have come in with the migration
 * You may need to go into the "comp camera" and reset the focus target to talent marker separate
-* You may need to set Project Settings->engine->general->custom TimeStep to AjaCustomTimeStep
+* You may need to set Project Settings->engine->general->custom TimeStep to ajagenlock
+
+When you are done with all of this, things should work but may not look quite right.  You will probably need to adjust the camera settings, lighting and chromakey colors as described in my YouTube tutorial.
+
+# Steam 1.10.1 beta bug
+
+Right now there is a bug in Steam 1.10.1 beta that breaks trackers, they don't work at all.  Till this is fixed please use the release version of steam 1.9.16
 
 # If you are on UE 4.24.1 with latest Steam
 
-You may find none of your trackers are working.  Here is a work-around, I'm not sure if this is the "right" way to do it but it works for me, I'll update if I find something simpler.
+The newer versions of Steam require you to assign "roles" to each tracker and setup an input mapping.  This is pretty new so I'm not sure if this is the "right" way to do it but it works for me, I'll update if I find something simpler.
 
->>>This part not fully complete, need to do it again myself to make sure I haven't missed any steps<<<
-
-* In UE project settings->input bindings, if you don't have ANY bindings here, create an axis mapping with default values.
-* in steam's "manage trackers" assign a different "role" to each of your trackers.
-* In UE's "steam" menu select manage
+* You need to have at least ONE axis mapping in UE project settings->input bindings or you won't be able to configure the tracker.  If you have nothing here, just create a default axis mapping.  Not sure if this is a bug, but at the moment it is required.
+* In steam's "manage trackers" assign a different "role" to each of your trackers such as "camera" and "keyboard"
+* In UE's "SteamVR Input" menu select "Launch SteamVr Bindings dashboard"
 * Click on the controller icon and choose the role you assigned to your camera tracker
 * Add an action that maps the raw pose to Special_1
-* write it out
 * Repeat for your second tracker and assign to Special_2
-* write that out
 * trackers should now be working
+
+# PLEASE report any problems.
+
+If you run into any problems making this work, please report them as an issue here on github and I'll try to address them.  You may also want to subscribe to my YouTube channel at https://www.youtube.com/user/GregCorson so you won't miss any new tutorials or demos.
 
 
