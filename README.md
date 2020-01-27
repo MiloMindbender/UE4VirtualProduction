@@ -20,6 +20,10 @@ See [my youtube channel](https://www.youtube.com/user/GregCorson) for documentat
 
 This may look complicated but you can get some great results from a very simple setup and since everything here runs in real-time, you can even use this setup for livestreaming!
 
+# Please Help Out!
+
+This example will get you started, but there is a lot of room for improvement.  There are still some issues with color correction of the live video, having the talent cast shadows and making the camera calibration easier just to name a few!  If you run into problems or have suggestions please feel free to contact me through "issues" here on Github or though my YouTube channel.
+
 # Hardware Required
 
 The only thing really required to do Virtual Production is an Unreal compatible camera & video capture card or a Webcam.  To use all the features and have a camera you can move, you need some kind of tracking system.  This can be a VR headset and it's controllers or specialized tracking devices.  The example is configured for the hardware and video studio I currently use so if your setup is different you will have to make some changes.
@@ -42,3 +46,4 @@ Starting with Unreal 4.24 and the latest Steam, you need to assign "roles" to ea
 * Click on the controller icon and choose the role you assigned to your camera tracker
 * Add an action that maps the raw pose to Special_1
 * Repeat for your second tracker and assign to Special_2
+
