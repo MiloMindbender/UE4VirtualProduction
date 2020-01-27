@@ -33,4 +33,12 @@ My setup is:
 * NVIDIA 2080 graphics card
 * A large fabric green-screen and some lights
 
+# New Steam input system in Unreal 4.24 or higher!
 
+Starting with Unreal 4.24 and the latest Steam, you need to assign "roles" to each tracker and setup an input mapping for them to work. These are the steps I used to get it working, let me know if there is a better way.
+
+* In steam's "manage trackers" assign a different "role" to each of your trackers such as "camera" and "keyboard"
+* In Unreal Editor's "SteamVR Input" menu select "Launch SteamVr Bindings dashboard"
+* Click on the controller icon and choose the role you assigned to your camera tracker
+* Add an action that maps the raw pose to Special_1
+* Repeat for your second tracker and assign to Special_2
