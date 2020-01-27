@@ -1,5 +1,7 @@
 # An example of Virtual Production in Unreal Engine 
 
+[![Virtual Production](http://img.youtube.com/vi/a3jh6HootAk/0.jpg)](https://www.youtube.com/watch?v=a3jh6HootAk "Virtual Production")
+
 This is an example of a Virtual set where live green-screen video of your "talent" (actors) is composited with a 3d virtual set rendered in realtime by Unreal.  Features of the example include:
 
 * A live video camera that is tracked so you can move it (even handheld)
@@ -10,11 +12,11 @@ This is an example of a Virtual set where live green-screen video of your "talen
 * A setup using Unreal's "composure" plugin to composite all the layers together.
 * Foreground and Background layers in the composite so objects can appear in front of and behind the talent.
 
-To avoid content licensing issues and keep the example small, only Unreal "starter content" from the 3rd person project template is used. In a few minutes you can migrate the assets from this project into any Unreal level you want to use as a virtual set.  See https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/ReadMe_2.md for instructions.  The Unreal "Virtual Studio" example has several TV studio levels that work well with this.
+To avoid content licensing issues and keep the example small, only Unreal "starter content" from the 3rd person project template is used. In a few minutes you can migrate the assets from this project into any Unreal level you want to use as a virtual set.  See [how to migrate to your own project](./ReadMe_2.md) for instructions.  The Unreal "Virtual Studio" example has several TV studio levels that work well with this.
 
 # Documentation is on Youtube
 
-See my youtube channel at https://www.youtube.com/user/GregCorson for documentation, tutorials, demos and tips on Virtual Production. There are also playlists with a lot of Virtual Production and mixed reality videos from other creators.
+See [my youtube channel](https://www.youtube.com/user/GregCorson) for documentation, tutorials, demos and tips on Virtual Production. There are also playlists with a lot of Virtual Production and mixed reality videos from other creators.
 
 This may look complicated but you can get some great results from a very simple setup and since everything here runs in real-time, you can even use this setup for livestreaming!
 
