@@ -12,7 +12,7 @@ This is an example of a Virtual set where live green-screen video of your "talen
 * A setup using Unreal's "composure" plugin to composite all the layers together.
 * Foreground and Background layers in the composite so objects can appear in front of and behind the talent.
 
-To avoid content licensing issues and keep the example small, only Unreal "starter content" from the 3rd person project template is used. In a few minutes you can migrate the assets from this project into any Unreal level you want to use as a virtual set.  See [how to migrate to your own project](./ReadMe_2.md) for instructions.  The Unreal "Virtual Studio" example has several TV studio levels that work well with this.
+To avoid content licensing issues and keep the example small, only Unreal "starter content" from the 3rd person project template is used. In a few minutes you can migrate the assets from this project into any Unreal level you want to use as a virtual set.  See [how to migrate to your own project](./ReadMe_2.md) for instructions.  The Unreal "Virtual Studio" example has several TV studio levels that work well with this, the video above is one of them, find it on the Epic launcher under "learn".
 
 # Documentation is on Youtube
 
