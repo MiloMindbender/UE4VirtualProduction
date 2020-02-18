@@ -2,7 +2,7 @@
 	"source": "UE",
 	"applications": [
 		{
-			"app_key": "application.generated.ue.third-person-bp-game-template-10757647.ue4editor.exe",
+			"app_key": "application.generated.ue.third-person-bp-game-template-11100242.ue4editor.exe",
 			"launch_type": "url",
 			"url": "steam://launch/",
 			"action_manifest_path": "C:/Users/Greg/Documents/GitHub/UE4VirtualProduction/Config/SteamVRBindings/steamvr_manifest.json",
@@ -10,7 +10,7 @@
 			{
 				"en_us":
 				{
-					"name": "Third Person BP Game Template-10757647 [UE Editor]"
+					"name": "Third Person BP Game Template-11100242 [UE Editor]"
 				}
 			}
 		}
