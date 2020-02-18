@@ -1,18 +1,49 @@
 # An example of Virtual Production in Unreal Engine 
 
-This example shows how to create a Virtual set, where live video of your "talent" (actors) is combined with a virtual set that is rendered in realtime by unreal.  There tracked you can move or handhold and a big cartoon hammer that follows another tracker on a selfi stick.  Other features include a way to locate where you want your real world "talent" to appear in the level and a garbage matte to prevent the camera from picking up things not in front of the greenscreen.
+[![Virtual Production](http://img.youtube.com/vi/a3jh6HootAk/0.jpg)](https://www.youtube.com/watch?v=a3jh6HootAk "Virtual Production")
 
-The example only uses the 3rd person starter project assets so it is small and easy to download.  You can migrate the assets from this project into any other map so you can use an unreal sample level or your own creation as a virtual set.
+This is an example of a Virtual set where live green-screen video of your "talent" (actors) is composited with a 3d virtual set rendered in realtime by Unreal.  Features of the example include:
 
-# Tutorial video is on Youtube
+* A live video camera that is tracked so you can move it (even handheld)
+* A tracked object (a cartoon hammer) you can make follow a tracker in the talent's hand
+* A marker you can move to anyplace in the level you want the talent to stand.
+* A tracked matte that prevents objects outside the green screen area from being seen, even if the camera moves.
+* A way to delay the tracking data to keep it in sync with the live video
+* A setup using Unreal's "composure" plugin to composite all the layers together.
+* Foreground and Background layers in the composite so objects can appear in front of and behind the talent.
 
-Instead of a printed guide I put a video up on youtube, you can find it on my channel https://www.youtube.com/user/GregCorson along with other demo videos.  There are also some playlists with a lot of Virtual Production and mixed reality videos from other creators.
+To avoid content licensing issues and keep the example small, only Unreal "starter content" from the 3rd person project template is used. In a few minutes you can migrate the assets from this project into any Unreal level you want to use as a virtual set.  See [how to migrate to your own project](./ReadMe_2.md) for instructions.  The Unreal "Virtual Studio" example has several TV studio levels that work well with this, the video above is one of them, find it on the Epic launcher under "learn".
+
+# Documentation is on Youtube
+
+See [my youtube channel](https://www.youtube.com/user/GregCorson) for documentation, tutorials, demos and tips on Virtual Production. There are also playlists with a lot of Virtual Production and mixed reality videos from other creators.
 
 This may look complicated but you can get some great results from a very simple setup and since everything here runs in real-time, you can even use this setup for livestreaming!
 
-# Problems with Unreal 4.24.1 and steam 1.10.1
+# Please Help Out!
 
-There are some new setup requirements for UE 4.24.1 and some problems with Steam 1.10.1
+This example will get you started, but there is a lot of room for improvement.  There are still some issues with color correction of the live video, having the talent cast shadows and making the camera calibration easier just to name a few!  If you run into problems or have suggestions please feel free to contact me through "issues" here on Github or though my YouTube channel.
 
-See "readme_2" in this github for details on how to set things up.  This is still in progress because Steam was just updated and the issues are still being worked out.  The current repository SHOULD work with UE 4.24.1 and steam 1.9.16 (the current "release" non beta).  If you want to stay on UE 4.23.1 use one of the older versions.
+# Hardware Required
+
+The only thing really required to do Virtual Production is an Unreal compatible camera & video capture card or a Webcam.  To use all the features and have a camera you can move, you need some kind of tracking system.  This can be a VR headset and it's controllers or specialized tracking devices.  The example is configured for the hardware and video studio I currently use so if your setup is different you will have to make some changes.
+
+My setup is:
+* A 35mm full frame consumer camera with HDMI out on a good tripod
+* AJA Kona-HDMI 4 input HDMI capture card
+* A Vive Pro VR setup (second generation base stations)
+* Several Vive tracking pucks (second generation)
+* Standard PC
+* NVIDIA 2080 graphics card
+* A large fabric green-screen and some lights
+
+# New Steam input system in Unreal 4.24 or higher!
+
+Starting with Unreal 4.24 and the latest Steam, you need to assign "roles" to each tracker and setup an input mapping for them to work. These are the steps I used to get it working, let me know if there is a better way.
+
+* In steam's "manage trackers" assign a different "role" to each of your trackers such as "camera" and "keyboard"
+* In Unreal Editor's "SteamVR Input" menu select "Launch SteamVr Bindings dashboard"
+* Click on the controller icon and choose the role you assigned to your camera tracker
+* Add an action that maps the raw pose to Special_1
+* Repeat for your second tracker and assign to Special_2
 
