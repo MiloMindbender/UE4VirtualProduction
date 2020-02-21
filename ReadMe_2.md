@@ -36,33 +36,40 @@ Your project MUST have all the unreal plugins installed and some settings proper
 If you have already done a migration from my project and have since made changes to the "ThirdPersonExampleMap", you may have an "EmptyStudio" map with copies of older assets in it.  Before you go ahead you may want to delete the old "EmptyStudio" map so you won't accidently migrate obsolete assets.
 
 * Edit my Virtual Production sample project
-* Create an "EmptyStudio" map where we will put the assets to be migrated.
+* In the Content Browser, go to Content->VPStuff and create a level called "EmptyStudio" 
 
 # Step 4 -- Migrate the assets
 
-In this step you select the assets from my project that you want to use in yours, move them into an empty map containing JUST what you want and then migrate them.  This is to make sure you don't copy anything over into your map that you don't want.  Below I show how to migrate everything but the manequin that appears in the foreground layer in my project.  This will leave you with an empty foreground layer that you can add your own actors to later and the simple manequin in the background that marks where the talent will stand.
+In this step you move just the assets you want to migrage into an empty map and then migrate them. 
 
-* If you have done a migration before and have NOT changed the project since, you can skip the next
-* Open the example level and select everything in the "comp elements" folder and right click and "copy".  
-* Open the level "EmptyStudio" and paste.
-* select the EmptyStudio level in the content browser and do asset actions->migrate to the the content folder in your target project
-* you will also need to migrate the "ajagenlock" asset over to the same location.
+* In the ThirdPersonExampleMap, go to the World Outliner and select everything in the Comp Elements folder.
+* If you WANT to migrate the second mannequin that appears in the foreground, select ThirdPersonCharacter also, I usually don't migrate him, leaving the foreground layer empty to add stuff to later.
+* Do a "copy" load the EmptyStudio map and paste.
+* In the Content Browser, go to Content->VPStuff
+* Select EmptyStudio
+* Also select ajagenlock or whatever custom timestep asset you created for your video hardware.
+* Right click and choose asset actions->migrate
+* A window will appear showing everything that will be migrated.  You may want to check this to make sure everything is there and nothing you don't want is on the list.
+* Continue and you will get a file dialog to specify where you want to migrate to, select the content folder of your target project.
+* You may get some warnings, usually about source control, review this list to make sure there are not serious errors.
+
+# Step 5 -- Setup of your project
 
 * Open up your target project
-* Switch to the EmptyStudio level
+* The EmptyStudio level
 * Select everything in the "comp elements" folder and do a copy
 * Switch to the level you want to do virtual production in
 * Paste into that level
 * Select the "talent marker separate" object you just pasted in and move it to wherever in your level you want your live talent to stand
-* In Project Settings->maps & modes set game instance to "globals" which should have come in with the migration
-* You may need to go into the "comp camera" and reset the focus target to talent marker separate
-* You may need to set Project Settings->engine->general->custom TimeStep to ajagenlock
+* In Project Settings->maps & modes set game instance to "globals"
+* In Project Settings->engine->general->custom TimeStep you need to set whatever your custom timestep asset was, for me it's ajagenlock, if you use different hardware it will probably be something else, or you may not have one.  This is the asset that locks the unreal framerate to the framerate of your video source.
 
-When you are done with all of this, things should work but may not look quite right.  You will probably need to adjust the camera settings, lighting and chromakey colors as described in my YouTube tutorial.
+# Step 6 -- Final Adjustments
 
-# Unreal Engine 4.24 or higher
+Now when you press play, everything should work like it did in my sample project.  You may need to adjust some things in your target project, below is a list of what to check if things don't look right.
 
-Unreal engine 4.24 started using a newer Steam input mapping system that requires you to assign "roles" to each tracker and setup an input mapping.  The main readme describes how to do this .  There is one potential problem, your project needs to have at least ONE axis mapping in UE project settings->input bindings or you won't be able to configure the tracker.  If you have nothing here, just create a dummy axis mapping.  Not sure if this is a bug, but at the moment it is required.
+* Atmospheric fog off
+* Set camera focus target set to talent marker
 
 # PLEASE report any problems.
 
