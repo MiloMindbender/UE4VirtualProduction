@@ -17,6 +17,10 @@
 		{
 			"Name": "MediaFrameworkUtilities",
 			"Enabled": true
+		},
+		{
+			"Name": "MfMedia",
+			"Enabled": true
 		}
 	]
 }
