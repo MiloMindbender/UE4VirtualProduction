@@ -1,6 +1,8 @@
-# An example of Virtual Production in Unreal Engine 
+# Virtual Production Projects For Unreal Engine
 
 [![Virtual Production](http://img.youtube.com/vi/a3jh6HootAk/0.jpg)](https://www.youtube.com/watch?v=a3jh6HootAk "Virtual Production")
+
+This repository was recently rebuilt to hold multiple Unreal Engine example projects. Please let me know if this causes you any problems.  Worst case some files and directories may have been moved, hopefully you will just have to re-open them in the Unreal launcher and everything will be ok (at least, it was for me).
 
 This is an example of a Virtual set where live green-screen video of your "talent" (actors) is composited with a 3d virtual set rendered in realtime by Unreal.  Features of the example include:
 
