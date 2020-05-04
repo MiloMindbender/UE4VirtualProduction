@@ -1,8 +1,33 @@
 # Virtual Production Projects For Unreal Engine
 
+This repository was recently rebuilt to hold multiple Unreal Engine example projects. Please let me know if this causes you any problems.  Worst case some files and directories may have been moved, hopefully you will just have to re-open them in the Unreal launcher and everything will be ok (at least, it was for me).
+
 [![Virtual Production](http://img.youtube.com/vi/a3jh6HootAk/0.jpg)](https://www.youtube.com/watch?v=a3jh6HootAk "Virtual Production")
 
-This repository was recently rebuilt to hold multiple Unreal Engine example projects. Please let me know if this causes you any problems.  Worst case some files and directories may have been moved, hopefully you will just have to re-open them in the Unreal launcher and everything will be ok (at least, it was for me).
+# Before you start
+
+These projects all require some kind of VR tracking gear, a video capture devices and a camera.  Because everyone's hardware setup will be a little different most of them WILL require some modifications before they will work for you.  I have tutorials on Youtube that describe how to do this.  If you have never used Unreal Engine before it will make things easier if you take a couple of getting started courses on the [Unreal Engine Learning Hub](https://www.unrealengine.com/en-US/onlinelearning-courses) just to get familiar with Unreal's user interface.
+
+Most of these examples assume you have a HTC Vive or Valve VR system with controllers, at least one base station and at least one tracking puck. All my tutorials assume you have this basic setup.  It is possible to use other configurations that cost less, but it will require more work to get everything setup.  
+
+# In This Repository
+
+* UE4VirtualProduction -- my original example which composites a live camera with a virtual set
+* TrackerTest -- a project that measures tracker jitter and reports it.
+
+# What you need to get started
+
+Each of the examples has slightly different requirements, see their individual readme files for more details, but in general to get started doing Virtual Production you will need a Windows PC with a good graphics card. a way to get video into Unreal and a a solid color background (usually green or blue).  You may also need some lights or a good source of natural light.  A lot of these things are covered in more detail by the tutorials on [my youtube channel](https://www.youtube.com/user/GregCorson)
+
+# Goals of this project
+
+The purpose of this project is to figure out how Virtual Production can be made easy and cheap enough so more people can use it.  Sometimes I will be using more expensive hardware because nothing cheaper is available (yet) but I will always be looking for low cost alternatives to make it more affordable.  It is already possible to do some basic virtual production with just a PC and a webcam and there are many on-line communities full of people working on making this easier and cheaper for all kinds of uses.
+
+# UNDER CONSTRUCTION
+
+I'm in the process of reorganizing this repository so it can handle multiple examples. The information below will be organized into different directories in the near future.
+
+# UE4VirtualProduction example
 
 This is an example of a Virtual set where live green-screen video of your "talent" (actors) is composited with a 3d virtual set rendered in realtime by Unreal.  Features of the example include:
 
