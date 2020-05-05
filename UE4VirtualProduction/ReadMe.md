@@ -22,7 +22,6 @@ This video shows my setup being used with a more realistic TV studio virtual set
 
 You can do Virtual Production with a lot of different kinds of equipment.  The only really essential thing is a camera and an Unreal compatible video capture device.  It's also possible to use a webcam. If you don't have exactly the same hardware as I use, you will have to make a few changes to the project.  They aren't too difficult and are covered in my video tutorial.  The hardware setup I currently use is:
 
-My setup is:
 * A 35mm full frame consumer camera with HDMI out on a good tripod
 * AJA Kona-HDMI 4 input HDMI capture card
 * A Vive Pro VR setup with two V2 base stations and controllers
@@ -41,7 +40,7 @@ You do need to setup a solid color background to stand in front of.  Bright gree
 
 # Using your own Unreal Levels
 
-To avoid content licensing issues I only use Unreal "starter content" in this project. In a few minutes you can migrate the assets from this project into any Unreal level you want to use as a virtual set.  See [how to migrate to your own project](./ReadMe_2.md) for instructions.  There is quite a bit of content available for free from the Unreal marketplace, a lot of it works without changes though some may contain lighting, fog or other effects that you will need to adjust to make them work with the live composites.
+To avoid content licensing issues I only use Unreal "starter content" in this project. In a few minutes you can migrate the assets from this project into any Unreal level you want to use as a virtual set.  See my video [how to migrate to your own project](https://youtu.be/lmCeBpzhge4) for instructions.  There is quite a bit of content available for free from the Unreal marketplace, a lot of it works without changes though some may contain lighting, fog or other effects that you will need to adjust to make them work with the live composites.
 
 # Recording and Streaming
 
