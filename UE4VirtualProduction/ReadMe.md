@@ -44,7 +44,7 @@ To avoid content licensing issues I only use Unreal "starter content" in this pr
 
 # Recording and Streaming
 
-Most any screen recording/streaming software should be able to record the unreal window.  I usually use OBS: Open Broadcaster Software because it is free and easy to use.  You can also livestream the output from unreal directly to the internet for live events.  If you want a higher quality recording that is easier to edit you can use a hardware recorder such as a [Atomos Ninja V](https://www.atomos.com/ninjav) plugged into your graphics card or a video output card.
+Most any screen recording/streaming software should be able to record the unreal window.  I usually use [OBS: Open Broadcaster Software](https://obsproject.com/) because it is free and easy to use.  You can also livestream the output from unreal directly to the internet for live events.  If you want a higher quality recording that is easier to edit you can use a hardware recorder such as a [Atomos Ninja V](https://www.atomos.com/ninjav) plugged into your graphics card or a video output card.
 
 # Known Issues
 
