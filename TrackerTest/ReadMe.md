@@ -26,7 +26,7 @@ LogBlueprintUserMessages: [AutoTest_2] --------------------
 
 The first row shows X, Y, Z position in centimeters and Roll, Pitch, Yaw rotation in degrees.  This is where in the room the tracker was when you ran the test.  If you run several tests without moving the tracker, these numbers should be almost the same.
 
-The second row shows how much the values have changed during the test, also called the standard deviation.  The smaller these numbers are, the less jitter you have.
+The second row shows how much the values have changed during the test, also called the standard deviation.  The smaller these numbers are, the less jitter you have.  If this row is all zeros then tracking is not working at all, check your Unreal and Steam setup.
 
 # What is good?
 
