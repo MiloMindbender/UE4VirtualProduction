@@ -1,0 +1,30 @@
+# VPStudio Example WORK IN PROGRESS, NOT FULLY FUNCTIONAL
+
+This is a new template for doing Virtual Production.  I won't go into much detail because I'm still working on it.  Please be aware I am actively updating this daily so it may not always be fully functional.
+
+The biggest features of this new studio will be support for multiple cameras and a structure that is easier to understand.
+
+# Currently
+
+Right now the setup is very basic, there is a composite with two camera inputs and code to switch between them.
+
+To see the results of the composite, make sure that the VPComp output pass is set to "Player Viewport"  if you set it to "none" you will be able to move a camera around the set using the usual Unreal wasd movement keys and the mouse.
+
+Remember for any keyboard commands to work you need to have clicked in the game window with your mouse.
+
+Currently Special_1 and Special_2 trackers drive the two main cameras.  Special_3 drives a third camera that is not connected to a composite.  If you run with VPComp output pass set to "none" you should be able to move around the world with the wasd keys and get to a position where you can see all 3 cameras which will move when you move trackers.
+
+There is no delay on the tracking data yet so the cameras will not be in sync with the CG when you move them.
+
+There is no garbage matte yet.
+
+This setup is probably inefficient, rendering the CG views for both cameras every frame.  Need to improve this.
+
+All the controls are now in the "VPPlayerController" object.  When the game starts a blueprint finds all the VPCamera objects and stores them in an array here.  Another part of the blueprint reads the three motion controller positions and copies them into the cameras.
+
+Composure still does not recognize camera components, so it is nessary to create a camera actor.  This is why the player controller handles reading the motion controllers.
+
+# Bugs and Suggestions
+
+Like I said, I'm still working on this.  I welcome suggestions on how to make it simpler or more efficient.  You can use the issues tracker to comment on things.  Remember this is in active development so there will occasionally be bugs, missing features and other problems.
+
