@@ -8,11 +8,15 @@ The biggest features of this new studio will be support for multiple cameras and
 
 Right now the setup is very basic, there is a composite with two camera inputs and code to switch between them.
 
+This is currently setup for an AJA Kona HDMI card with the first 2 inputs at 1080p59.94  It should not be too hard to change it for a different card by modifying the media bundles and composure video plates.  I'm working on making this easier.
+
 To see the results of the composite, make sure that the VPComp output pass is set to "Player Viewport"  if you set it to "none" you will be able to move a camera around the set using the usual Unreal wasd movement keys and the mouse.
 
 Remember for any keyboard commands to work you need to have clicked in the game window with your mouse.
 
 Currently Special_1 and Special_2 trackers drive the two main cameras.  Special_3 drives a third camera that is not connected to a composite.  If you run with VPComp output pass set to "none" you should be able to move around the world with the wasd keys and get to a position where you can see all 3 cameras which will move when you move trackers.
+
+To switch between the two cameras use the 9 and 0 keys.
 
 There is no delay on the tracking data yet so the cameras will not be in sync with the CG when you move them.
 
