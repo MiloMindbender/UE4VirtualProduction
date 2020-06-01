@@ -14,6 +14,7 @@ Most of these examples assume you have a HTC Vive or Valve VR system with contro
 
 * UE4VirtualProduction -- my original example which composites a live camera with a virtual set
 * TrackerTest -- a project that measures tracker jitter and reports it so you can tune your setup for lowest jitter
+* VPStudio -- a new studio example (WORK IN PROGRESS, NOT DONE YET)
 
 # What you need to get started
 
