@@ -18,13 +18,15 @@ Currently Special_1 and Special_2 trackers drive the two main cameras.  Special_
 
 To switch between the two cameras use the 9 and 0 keys.
 
-There is no delay on the tracking data yet so the cameras will not be in sync with the CG when you move them.
+Camera tracking delay is set individually in each VPCamera object so you can have different delays for different cameras.
 
 There is no garbage matte yet.
 
 This setup is probably inefficient, rendering the CG views for both cameras every frame.  Need to improve this.
 
-All the controls are now in the "VPPlayerController" object.  When the game starts a blueprint finds all the VPCamera objects and stores them in an array here.  Another part of the blueprint reads the three motion controller positions and copies them into the cameras.
+All the controls are now in the "VPPlayerController" object.  When the game starts a blueprint finds all the VPCamera and MotionController objects and stores them in an array here.  Another part of the blueprint reads the three motion controller positions and copies them into the cameras.
+
+There is some test code in the level blueprint, it prints some messages but does nothing functional right now, you can delete it or ignore it if you like.
 
 Composure still does not recognize camera components, so it is nessary to create a camera actor.  This is why the player controller handles reading the motion controllers.
 
