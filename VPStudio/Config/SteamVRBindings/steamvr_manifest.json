@@ -86,18 +86,6 @@
 	],
 	"default_bindings": [
 		{
-			"controller_type": "vive_tracker_chest",
-			"binding_url": "application_generated_ue_vpstudio-13144385_ue4editor_exe_binding_vive_tracker_chest.json"
-		},
-		{
-			"controller_type": "vive_tracker_keyboard",
-			"binding_url": "application_generated_ue_vpstudio-13144385_ue4editor_exe_binding_vive_tracker_keyboard.json"
-		},
-		{
-			"controller_type": "vive_tracker_waist",
-			"binding_url": "application_generated_ue_vpstudio-13144385_ue4editor_exe_binding_vive_tracker_waist.json"
-		},
-		{
 			"controller_type": "gamepad",
 			"binding_url": "gamepad.json"
 		},
