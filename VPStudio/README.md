@@ -1,3 +1,7 @@
+# IMPORTANT UNREAL 4.25.1 BUG
+
+There is currently a bug in 4.25.1 that causes a crash when you try to create and open up a level.  This is related to having mediabundles in the level.  Till an Unreal fix is released I will be checking this project in without the media bundles, so I can continue to work on it.  If you want the media bundle stuff to work you can drag the 2 AJA media bundles into level and it should work, but might crash so save your work.  Not sure if this bug is present in 4.25.0
+
 # VPStudio Example WORK IN PROGRESS, NOT FULLY FUNCTIONAL
 
 This is a new template for doing Virtual Production.  I won't go into much detail because I'm still working on it.  Please be aware I am actively updating this daily so it may not always be fully functional.
