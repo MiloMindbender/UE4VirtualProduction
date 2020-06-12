@@ -30,6 +30,10 @@ Under Edit->Project Settings->Project->Maps & Modes I provide a VPPlayerControll
 
 If you change the VPCamera asset blueprints and recompile, Unreal disconnects the cameras from the composure passes.  You will have to go into VPStudioBackground1 & 2 and reset the "camera source" to override and the Target Camera Actor to VPCamera 1 & 2 again.
 
+Right now there is no way to switch between "Virtual Production Filming" mode and just looking around the set mode with a keyboard key.  You have to go to the "VPStudio Comp" item and find the output pass.  Set the output to "none" if you just want to look around, or "player viewport" to see the composite output.
+
+Because of the 4.25.1 bug in unreal, my levels don't contain the AjaMediaBundles.  When you are ready to shoot just drag them from the aja folder into the level and you will be ready to film.
+
 # Features
 
 Keep in mind all these are subject to change!  Remember for keyboard/mouse to work you need to have clicked in the 3d viewport.  To get control of your computer back just hit shift-F1 or ESC to quit.
