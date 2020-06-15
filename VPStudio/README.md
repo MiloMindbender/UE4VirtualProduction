@@ -34,6 +34,18 @@ Right now there is no way to switch between "Virtual Production Filming" mode an
 
 Because of the 4.25.1 bug in unreal, my levels don't contain the AjaMediaBundles.  When you are ready to shoot just drag them from the aja folder into the level and you will be ready to film.
 
+# Latest Revisions
+
+6/14/2020
+
+Completely revised the tracking and camera system.  It is now broken into several actors.  There is a tracker which handles the motion controllers (and any delay), one or more "rigs" that represent the structure attaching the tracker to the camera, the VPCamera which is the CineCameraActor and another actor with a model of the camera.  This change allows for multiple types of "tracker" actor such as Optitrack or a mechanical tracker.  It also allows multiple rigs to attach the tracker to the camera such as a hot-shoe mount or a ball head.  The rigs allow for the tracker to be setup in most any position and can have degrees of freedom which can be adjusted to account for something such as a ball head that is not perfectly aligned.  The default has the tracker, rig and camera models all visible but they can be easily turned off or set to be "hidden in game".  The system is similar to the built-in unreal "camera rig crane" but is implemented in blueprints instead of C++ code.
+
+Do not touch any transform nodes in a rig while it is running, this will detach the rig from the tracker and stop it from working.  Each rig is made mostly of solid parts, any place in the rig that can move will have a variable in details for adjusting it to correct for small alignment errors.
+
+Both maps were updated to use the new camera components.  The virtual camera map is using the "sample" camera rig right now, if you are using this map you will want to make a rig that matches your camera.
+
+The rig system could also be used to represent a fixed tripod with tracked joints, a crane/jib or something like a robot with a camera on the end of the arm.
+
 # Features
 
 Keep in mind all these are subject to change!  Remember for keyboard/mouse to work you need to have clicked in the 3d viewport.  To get control of your computer back just hit shift-F1 or ESC to quit.
