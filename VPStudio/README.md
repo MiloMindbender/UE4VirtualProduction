@@ -38,6 +38,10 @@ Right now there is no way to switch between "Virtual Production Filming" mode an
 
 # Latest Revisions
 
+6/19/2020
+
+While recording the demo I noticed a few small errors and fixed them, mainly the garbage mattes were not attached to cameras, so they were not tracking.  There was also a small error in the A7R rig where the tilt axis was rotating the wrong way.
+
 6/14/2020
 
 Completely revised the tracking and camera system.  The system is similar to the built-in unreal "camera rig crane" but is implemented in blueprints instead of C++ code.  It is broken into several actors.  There is a tracker which handles the motion controllers (and any delay), one or more "rigs" that represent the structure attaching the tracker to the camera, the VPCamera which is the CineCameraActor and another actor with a model of the camera.  This change allows for multiple types of "tracker" actor such as Optitrack or a mechanical tracker.  It also allows multiple rigs to attach the tracker to the camera such as a hot-shoe mount or a ball head.  The rigs allow for the tracker to be setup in most any position and can have degrees of freedom which can be adjusted to account for something such as a ball head that is not perfectly aligned.  The default has the tracker, rig and camera models all visible but they can be easily turned off or set to be "hidden in game".  
