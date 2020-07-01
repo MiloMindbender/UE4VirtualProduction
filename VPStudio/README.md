@@ -1,26 +1,26 @@
 # READ SO YOU DON"T LOSE WORK! UNREAL 4.25.1 BUG
 
-There is a bug in 4.25.1 that causes an editor crash. If there are mediabundles in the current level and you open a new level the editor may crash and lose everything till the last time you saved.  Epic says the fix will be in 4.25.2  Tillthen I will checkin this project without media bundles in the level to avoid crashes and lost work.
+There is a bug in 4.25.1 that causes an editor crash. If there are mediabundles in the current level and you open a new level the editor may crash.  Epic says the fix will be in 4.25.2  Till then I will checkin this project without media bundles in the level to avoid crashes and lost work.
 
 You can still use the level for Virtual Production, just drag the two media bundles from the AJA folder (or make your own if you don't use AJA) back into the level.  But once you do this DO NOT try to switch levels or Unreal may crash.  Delete the media bundles from the level (NOT from content browser) and you should be able to switch levels again.
 
 # VPStudio is a WORK IN PROGRESS, NOT FULLY FUNCTIONAL
 
-This is my new template for Virtual Production.  It's easier to understand how it works and it has a number of new features.  It should also be esier to setup and customize for your studio.
+This is my new Virtual Production project.  It's easier to setup and customize for your studio setup and it has many new features.  
 
-Things could change on an almost daily basis.  Feel free to look at it and make comments on anything you think could be improved.  Feel free to use any of the bits and pieces or ideas you find here in your own projects, just please credit me, Greg Corson for whatever stuff you take.
+It will change almost daily.  Please take a look at it and make comments on anything you think could be improved.  Feel free to use anything you find here in your own projects, just please credit me, Greg Corson, for whatever you use.
 
-I will be starting a series of tutorial videos on my YouTube site soon.
+A series of tutorials on this project has already started on my YouTube channel.
 
 # What a boaring level!
 
-Yes, this level isn't very pretty.  This is because of content licensing.  Content from the Epic Marketplace and many other online stores allows you to use it in games and videos, but you CAN NOT distribute it in an Unreal project.  So this sample is made with only things that come with the Unreal distribution, this also makes the project small and quick to download.  I'm working with some artists to make a few virtual production sets we can give away, but they are not done yet.  If you are an artist would like to help by contributing original material under creative commons license, please let me know.
+Yes, the included level isn't pretty.  This is because of content licensing.  Content from the Epic Marketplace and many other online stores allows you to use it in games and videos, but you CAN NOT distribute as part of an open Unreal project.  This sample is made with things that are built into Unreal when you get it, so no licensing issues and it keeps the project very small.  I'm working with some artists to make a few virtual production sets we can give away, but they are not done yet.  If you are an artist would like to help by contributing original material under creative commons license, please let me know.
 
-To be clear, you CAN buy or use free content from Epic in your own work, but YOU have do buy or download it from Epic, their licensing will not allow me to give it to you.
+To be clear, you CAN buy or use free content from the Epic's Unreal marketplace in your own work, but YOU have to get it from Epic yourself, their licensing will not allow me to give it to you.
 
 # Recommendations for Use
 
-Every time you check this out from github there could be major changes.  I recommend you keep an UNCHANGED copy as a backup.  If I make a change that isn't compatible with what you are doing, you will have your saved version to go back to.
+Every time you check this out from github there could be big changes.  I recommend you keep an UNCHANGED copy as a backup.  If I make a change that isn't compatible with what you are doing, you will have your saved version to go back to.
 
 If you are checking out or cloneing the github repository, I recommend you don't make changes in the directory you checked out.  Make a duplicate, fork or in the unreal launcher, a clone of the project to work on.  That way if I make a change and you check it out, it won't overwrite work you've done.
 
@@ -30,13 +30,37 @@ To use this project with your own levels, migrate your level into this project. 
 
 # Known Problems
 
-Under Edit->Project Settings->Project->Maps & Modes I provide a VPPlayerController that manages all user input and controls everything.  This is required or nothing will work.  I also provide a VPGameState and VPGameMode which are currently EMPTY and not required.  Though in the future this may change.  If you want to use this project with a level that requires it's own PlayerController you will need to figure out how to combine mine and yours.
+Under Edit->Project Settings->Project->Maps & Modes I provide a VPPlayerController that manages all user input and controls everything.  This is required or nothing will work.  If you want to use this project with a level that requires it's own PlayerController you will need to figure out how to combine mine and yours. I also provide a VPGameState and VPGameMode which are currently EMPTY and not required.  Though in the future this may change.  
 
-Every time you recompile the VPCamera asset, Unreal disconnects the cameras from the composure passes.  You will have to go into VPStudioBackground1 & 2 and reset the "camera source" to override and the Target Camera Actor to VPCamera 1 & 2 again.
+Every time you recompile the VPCamera asset, Unreal disconnects the cameras from the composure passes.  If you recompile these you will have to go back into VPStudioBackground1 & 2 and the garbage matte passes and set the "camera source" to override and the Target Camera Actor to VPCamera 1 & 2 again.
 
 Right now there is no way to switch between "Virtual Production Filming" mode and just looking around the set mode with a keyboard key.  You have to go to the "VPStudio Comp" item and find the output pass.  Set the output to "none" if you just want to look around, or "player viewport" to see the composite output.
 
 # Latest Revisions
+
+6/28/2020
+
+Major refactoring of the tracker and camera rig system to remove some unnecessary rotations and transforms.  This was because vive trackers are setup so that their "front" or X axis when they are flat on the table is pointing up.  This caused any mesh or other object connected to them to be pointing the wrong way.  The tracker objects in VPStudio have had a 270 degree Y axis rotation added to their output to fix this.  Now when the tracker is setting flat on a table, up is the Z axis same in unreal.  The "front" positive X axis points in the direction opposite the USB plug.  If you used one of my earlier examples to build your own camera rig, you probably have this 270 degree rotation as the first node in your rig, this is no longer needed, you can set the rotations to zeros.
+
+Added measuring and alignment tools.  Actors that can be attached to a tracker or placed in the world for reference.  Attach AxisGuide to anything to see it's local coordinates. AxisGuideWorld will always show the world x/y/z no matter what it is attached to or how it is rotated. There are two 1m objects you can use as references when aligning the camera with the virtual world.  These are examples, you should find a real world box and a square of material some fixed size and make your own versions of these references in that size.  Then you can compare the real world object and CG objects in a composite to see if they line up.  Both of my objects have the origin at top-center so if you attach them to a tracker object in unreal and set a Vive tracker on the real world object the CG reference object will appear in the same place.  There is also an actor called PlumbLine which will always draw a vertical line no matter what it is attached to.  If you hang a real plumb line from a vive tracker, the two vertical lines should match.  An axis guide attached to CameraRig will show the entrance pupil component (where the camera would be attached).  If you attach one to the tracker it will show the output of the tracker with any delay included.
+
+The camera models have been adjusted so their origin is at the entrance pupil of the lens.  The A7R4 has a 24-70 F2.8 G-Master zoom attached with the entrance pupil set for it set to 24mm.  The UNCS3CA is setup for a 16-35 F2.8 G-Master with the zoom set to 16mm.  Note that camera models are just for reference when building camera rigs and setting up the studio.  They don't have anything to do with the alignment of the composite cameras so their measurements don't have to be exact.
+
+There are 3 pre-built camera rigs, these represent the hardware used to attach your tracker to your camera and must have correct measurements.  One end of the rig is the point where the tracker attaches, the other is where the entrance pupil of your lens is.  You can make your own rigs however you like.  I have found it is helpful to put joints wherever your real-world rig can rotate or twist (like at a tripod screw or ballhead) and set them up as I have so you can make small adjustments easily.  If the real-world rig is out of alignment by as little as a degree it will be noticable, these adjustments let you correct that without having to fight to get the real-world rig parts perfectly aligned.  My rigs include the mesh of the vive tracker, this is just to make it more clear how the rigs are built, when you build your own you can leave the tracker mesh out.
+
+Added a two-sided white material with a red X going through the center.  These are useful when making alignment objects.  It's also used on the greenscreen model to make it visible from both sides.
+
+Added meshes for a Sony A7R4 camera and a VIVE tracker, these are not precise models but are fairly accurate.  Both models didn't come with the origin where it should be.  To have them appear in the right places, the Vive model needs to have it's origin at the tripod screw and the A7R4 needs it at the entrance pupil location of the lens.
+
+Added TalentMarkMan with the unreal mannequin standing on it as a size reference.  This man is 193cm tall or around 6'3".  I suggest you rescale this to match your your talent's height so it will be a good size reference when putting the talent mark in a level.
+
+Added VivePuckNoRotate which outputs a tracker position without any rotation.
+
+The "entrance pupil" map was used in filming of the tutorials but at the moment is probably not useful for anyone.
+
+There is a "laser pointer" actor.  It contains a motion controller you can hook to any tracking device, by default it is hooked to the right vive controller.  This actor will have a red laser coming from the tracker and stopping on the first object it hits.  Not really useful yet, but it is fun and can be used to point out objects in a virtual set if you are doing a tutorial.  Inside the blueprint it returns the actor the beam hit.
+
+Added keys to toggle visibility of TalentMark, MeasuringGuide, CameraModel, CameraRig and Tracker actors with to the y, u, p, o and i keys.  Sometimes these are visible when filming so you want to turn them on and off easily.  Current default is ON.
 
 6/19/2020
 
