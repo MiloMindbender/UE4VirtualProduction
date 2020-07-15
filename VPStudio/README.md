@@ -38,6 +38,10 @@ Right now there is no way to switch between "Virtual Production Filming" mode an
 
 # Latest Revisions
 
+7/5/2020
+
+After testing with a different virtual set, realized all the stage elements (inspection camera, color reference...etc) should be attached to TalentMark1.  If you migrate a new map into this template it makes it easier to get everything to the right position, you just move the talent mark.
+
 6/28/2020
 
 Major refactoring of the tracker and camera rig system to remove some unnecessary rotations and transforms.  This was because vive trackers are setup so that their "front" or X axis when they are flat on the table is pointing up.  This caused any mesh or other object connected to them to be pointing the wrong way.  The tracker objects in VPStudio have had a 270 degree Y axis rotation added to their output to fix this.  Now when the tracker is setting flat on a table, up is the Z axis same in unreal.  The "front" positive X axis points in the direction opposite the USB plug.  If you used one of my earlier examples to build your own camera rig, you probably have this 270 degree rotation as the first node in your rig, this is no longer needed, you can set the rotations to zeros.
@@ -60,7 +64,7 @@ The "entrance pupil" map was used in filming of the tutorials but at the moment 
 
 There is a "laser pointer" actor.  It contains a motion controller you can hook to any tracking device, by default it is hooked to the right vive controller.  This actor will have a red laser coming from the tracker and stopping on the first object it hits.  Not really useful yet, but it is fun and can be used to point out objects in a virtual set if you are doing a tutorial.  Inside the blueprint it returns the actor the beam hit.
 
-Added keys to toggle visibility of TalentMark, MeasuringGuide, CameraModel, CameraRig and Tracker actors with to the y, u, p, o and i keys.  Sometimes these are visible when filming so you want to turn them on and off easily.  Current default is ON.
+Added keys to toggle visibility of TalentMark, MeasuringGuide, CameraModel, CameraRig and Tracker actors.  Sometimes these are visible when filming so you want to turn them on and off easily.  Current default is ON.
 
 6/19/2020
 
@@ -112,8 +116,6 @@ Keep in mind all these are subject to change!  For the keyboard/mouse to work yo
 
 * The composure setup currently does 2 cameras and requires editing of both the composure setup and PlayerController blueprints to add more.  I'm trying to figure out a way to make this easier or automatic.
 
-* The cameras and trackers are rendered as 3d objects so you can see them.  If they get in the way while filming you can tick the "hidden in game" box on each actor to make them disappear.  I will add a button to turn them on and off as soon as I have time.
-
 * It is setup for an AJA Kona HDMI video input card right now.  You can change this to support a different card or webcam.  I am working on a way to distribute setups for multiple types of cards and cameras to make it easier to configure it for whatever setup you have.
 
 * There is no setup for a "pro video output card" because I don't have one to test.  You should be able to do this with minor changes.  See step 6 in this https://docs.unrealengine.com/en-US/Engine/Composure/QuickStart/index.html to see where to make the change in composure.  I currently capture output from my NVIDIA card's HDMI output.
@@ -140,7 +142,9 @@ The M key switches between VPCamera "raw" views.  This gives you a view from eac
 
 The I key switches to the inspection camera.  This is just a free floating camera that lets you look around the level while all the cameras and tracked objects are running so you can see if they are working and in the right places. (only works when VPStudioComp output is set to NONE)
 
-The T key toggles between moving the inspection camera and moving the talent marks.  
+The T key toggles between moving the inspection camera and moving the talent marks.
+
+y, u, p, o and i keys will toggle visibility of TalentMark, MeasuringGuide, CameraModel, CameraRig and Tracker actors
 
 When VPStudioComp output is set to "player viewport" you will see the full composite output of live cameras and the CG background.  The 1 and 2 keys switch between VPCamera1 and VPCamera2
 
