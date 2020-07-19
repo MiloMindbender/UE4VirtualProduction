@@ -6,7 +6,64 @@
 	{
 		"/actions/main":
 		{
-			"sources": [],
+			"sources": [
+				{
+					"mode": "trigger",
+					"path": "/user/hand/right/input/trigger",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/NextTalentMark"
+						}
+					}
+				},
+				{
+					"mode": "dpad",
+					"path": "/user/hand/right/input/trackpad",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"west":
+						{
+							"output": "/actions/main/in/SwitchToVPCamera1"
+						}
+					}
+				},
+				{
+					"mode": "dpad",
+					"path": "/user/hand/right/input/trackpad",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"east":
+						{
+							"output": "/actions/main/in/SwitchToVPCamera2"
+						}
+					}
+				},
+				{
+					"mode": "dpad",
+					"path": "/user/hand/right/input/trackpad",
+					"parameters":
+					{
+						"sub_mode": "click"
+					},
+					"inputs":
+					{
+						"south":
+						{
+							"output": "/actions/main/in/Screenshot"
+						}
+					}
+				}
+			],
 			"poses": [
 				{
 					"output": "/actions/main/in/controllerleft",

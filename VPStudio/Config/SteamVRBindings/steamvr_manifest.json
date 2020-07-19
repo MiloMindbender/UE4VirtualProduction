@@ -76,6 +76,22 @@
 			"name": "/actions/main/in/open_console",
 			"type": "boolean",
 			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/NextTalentMark",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/SwitchToVPCamera1",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/SwitchToVPCamera2",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/Screenshot",
+			"type": "boolean"
 		}
 	],
 	"action_sets": [
@@ -192,6 +208,10 @@
 			"/actions/main/out/vibrateleft": "Haptic (Left)",
 			"/actions/main/out/vibrateright": "Haptic (Right)",
 			"/actions/main/in/open_console": "Open Console",
+			"/actions/main/in/NextTalentMark": "NextTalentMark",
+			"/actions/main/in/SwitchToVPCamera1": "SwitchToVPCamera1",
+			"/actions/main/in/SwitchToVPCamera2": "SwitchToVPCamera2",
+			"/actions/main/in/Screenshot": "Screenshot",
 			"/actions/main": "Main Game Actions"
 		}
 	]

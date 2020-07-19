@@ -1,22 +1,20 @@
 # READ SO YOU DON"T LOSE WORK! UNREAL 4.25.1 BUG
 
-There is a bug in 4.25.1 that causes an editor crash. If there are mediabundles in the current level and you open a new level the editor may crash.  Epic says the fix will be in 4.25.2  Till then I will checkin this project without media bundles in the level to avoid crashes and lost work.
+A bug in 4.25.1 can cause an editor crash. If there are mediabundles in the current level and you open a new level the editor may crash.  Epic says the fix will be in 4.25.2  If you notice any crashes while switching levels, just delete the media bundles from the level you are switching FROM and it should work.
 
-You can still use the level for Virtual Production, just drag the two media bundles from the AJA folder (or make your own if you don't use AJA) back into the level.  But once you do this DO NOT try to switch levels or Unreal may crash.  Delete the media bundles from the level (NOT from content browser) and you should be able to switch levels again.
+# VPStudio is a WORK IN PROGRESS and may change in major ways without notice
 
-# VPStudio is a WORK IN PROGRESS, NOT FULLY FUNCTIONAL
-
-This is my new Virtual Production project.  It's easier to setup and customize for your studio setup and it has many new features.  
+My new Virtual Production project is easier to setup and customize for your studio and it has many new features.  
 
 It will change almost daily.  Please take a look at it and make comments on anything you think could be improved.  Feel free to use anything you find here in your own projects, just please credit me, Greg Corson, for whatever you use.
 
-A series of tutorials on this project has already started on my YouTube channel.
+A series of tutorials on this project are on [my youtube channel](https://www.youtube.com/user/GregCorson).
 
 # What a boaring level!
 
-Yes, the included level isn't pretty.  This is because of content licensing.  Content from the Epic Marketplace and many other online stores allows you to use it in games and videos, but you CAN NOT distribute as part of an open Unreal project.  This sample is made with things that are built into Unreal when you get it, so no licensing issues and it keeps the project very small.  I'm working with some artists to make a few virtual production sets we can give away, but they are not done yet.  If you are an artist would like to help by contributing original material under creative commons license, please let me know.
+The included level is very basic because of content licensing.  Content from the Epic Marketplace and many other online stores allows you to use it in games and videos, but you CAN NOT distribute as part of an open Unreal project.  This sample only uses content built into Unreal, so no licensing issues and it keeps the project small.  I'm working with artists to make a few virtual production sets we can give away, but they are not done yet.  If you are an artist would like to help by contributing original material under creative commons license, please let me know.
 
-To be clear, you CAN buy or use free content from the Epic's Unreal marketplace in your own work, but YOU have to get it from Epic yourself, their licensing will not allow me to give it to you.
+You CAN buy or use content from the Epic's Unreal marketplace in your own work, but YOU have to get it from Epic yourself, their licensing will not allow me to host the content here.
 
 # Recommendations for Use
 
@@ -37,6 +35,16 @@ Every time you recompile the VPCamera asset, Unreal disconnects the cameras from
 Right now there is no way to switch between "Virtual Production Filming" mode and just looking around the set mode with a keyboard key.  You have to go to the "VPStudio Comp" item and find the output pass.  Set the output to "none" if you just want to look around, or "player viewport" to see the composite output.
 
 # Latest Revisions
+
+7/17/2020
+
+This includes some new stuff I added to film the mad scientist lab demo.
+
+The right hand vive controller can now be used to control some of the demo functions.  Clicking left or right trackpad will select camera 1 or 2.  Pulling the trigger moves to the next talent mark.  Clicking down on the trackpad or pressing B on the keyboard will take s screenshot (this is useful for checking the key, focus...etc if you are working by yourself).
+
+I've put some materials on things like the floor and the spheres/cones/cubes in the scene.  This makes it easier to see all the objects.  The green screen object is now green.
+
+The talent mark texture now has an arrow showing which way the talent should be facing.
 
 7/5/2020
 
@@ -86,9 +94,9 @@ Keep in mind all these are subject to change!  For the keyboard/mouse to work yo
 
 * To see all the control keys, go to Edit->Project settings and then open Engine->Input
 
-* User commands go through Edit->Project Settings->Engine->Input so they can be easily changed.  Everything is keyboard/mouse now.  You can change what keyboard keys do what and the speed of movement and mouse response on this page.  You can also add support for any input device you have by adding it here, this would include things like PC game controllers, joysticks and VR controllers.  
+* User commands go through Edit->Project Settings->Engine->Input so they can be easily changed. You can change what keyboard keys do what and the speed of movement and mouse response on this page.  You can also add support for any input device you have by adding it here, this would include things like PC game controllers, joysticks and VR controllers.  
 
-* Multiple cameras and video sources are supported.  This lets you have more than one camera view of your talent and live switch between them.  Currently the project is setup for 2 cameras, adding more requires some blueprint and composure changes but I am working to make this simpler.
+* Multiple cameras and video sources are supported.  This lets you have more than one camera view of your talent and live switch between them.  The project is setup for 2 cameras, adding more requires some blueprint and composure changes but I am working to make this simpler.
 
 * An "inspection camera" gives you a 3rd person view of your level.  This is useful if you want to see if your cameras and other trackers are pointed in the right direction and moving.  This is a live view so if your tracked cameras move you will see them move.  This camera can also be moved around while the project is running.
 
@@ -104,7 +112,7 @@ Keep in mind all these are subject to change!  For the keyboard/mouse to work yo
 
 * VPCamera1 and VPCamera2 are setup to be controlled by VIVE trackers set to Special_1 and Special_2.  If you want to use some other controller just change the source in the camera's motion controller component.  For example "left" or "right" if you want to use the hand controllers.
 
-* The setup should work as-is if you have less than 2 cameras (even none) you should not have to change anything.
+* The setup should still work if you have only one camera.  Just don't use the "switch to camera 2" feature.
 
 * The camera "rig" actors I've provided have variables for making small adjustments to the joints of the rig.  This is to correct for minor tracker rotation issues such as the tracker being slightly rotated on it's 1/4-20 tripod thread or on a ballhead mount you couldn't get exactly straight.  It is meant for very small adjustments of a few degrees at most and is not perfect, but if your tracker is slightly out of alignment using this can bring it back without having to mess with the mount itself.  The ones I included represent my actual camera rigs and only have these adjustments at places that can move.
 
@@ -126,7 +134,7 @@ Keep in mind all these are subject to change!  For the keyboard/mouse to work yo
 
 # Keyboard Keys
 
-For any of the controls to work you need to click in the viewport where this project is running.  To get mouse control back press shift-F1
+For keyboard or Vive controller buttons to work the player viewport or PIE window needs to have focus.  Just click in it, your mouse cursor will disappear, to get mouse control back press shift-F1
 
 These are what the keyboard keys currently do, if you want to change them go to Edit->Project Settings->Engine->Input.
 
@@ -136,7 +144,9 @@ When you first press PLAY you will either be looking at the composure composite 
 
 Depending on what mode you are in, you can move talent markers or the inspection camera around.  Use the standard Unreal W, S, D, A keys for forward, back right and left movemtnt.  E and C moves up and down.  Use the mouse to look around (pan tilt).
 
-The N key teleports you to the next TalentMark.  You can have as many of these as you want, just drag them into the level and number them 1, 2, 3 and so on.  When you press this key all your tracked objects & cameras will jump to the next mark and your talent will appear in that spot.
+To change to Virtual Production camera one, press 1 or left-click the right hand vive controller trackpad.  For camera two, use 2 or click right on the trackpad.
+
+The N key or Vive controller trigger teleports you to the next TalentMark.  You can have as many of these as you want, just drag them into the level and number them 1, 2, 3 and so on.  When you press this key all your tracked objects & cameras will jump to the next mark and your talent will appear in that spot.
 
 The M key switches between VPCamera "raw" views.  This gives you a view from each of your cameras but without any live composite, you will only see the CG part.  (only works when VPStudioComp output is set to NONE)
 
@@ -148,9 +158,11 @@ y, u, p, o and i keys will toggle visibility of TalentMark, MeasuringGuide, Came
 
 When VPStudioComp output is set to "player viewport" you will see the full composite output of live cameras and the CG background.  The 1 and 2 keys switch between VPCamera1 and VPCamera2
 
+Press b or click the right VIVE controller trackpad down to take a screenshot.  This is the same as typing "shot" into the editor command window.
+
 # Other Notes
 
-The large cone, cube and sphere are all 1 meter tall.  The center of the sphere is about 1.5 meters off the ground or about 5 feet high.
+The large cone, cube and sphere are all 1 meter tall.  The center of the sphere is about 1.5 meters off the ground or about 5 feet high.  TalentMarkMan is 193cm tall or about 6'3".
 
 # Bugs and Suggestions
 
