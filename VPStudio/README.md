@@ -8,15 +8,15 @@ This is an active project and will be seeing new checkins FREQUENTLY.  I suggest
 
 # The sample level IS boaring!
 
-Content from the Epic Marketplace and many other other places is licensed so you can use it in games and videos but you CAN NOT redistribute the assets.  My sample only uses Unreal builtin content to avoid licensing issues and keep the project small.  I've tried to make VPStudio easy to use with your own levels.
+Content from the Epic Marketplace and many other other places is licensed so you can use it in games and videos but you CAN NOT redistribute the assets.  Unfortunately, all the demos I've done so far have been done with their models so I can't redistribute them to you.  My sample only uses Unreal builtin content to avoid licensing issues and keep the project small.  I've tried to make VPStudio easy to use with your own levels so it shouldn't be too hard to add it to any level you have.
 
-If you are an artist would like to help by contributing original material under creative commons license, please let me know.
+If you are an artist and would like to help by contributing original material under creative commons license, please let me know.
 
 # Setup VPStudio
 
-After you get a copy of VPStudio you need to set it up for your hardware.  Do this BEFORE trying to add your own stuff to the level. Right now it is setup for an AJA Kona HDMI video capture card and VIVE trackers.  If you have a BlackMagic DeckLink or other card/webcam you will need to replace the assets found in the Aja folder with ones for your hardware.  I will try to add a webcam setup to this soon.  I don't have any BlackMagic hardware to work with so I can't do a setup for that.  Look at [Unreal Pro Video](https://docs.unrealengine.com/en-US/Engine/ProVideoIO/index.html) for information on setting up BlackMagic and Aja cards and [Using WebCams](https://docs.unrealengine.com/en-US/Engine/MediaFramework/HowTo/UsingWebCams/index.html) for info on webcams.  If you are not using VIVE hardware, you will have to make your own tracker actors.  See VPStudioCore->Trackers folder for examples.
+After you get VPStudio you need to set it up for your hardware.  Do this BEFORE trying to add your own stuff to the level. Right now it is setup for an AJA Kona HDMI video capture card and VIVE trackers.  If you have a BlackMagic DeckLink or other card/webcam you will need to replace the assets found in the Aja folder with ones for your hardware.  I will try to add a webcam setup to this soon.  I don't have any BlackMagic hardware to work with so I can't do a setup for that.  Look at [Unreal Pro Video](https://docs.unrealengine.com/en-US/Engine/ProVideoIO/index.html) for information on setting up BlackMagic and Aja cards and [Using WebCams](https://docs.unrealengine.com/en-US/Engine/MediaFramework/HowTo/UsingWebCams/index.html) for info on webcams.  If you are not using VIVE hardware, you will have to make your own tracker actors.  See VPStudioCore->Trackers folder for examples.
 
-Follow [tutorial 1](https://youtu.be/wWPZjX29asM) and [tutorial 2](https://youtu.be/kRUbUaESw80) to make a rig in Unreal that shows how your camera and tracker are mounted.  There are sample rigs in VPStudio but if they don't match your camera/lens/tracker setup you won't get good alignment of real and virtual objects in your scene.  [Tutorial 3](https://youtu.be/4LjvekNocD4) shows how to setup VIVE tracker bindings.  Make sure your VIVE trackers are setup to Special_1, 2, etc. as shown here.
+Follow [tutorial 1](https://youtu.be/wWPZjX29asM) and [tutorial 2](https://youtu.be/kRUbUaESw80) to make a rig in Unreal that shows how your camera and tracker are mounted.  There are sample rigs in VPStudio but if they don't match your camera/lens/tracker setup you won't get good alignment of real and virtual objects in your scene.  [Tutorial 3](https://youtu.be/4LjvekNocD4) shows how to setup VIVE controller buttons to control things.  Make sure your VIVE trackers are setup to Special_1, 2, etc. as shown here.
 
 You also need to setup the location of your greenscreen and a few other things.  Tutorials on this for VPStudio are coming, for now you can look at my older tutorials for advice.
  
@@ -46,17 +46,39 @@ All the release notes have been moved to the releases page on github, please che
 
 7/24/2020  Release 1
 
-Unreal 4.25.2 fixes the crash bug when switching maps, suggest you update to it.
+It's called Release 1 because I thought I'd better start numbering things, number will go up by 1 with each release, no fractions.
 
-7/17/2020
+This release was used to film Tutorial 4 on [my youtube channel](https://www.youtube.com/user/GregCorson).
 
-This includes some new stuff I added to film the mad scientist lab demo.
+You should update to Unreal 4.25.2 or higher to get a fix to a bug that can cause a CRASH when switching maps.
+
+Folder structure has changed, everything is now in a top level folder called VPStudioCore.  This is so when you migrate your own content into this project it will clearly be separate from all the VPStudio stuff.
+
+Converted to using sublevels.  Now the virtual production stuff is by itself in a sublevel.  You can import your own level into the project, then just add the virtual production sublevel and you're ready to go.
+
+Added some more adjustments to my camera rigs because the real world rigs turned out to be slightly misaligned on a couple other axies. 
+
+Fixed a problem with talent mark man, made it inherit from talent mark.
+
+Added a two meter height scale, marks on the right side are at 5'8" and 6'
+
+I added a few more props to the demo level to make it slightly more interesting.  Just a big studio light and a camera on a tripod.
+
+You should have had all your studio elements attached to the first talent mark, but in case you did not the initialization process now finds the things attached to ALL the talent marks and moves them to the first one.
+
+Talent marks now have a "sort order" field you can set.  VPStudio will now sort all your talent marks into order based on this field.  It's a float to make it easy if you want to insert a talent mark between some existing ones (ie: if you have mark 1 and mark 2 you can insert between them by setting the number on the new mark to 1.5)  The name of the talent mark can be anything you want (ie: BedroomMark, KitchenMark...etc)
+
+Changed the color of the plumbline graphic to red for better contrast when trying to line up with real world objects.
+
+This includes everything I added to film the mad scientist lab demo.
 
 The right hand vive controller can now be used to control some of the demo functions.  Clicking left or right trackpad will select camera 1 or 2.  Pulling the trigger moves to the next talent mark.  Clicking down on the trackpad or pressing B on the keyboard will take s screenshot (this is useful for checking the key, focus...etc if you are working by yourself).
 
 I've put some materials on things like the floor and the spheres/cones/cubes in the scene.  This makes it easier to see all the objects.  The green screen object is now green.
 
 The talent mark texture now has an arrow showing which way the talent should be facing.
+
+The H key will bring a HUD with some alignment guides that go through the center of the screen and one quarter the way to either side of it.  These are useful when trying to align cameras/trackers if your camera doesn't have a screen or the screen is hard to see.
 
 # Features
 
@@ -85,6 +107,8 @@ Keep in mind all these are subject to change!
 * The camera "rig" actors I've provided have variables for making small adjustments to the joints of the rig.  This is to correct for minor tracker rotation issues such as the tracker being slightly rotated on it's 1/4-20 tripod thread or on a ballhead mount you couldn't get exactly straight.  It is meant for very small adjustments of a few degrees at most and is not perfect, but if your tracker is slightly out of alignment using this can bring it back without having to mess with the mount itself.  The ones I included represent my actual camera rigs and only have these adjustments at places that can move.
 
 * There is a garbage matte setup for use with a greenscreen that covers a wall and floor.  If your greenscreen has a different shape, you can model it and add your own mesh for a better fit.  There is a tutorial on my youtube channel that shows how to adjust the garbage matte to match the size of your greenscreen.
+
+* A HUD with guides useful for aligning cameras if your camera doesn't have guides or has no screen.
 
 # Planned (NOT done yet)
 
@@ -123,6 +147,8 @@ y, u, p, o and i keys will toggle visibility of TalentMark, MeasuringGuide, Came
 When VPStudioComp output is set to "player viewport" you will see the full composite output of live cameras and the CG background.  The 1 and 2 keys switch between VPCamera1 and VPCamera2
 
 Press b or click the right VIVE controller trackpad down to take a screenshot.  This is the same as typing "shot" into the editor command window.
+
+The H key brings up the hud with camera alignment guides.
 
 # Bugs and Suggestions
 
