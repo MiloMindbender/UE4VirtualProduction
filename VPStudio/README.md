@@ -44,41 +44,15 @@ The way my dual camera setup works is inefficient and is probably always renderi
 
 All the release notes have been moved to the releases page on github, please check there for new features and fixes.  From now on I'll be making a release every time I get to a clean and usable spot in development.
 
-7/24/2020  Release 1
+Release 2
 
-It's called Release 1 because I thought I'd better start numbering things, number will go up by 1 with each release, no fractions.
+This release contains some small fixes to make the import/migrate demo work right.
 
-This release was used to film Tutorial 4 on [my youtube channel](https://www.youtube.com/user/GregCorson).
+* Set all the chroma key, despil and erode passes to be on by default
 
-You should update to Unreal 4.25.2 or higher to get a fix to a bug that can cause a CRASH when switching maps.
+* I key was mapped to two functions (inspection camera and hide trackers) remapped so hide trackers is now K key.
 
-Folder structure has changed, everything is now in a top level folder called VPStudioCore.  This is so when you migrate your own content into this project it will clearly be separate from all the VPStudio stuff.
-
-Converted to using sublevels.  Now the virtual production stuff is by itself in a sublevel.  You can import your own level into the project, then just add the virtual production sublevel and you're ready to go.
-
-Added some more adjustments to my camera rigs because the real world rigs turned out to be slightly misaligned on a couple other axies. 
-
-Fixed a problem with talent mark man, made it inherit from talent mark.
-
-Added a two meter height scale, marks on the right side are at 5'8" and 6'
-
-I added a few more props to the demo level to make it slightly more interesting.  Just a big studio light and a camera on a tripod.
-
-You should have had all your studio elements attached to the first talent mark, but in case you did not the initialization process now finds the things attached to ALL the talent marks and moves them to the first one.
-
-Talent marks now have a "sort order" field you can set.  VPStudio will now sort all your talent marks into order based on this field.  It's a float to make it easy if you want to insert a talent mark between some existing ones (ie: if you have mark 1 and mark 2 you can insert between them by setting the number on the new mark to 1.5)  The name of the talent mark can be anything you want (ie: BedroomMark, KitchenMark...etc)
-
-Changed the color of the plumbline graphic to red for better contrast when trying to line up with real world objects.
-
-This includes everything I added to film the mad scientist lab demo.
-
-The right hand vive controller can now be used to control some of the demo functions.  Clicking left or right trackpad will select camera 1 or 2.  Pulling the trigger moves to the next talent mark.  Clicking down on the trackpad or pressing B on the keyboard will take s screenshot (this is useful for checking the key, focus...etc if you are working by yourself).
-
-I've put some materials on things like the floor and the spheres/cones/cubes in the scene.  This makes it easier to see all the objects.  The green screen object is now green.
-
-The talent mark texture now has an arrow showing which way the talent should be facing.
-
-The H key will bring a HUD with some alignment guides that go through the center of the screen and one quarter the way to either side of it.  These are useful when trying to align cameras/trackers if your camera doesn't have a screen or the screen is hard to see.
+* The two AJA media sources should have been part of the core map, moved them there.
 
 # Features
 
@@ -142,7 +116,7 @@ The I key switches to the inspection camera.  This is just a free floating camer
 
 The T key toggles between moving the inspection camera and moving the talent marks.
 
-y, u, p, o and i keys will toggle visibility of TalentMark, MeasuringGuide, CameraModel, CameraRig and Tracker actors
+y, u, p, o and k keys will toggle visibility of TalentMark, MeasuringGuide, CameraModel, CameraRig and Tracker actors
 
 When VPStudioComp output is set to "player viewport" you will see the full composite output of live cameras and the CG background.  The 1 and 2 keys switch between VPCamera1 and VPCamera2
 
