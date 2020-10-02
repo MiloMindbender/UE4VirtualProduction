@@ -4,7 +4,7 @@ Release 3 of VPStudio has some features that can be controlled by an OSC control
 
 # Sample OSC control Surface 
 
-[TouchOSC Screenshot](./Screenshot1.jpg)
+![TouchOSC Screenshot](./Screenshot1.jpg)
 
 This is what the controller looks like in TouchOSC when it is running, at the top it has a button for each of 3 screens to make them move up and down.  Below those buttons is a volume control for each screen.  There is also a button to switch between cameras, to go to the next camera, to play an opening "flying logo" title and to take a screenshot.  The screen and camera buttons light up when that item is active and the volume controls will move as the volume changes.
 
@@ -19,15 +19,25 @@ There are many OSC control surface applications available besides TouchOSC.  The
 All the controls are set to send and receive a float value from 0 to 1.  The OSC app should be set to send single messages, not "bundles"
 
 /1/screen1
+
 /1/screen2
+
 /1/screen3
+
 /1/volume1
+
 /1/volume2
+
 /1/volume3
+
 /1/camera1
+
 /1/camera2
+
 /1/nextcamera
+
 /1/title
+
 /1/screenshot
 
 # OSC in VPStudio
