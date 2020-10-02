@@ -4,29 +4,32 @@ My new Virtual Production project has many new features and is easier to setup. 
 
 Please subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) and check it out for tutorials on Virtual Production.  You can also ask me for help on [this discord channel](https://discord.gg/ReEhkhc).
 
-This is an active project and will be seeing new checkins FREQUENTLY.  I suggest you grab the latest release from the releases section here on github and keep a backup copy of it in case I change something that causes you issues.  If you clone the archive you will get the latest version but there might also be bugs or unfinished features.
+This is an active project and will be seeing new checkins FREQUENTLY.  You should use the latest release from the releases section here on github doing.  Cloning the repository will get you the latest but may include work-in-progress code that isn't tested or is not complete.  Remember to keep backup copies!
+
+# Tutorials are coming
+
+I usually release tutorials at the same time as a new VPStudio release but some people really wanted to see the blueprints for OSC, the flying logo and the flying screen features.  So I'm doing this release so you can have a look at it.  If you can't figure out how things work don't worry, I should have tutorials out fairly soon.
 
 # The sample level IS boaring!
 
-Content from the Epic Marketplace and many other other places is licensed so you can use it in games and videos but you CAN NOT redistribute the assets.  Unfortunately, all the demos I've done so far have been done with their models so I can't redistribute them to you.  My sample only uses Unreal builtin content to avoid licensing issues and keep the project small.  I've tried to make VPStudio easy to use with your own levels so it shouldn't be too hard to add it to any level you have.
+A lot of content, including Epic "free" stuff, is licensed so you can use it in games and videos but you CAN NOT redistribute the assets.  Unfortunately, all the demos I've done so far have been done with Epic models so I can't redistribute them to you.  My sample only uses Unreal builtin content to avoid licensing issues and keep the project small.  VPStudio is pretty easy to use with your own content.
 
 If you are an artist and would like to help by contributing original material under creative commons license, please let me know.
 
 # Setup VPStudio
 
-After you get VPStudio you need to set it up for your hardware.  Do this BEFORE trying to add your own stuff to the level. Right now it is setup for an AJA Kona HDMI video capture card and VIVE trackers.  If you have a BlackMagic DeckLink or other card/webcam you will need to replace the assets found in the Aja folder with ones for your hardware.  I will try to add a webcam setup to this soon.  I don't have any BlackMagic hardware to work with so I can't do a setup for that.  Look at [Unreal Pro Video](https://docs.unrealengine.com/en-US/Engine/ProVideoIO/index.html) for information on setting up BlackMagic and Aja cards and [Using WebCams](https://docs.unrealengine.com/en-US/Engine/MediaFramework/HowTo/UsingWebCams/index.html) for info on webcams.  If you are not using VIVE hardware, you will have to make your own tracker actors.  See VPStudioCore->Trackers folder for examples.
+Before adding any of your own content to VPStudio, get the demo level working on your hardware.  Once the demo level is working you will have a template you can use the Epic launcher "clone" function on to make a copy you can add your own content to.
 
-Follow [tutorial 1](https://youtu.be/wWPZjX29asM) and [tutorial 2](https://youtu.be/kRUbUaESw80) to make a rig in Unreal that shows how your camera and tracker are mounted.  There are sample rigs in VPStudio but if they don't match your camera/lens/tracker setup you won't get good alignment of real and virtual objects in your scene.  [Tutorial 3](https://youtu.be/4LjvekNocD4) shows how to setup VIVE controller buttons to control things.  Make sure your VIVE trackers are setup to Special_1, 2, etc. as shown here.
+Right now VPStudio is setup for an AJA Kona HDMI video capture card and VIVE trackers.  If you have a BlackMagic DeckLink or other card/webcam you will need to replace the assets found in the Aja folder with ones for your hardware.  Look at [Unreal Pro Video](https://docs.unrealengine.com/en-US/Engine/ProVideoIO/index.html) for information on setting up BlackMagic and Aja cards and [Using WebCams](https://docs.unrealengine.com/en-US/Engine/MediaFramework/HowTo/UsingWebCams/index.html) for info on webcams.  If you are not using VIVE hardware, you will have to make your own tracker actors.  See VPStudioCore->Trackers folder for examples.
 
-You also need to setup the location of your greenscreen and a few other things.  Tutorials on this for VPStudio are coming, for now you can look at my older tutorials for advice.
+Follow [tutorial 1](https://youtu.be/wWPZjX29asM) and [tutorial 2](https://youtu.be/kRUbUaESw80) to make a rig in Unreal that shows how your camera and tracker are mounted.  There are sample rigs in VPStudio but if they don't match your camera/lens/tracker setup you won't get good alignment of real and virtual objects in your scene.  [Tutorial 3](https://youtu.be/4LjvekNocD4) shows how to setup VIVE controller buttons to control things.  Make sure your VIVE trackers are setup to Special_1, 2, etc. as shown here. [Tutorial 4](https://youtu.be/UGHjwZ6J13E) shows how to setup the studio and fine tune your camera and tracker alignment [totorial 5](https://youtu.be/trlpmm5gI6U) shows how to add your own sets and assets to a copy of VPStudio.
  
-Once VPStudio is working with your trackers and studio setup, keep this version as a backup and use the Epic launcher "clone" function to create a copy you can add stuff too. 
 
 # Using your own levels
 
-Some Epic Marketplace content has an "add to project" button you can use to add it to your VPStudio project.  To add content from another project, open it and use the editor "migrate" function to move content or whole levels into your VPStudio project.  Doing it this way will make sure all the plugins and other settings needed are properly setup.  You can also migrate the VPStudio content into your own project, but you might miss some important setup if you do.
-
-VPStudio uses sublevels to make adding Virtual Production features to your own level easier.  Start by opening the level you want to do virtual production on.  Go to window->levels to open the levels window.  You will see just "persistent level" which is the one you just opened.  Under Levels, select "default streaming method" and set it to "always loaded".  Then under Levels select "add existing" and browse to VPCoreMap.  When you load this all the Virtual Production actors should appear in your level and be ready to use.
+[Tutorial 5](https://youtu.be/trlpmm5gI6U) shows how to add your own sets and assets to a copy of VPStudio.
+ 
+The basic process is to make a copy of your working VPStudio project and then "migrate" your content into it.  Once you have your level migrated, you use the "levels" to add VPStudioCore as a sublevel and you are ready to go, refer to the tutorial for more details.
 
 Some levels may do things with lighting that will make them appear too bright or too dark.  For now you're on your own about fixing this, I don't have any good advice (yet).
 
@@ -38,21 +41,27 @@ Every time you recompile a VPCamera asset, Unreal disconnects the cameras from t
 
 Right now to switch between "Virtual Production Filming" mode and just inspecting the set has to be done by going to the "VPStudio Comp" actor and setting the output pass to "Player Viewport" for filming or "none" for inspecting.  I haven't been able to find a way to do this with a keyboard key yet.
 
-The way my dual camera setup works is inefficient and is probably always rendering both camera views.  If you are only using one camera you may want to delete the composure passes for camera 2 to speed things up.
+The way my dual camera setup works is inefficient and is probably always rendering both camera views.  If you are only using one camera you should delete the composure passes and mattes for camera two and things will be faster.
 
 # Latest Revisions
 
 All the release notes have been moved to the releases page on github, please check there for new features and fixes.  From now on I'll be making a release every time I get to a clean and usable spot in development.
 
-Release 2
+Release 3
 
-This release contains some small fixes to make the import/migrate demo work right.
+* Added a system for measuring your camera rig by temporarily placing a second tracker on the center of the lenscap.  This measures the offset from the base of one tracker to the front of the lens.  You will still need to find out how far back the entrance pupil is from the front of the lens and move this point back towards the camera by that amount.  I seem to be getting good results that match my manual measurements but this feature is experimental so give it a try and let me know how it works for you.
 
-* Set all the chroma key, despil and erode passes to be on by default
+* I've added control of some functions by OSC (OpenSoundControl) protocol so you can control common functions from a phone or PC OSC app.  I am using [Hexler Touch OSC](https://hexler.net/products/touchosc) which is available for Android or Apple devices for $4.99 on the app store.  This is a good app and very easy to use, you can easily make your own control panels with it.  I will include the control panel file I use for the [ESports Studio Demo](https://youtu.be/0zIN-2Crgkg) as an example.  The Touch OSC also works with MIDI devices.  Right now you can control camera switching, 3 TV screen blueprints (see below), play a "flying logo" opening title and take screenshots.  For sending commands back to your OSC device the IP address has to be setup in "create OSCClient" in the VPPlayerController  I will try to make this easier in a future release.
 
-* I key was mapped to two functions (inspection camera and hide trackers) remapped so hide trackers is now K key.
+* Any function currently controlled by a keyboard key can also be controlled by an OSC message.  Look near the top of the VPPlayerController blueprint to see how the OSC events for switching cameras are setup.  You can add this to any other function in VPStudio.  Note that you can setup more than one OSC controller if, for example, you want a different set of controls for the presenter's phone and a director's tablet
 
-* The two AJA media sources should have been part of the core map, moved them there.
+* There is a blueprint for the moving TV screens as seen in [my ESports studio demo](https://youtu.be/0zIN-2Crgkg) with this you can make any number of screens that you can control from an OSC (OpenSoundControl) app on a phone or PC.  The screen can move between two locations at the touch of a button and has both automatic and manual volume control support.  How to setup a video to play on this will be shown in a future tutorial.
+
+* For demoing the TV screen I didn't want to put a large video in the project, so right now the screen links to a public domain video on a NASA site online.  Hopefully this will work ok for you.  If you want to use a video from your computer's disk (recommended!)go into the VideoStreams folder and setup the "LocalVideo" asset to point to a video on your disk, then go into the world outliner, select "FlyingScreen" and use the popup menu to change "My Media Source" from InternetVideo to LocalVideo
+
+* There is a blueprint for playing a "flying logo" this uses the new 3dText feature of Unreal 4.25 to draw and animate the text.  It can also play a file with music to go with the title.  Currently it plays a 2 second sound sample that comes with unreal, to play your own sound just add your sound resource to the content folder and choose it in the "Play Sound 2d" item in the flying logo controller.
+
+* The TouchOSC setup file I use for this project is included in the "TouchOSC" directory, if you have the touch OSC app you can just install this into it and it should work for you.  There is a readme inside the TouchOSC directory with a screenshot of the layout and a description of the OSC messages I use in case you want to setup some other OSC controler to send them.
 
 # Features
 
