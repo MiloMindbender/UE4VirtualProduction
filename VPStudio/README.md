@@ -47,6 +47,10 @@ The way my dual camera setup works is inefficient and is probably always renderi
 
 All the release notes have been moved to the releases page on github, please check there for new features and fixes.  From now on I'll be making a release every time I get to a clean and usable spot in development.
 
+Release 4
+
+* Basically the same as release 3 but with some minor setup changes to make sure it matches the latest tutorial.
+
 Release 3
 
 * Added a system for measuring your camera rig by temporarily placing a second tracker on the center of the lenscap.  This measures the offset from the base of one tracker to the front of the lens.  You will still need to find out how far back the entrance pupil is from the front of the lens and move this point back towards the camera by that amount.  I seem to be getting good results that match my manual measurements but this feature is experimental so give it a try and let me know how it works for you.
