@@ -26,17 +26,17 @@ Virtual Production is still very new and there isn't much documentation about ho
 
 # Other Sources of help
 
-There is a lot of virtual production info on social media, check #virtualproduction to find the latest ones.  For good help from experienced people chec this [discord channel] (https://discord.com/invite/ReEhkhc) and this [facebook group] (https://www.facebook.com/groups/virtualproduction)
+There is a lot of virtual production info on social media, check #virtualproduction to find the latest ones.  For good help from experienced people chec this [discord channel](https://discord.com/invite/ReEhkhc) and this [facebook group](https://www.facebook.com/groups/virtualproduction)
 
 # Some other applications
 
-Virtual Production can be used to take people from in different places and put them all together on a virtual set, great for press conferences, product announcements and training videos.  Unreal Engine can also be used to produce high quality animated productions like [this] (https://youtu.be/6xbxA8tnlbY) or [this] (https://youtu.be/cE0wfjsybIQ) very quickly.
+Virtual Production can be used to take people from in different places and put them all together on a virtual set, great for press conferences, product announcements and training videos.  Unreal Engine can also be used to produce high quality animated productions like [this](https://youtu.be/6xbxA8tnlbY) or [this](https://youtu.be/cE0wfjsybIQ) very quickly.
 
 The great thing about Unreal Engine virtual production is that the same tools can be used in a small home studio or in huge big budget movie productions.
 
 # Free software and 3d models
 
-My examples and the software and CG assets I used to make them are available for free.  Almost everything I have used in my demos comes from the "free assets" section of Unreal Marketplace.  There is a lot of CG content available there and every month they release more.  Unfortunately, Unreal's licensing doesn't allow me to redistribute this content here, but you can grab it yourself from the marketplace and add them to my VPStudio project by following the [Use your own sets tutorial] (https://youtu.be/trlpmm5gI6U) on my YouTube channel.
+My examples and the software and CG assets I used to make them are available for free.  Almost everything I have used in my demos comes from the "free assets" section of Unreal Marketplace.  There is a lot of CG content available there and every month they release more.  Unfortunately, Unreal's licensing doesn't allow me to redistribute this content here, but you can grab it yourself from the marketplace and add them to my VPStudio project by following the [Use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel.
 
 # Please Contribute!
 
