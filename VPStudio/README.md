@@ -1,26 +1,28 @@
 # VPStudio Virtual Production sample project
 
-My new Virtual Production project has many new features and is easier to setup. Feel free to use anything you find here in your own projects, please credit me, Greg Corson, for helping you out.
+VPStudio is my latest Unreal Virtual Production example and is the one you should use.  Feel free to use anything you find here in your own projects, if you can please credit me, Greg Corson, for helping you out.
 
-Please subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) and check it out for tutorials on Virtual Production.  You can also ask me for help on [this discord channel](https://discord.gg/ReEhkhc).
+Please subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) I always post to YouTube when something new is available and there are a lot of tutorials there too.  You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc).
 
-This is an active project and will be seeing new checkins FREQUENTLY.  You should use the latest release from the releases section here on github doing.  Cloning the repository will get you the latest but may include work-in-progress code that isn't tested or is not complete.  Remember to keep backup copies!
+The github is updated FREQUENTLY. Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest release tag to make sure you are not getting an untested work-in-progress.  
 
-# Tutorials are coming
+Remember to KEEP BACKUP copies of all your projects!
 
-I usually release tutorials at the same time as a new VPStudio release but some people really wanted to see the blueprints for OSC, the flying logo and the flying screen features.  So I'm doing this release so you can have a look at it.  If you can't figure out how things work don't worry, I should have tutorials out fairly soon.
+# Updating to New Releases
 
-# The sample level IS boaring!
+If you have customized VPStudio for your own hardware, I don't know of a good way to update it without wiping out the changes you have made.  So please KEEP BACKUPS of all your projects and a record of what you changed so you can apply the same changes to a new release.  If anyone knows of a good way to solve this problem, please let me know.
 
-A lot of content, including Epic "free" stuff, is licensed so you can use it in games and videos but you CAN NOT redistribute the assets.  Unfortunately, all the demos I've done so far have been done with Epic models so I can't redistribute them to you.  My sample only uses Unreal builtin content to avoid licensing issues and keep the project small.  VPStudio is pretty easy to use with your own content.
+ALWAYS get VPStudio working on your hardware first and save a copy of the working version before trying to use it with your own Unreal levels and assets!  Use the Epic launcher "clone" function to make a copy of any project.
 
-If you are an artist and would like to help by contributing original material under creative commons license, please let me know.
+# Yes the sample level IS boaring!
+
+A lot of content, including Epic "free" stuff, is licensed so you can use it in games and videos but you CAN NOT redistribute it to other people.  My sample only uses Unreal builtin content to avoid licensing issues and keep the project small.  See the [use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel for help on using your own content.  Almost all the demos on my channel were done with Epic "free" content that you can download yourself and use with VPStudio.  Epic releases new free content every month..
+
+If you are an artist and would like to help by contributing a better sample level under creative commons license, please let me know.
 
 # Setup VPStudio
 
-Before adding any of your own content to VPStudio, get the demo level working on your hardware.  Once the demo level is working you will have a template you can use the Epic launcher "clone" function on to make a copy you can add your own content to.
-
-Right now VPStudio is setup for an AJA Kona HDMI video capture card and VIVE trackers.  If you have a BlackMagic DeckLink or other card/webcam you will need to replace the assets found in the Aja folder with ones for your hardware.  Look at [Unreal Pro Video](https://docs.unrealengine.com/en-US/Engine/ProVideoIO/index.html) for information on setting up BlackMagic and Aja cards and [Using WebCams](https://docs.unrealengine.com/en-US/Engine/MediaFramework/HowTo/UsingWebCams/index.html) for info on webcams.  If you are not using VIVE hardware, you will have to make your own tracker actors.  See VPStudioCore->Trackers folder for examples.
+Right now VPStudio is setup for an AJA Kona HDMI video capture card and VIVE trackers.  If you have a BlackMagic DeckLink or other card/webcam you will need to replace the assets found in the Aja folder with ones for your hardware.  Look at [Unreal Pro Video](https://docs.unrealengine.com/en-US/Engine/ProVideoIO/index.html) for how to set up different BlackMagic and Aja cards. [Using WebCams](https://docs.unrealengine.com/en-US/Engine/MediaFramework/HowTo/UsingWebCams/index.html) shows how to use most USB webcams.  If you are not using VIVE hardware, you will have to make your own tracker actors.  See VPStudioCore->Trackers folder for examples.
 
 Follow [tutorial 1](https://youtu.be/wWPZjX29asM) and [tutorial 2](https://youtu.be/kRUbUaESw80) to make a rig in Unreal that shows how your camera and tracker are mounted.  There are sample rigs in VPStudio but if they don't match your camera/lens/tracker setup you won't get good alignment of real and virtual objects in your scene.  [Tutorial 3](https://youtu.be/4LjvekNocD4) shows how to setup VIVE controller buttons to control things.  Make sure your VIVE trackers are setup to Special_1, 2, etc. as shown here. [Tutorial 4](https://youtu.be/UGHjwZ6J13E) shows how to setup the studio and fine tune your camera and tracker alignment [totorial 5](https://youtu.be/trlpmm5gI6U) shows how to add your own sets and assets to a copy of VPStudio.
  
@@ -29,7 +31,7 @@ Follow [tutorial 1](https://youtu.be/wWPZjX29asM) and [tutorial 2](https://youtu
 
 [Tutorial 5](https://youtu.be/trlpmm5gI6U) shows how to add your own sets and assets to a copy of VPStudio.
  
-The basic process is to make a copy of your working VPStudio project and then "migrate" your content into it.  Once you have your level migrated, you use the "levels" to add VPStudioCore as a sublevel and you are ready to go, refer to the tutorial for more details.
+The process is to make a copy of a working VPStudio project and then "migrate" your level into it.  Once you have your level migrated, you use the "levels" window in the editor to add VPStudioCore as a sublevel and you are ready to go, refer to the tutorial for more details.
 
 Some levels may do things with lighting that will make them appear too bright or too dark.  For now you're on your own about fixing this, I don't have any good advice (yet).
 
@@ -37,15 +39,15 @@ Some levels may do things with lighting that will make them appear too bright or
 
 Under Edit->Project Settings->Project->Maps & Modes I provide a VPPlayerController that manages all user input and controls everything.  This is required or nothing will work.  If you want to use this project with a level that requires it's own PlayerController you will need to figure out how to combine mine and yours. I also provide a VPGameState and VPGameMode which are currently EMPTY and not required.  Though in the future this may change.  
 
-Every time you recompile a VPCamera asset, Unreal disconnects the cameras from the composure passes.  If you recompile these you will have to go back into VPStudioBackground1 & 2 and the GarbageMatte1 & 2  and set the "camera source" to override and the Target Camera Actor to VPCamera 1 & 2.
+Every time you recompile a VPCamera asset, Unreal disconnects the cameras from the composure passes.  If you recompile these you will have to go back into VPStudioBackground 1 & 2 and the GarbageMatte 1 & 2  and set the "camera source" to override and the Target Camera Actor to VPCamera 1 & 2.
 
 Right now to switch between "Virtual Production Filming" mode and just inspecting the set has to be done by going to the "VPStudio Comp" actor and setting the output pass to "Player Viewport" for filming or "none" for inspecting.  I haven't been able to find a way to do this with a keyboard key yet.
 
-The way my dual camera setup works is inefficient and is probably always rendering both camera views.  If you are only using one camera you should delete the composure passes and mattes for camera two and things will be faster.
+The way my dual camera setup works is inefficient as it always rendering both camera views.  If you are only using one camera you should delete the composure passes and mattes for camera two and things will be faster.
 
 # Latest Revisions
 
-All the release notes have been moved to the releases page on github, please check there for new features and fixes.  From now on I'll be making a release every time I get to a clean and usable spot in development.
+The release notes are on the releases page on github, please check there to see the release history of all versions.  From now on this file will only have release notes for the most recent release.
 
 Release 4
 
@@ -68,8 +70,6 @@ Release 3
 * The TouchOSC setup file I use for this project is included in the "TouchOSC" directory, if you have the touch OSC app you can just install this into it and it should work for you.  There is a readme inside the TouchOSC directory with a screenshot of the layout and a description of the OSC messages I use in case you want to setup some other OSC controler to send them.
 
 # Features
-
-Keep in mind all these are subject to change!  
 
 * Keyboard, mouse and Vive commands go through Edit->Project Settings->Engine->Input so they can be changed. You can change the keyboard key functions and the speed of movement on this page.  You can also add support for any input device you have by adding it here, this would include things like PC game controllers, joysticks and VR controllers.  
 
@@ -105,8 +105,6 @@ Keep in mind all these are subject to change!
 
 * There is no setup for a "pro video output card", I don't have one to test.  You should be able to do this with minor changes.  See [step 6 here](https://docs.unrealengine.com/en-US/Engine/Composure/QuickStart/index.html) to see where to make the change in composure.  I capture output from my NVIDIA card's HDMI output.
 
-* Eventually I will be find a way to switch between "filming" and "inspecting" with a keyboard key.
-
 # Keyboard Keys
 
 For the keyboard/mouse/vive tracker commands to work you need to have clicked in the player viewport or PIE window.  To get control back just hit shift-F1 or ESC to quit.
@@ -139,5 +137,5 @@ The H key brings up the hud with camera alignment guides.
 
 # Bugs and Suggestions
 
-I'm still working on this.  I welcome suggestions on how to make it simpler or more efficient.  You can use the github issues tracker to comment on things if you like. 
+I welcome suggestions on how to make this simpler or more efficient.  You can use the github issues tracker or post to my YouTube channel if you find bugs or have feature requests.
 
