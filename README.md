@@ -36,7 +36,7 @@ The great thing about Unreal Engine virtual production is that the same tools ca
 
 # Free software and 3d models
 
-My examples and the software and CG assets I used to make them are available for free.  Almost everything I have used in my demos comes from the "free assets" section of Unreal Marketplace.  There is a lot of CG content available there and every month they release more.  Unfortunately, Unreal's licensing doesn't allow me to redistribute this content here, but you can grab it yourself from the marketplace and add them to my VPStudio project by following the [Use your own sets tutorial] [https://youtu.be/trlpmm5gI6U] on my YouTube channel.
+My examples and the software and CG assets I used to make them are available for free.  Almost everything I have used in my demos comes from the "free assets" section of Unreal Marketplace.  There is a lot of CG content available there and every month they release more.  Unfortunately, Unreal's licensing doesn't allow me to redistribute this content here, but you can grab it yourself from the marketplace and add them to my VPStudio project by following the [Use your own sets tutorial] (https://youtu.be/trlpmm5gI6U) on my YouTube channel.
 
 # Please Contribute!
 
