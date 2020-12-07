@@ -8,9 +8,9 @@ Below is me doing a product review from a Virtual Set.  The output is real-time 
 
 # Getting Started
 
-Everyone has a different hardware and studio so none of these projects are "plug-and-play" you will need to customize them a bit to work with the hardware you have.  There are tutorials on [my youtube channel.](https://www.youtube.com/user/GregCorson) to help you get started.  If you have never used Unreal Engine before you should probably watch a couple of the getting started courses on the [Unreal Engine Learning Hub](https://www.unrealengine.com/en-US/onlinelearning-courses) to get familiar with how to use Unreal.
+Everyone has a different hardware and studio so none of these projects are "plug-and-play" you will need to customize them to work with the hardware you have.  There are tutorials on [my youtube channel.](https://www.youtube.com/user/GregCorson) to help you get started.  If you have never used Unreal Engine you should  watch a couple of the getting started courses on the [Unreal Engine Learning Hub](https://www.unrealengine.com/en-US/onlinelearning-courses) to get familiar with how to use Unreal.
 
-My samples were done using consumer DSLR cameras and VIVE VR gear for tracking.  They can be customized for pro quality cameras and camera tracking equipment or can be used with something as simple/cheap as a webcam.  Any good 3d gaming PC will work for this.
+My samples were done with consumer DSLR cameras and VIVE VR gear for tracking.  They can be customized for pro quality cameras and camera tracking equipment or can be used with something as simple/cheap as a webcam.  Any good 3d gaming PC will work for this.
 
 You will need a free download of [Unreal Engine](https://www.unrealengine.com/) to run these samples.
 

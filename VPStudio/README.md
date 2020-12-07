@@ -1,6 +1,6 @@
 # VPStudio Virtual Production sample project
 
-VPStudio is my latest Unreal Virtual Production example and is the one you should use.  Feel free to use anything you find here in your own projects, if you can please credit me, Greg Corson, for helping you out.
+VPStudio is my latest Unreal Virtual Production example and is the one you should use.  Feel free to use anything you find here in your own projects, if you can please credit me, Greg Corson, for helping you out.  Tested on unreal 4.25, not tried on 4.26 yet.
 
 Please subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) I always post to YouTube when something new is available and there are a lot of tutorials there too.  You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc).
 
@@ -49,25 +49,15 @@ The way my dual camera setup works is inefficient as it always rendering both ca
 
 The release notes are on the releases page on github, please check there to see the release history of all versions.  From now on this file will only have release notes for the most recent release.
 
-Release 4
+Release 5
 
-* Basically the same as release 3 but with some minor setup changes to make sure it matches the latest tutorial.
+* The experimental "MeasureMe" actor has been removed and replaced by "MeasuringGadget"
 
-Release 3
+* In MeasuringGuides there is a "MeasuringGrid" actor that draws a grid of squares to help you align cameras with a real world object like a checkerboard or cutting mat with a grid on it.  You get to set the size of the squares in cm and the number of squares horizontal and vertical.  You can just draw the square outline of the whole grid.  To use just drop into the level.  You can attach it to a VivePuck actor and the grid will go wherever the Vive Puck goes.  The "Grid Adjustment" node inside the actor lets you rotate or shift the grid.
 
-* Added a system for measuring your camera rig by temporarily placing a second tracker on the center of the lenscap.  This measures the offset from the base of one tracker to the front of the lens.  You will still need to find out how far back the entrance pupil is from the front of the lens and move this point back towards the camera by that amount.  I seem to be getting good results that match my manual measurements but this feature is experimental so give it a try and let me know how it works for you.
+* In MeasuringGuides there is a "MeasuringGadget" actor.  This uses a second vive tracker to get a quick measurement of your camera rig.  This can save setup time since you don't have to measure and build your own camera rig actor.  To use first setup a VivePuck actor, attach an AutoRig actor to it and a VPCamera actor to the AutoRig.  Then setup another VivePuck actor for doing measurements.  The sample level has a MeasureingGadget and Camera 2 in VPStudio setup for this.  To do a measurement put the lenscap on your camera and hold the vive tracker centered on it, then press V.  It will take 100 samples from both trackers and load the offset into the AutoRig's "Measured" values.
 
-* I've added control of some functions by OSC (OpenSoundControl) protocol so you can control common functions from a phone or PC OSC app.  I am using [Hexler Touch OSC](https://hexler.net/products/touchosc) which is available for Android or Apple devices for $4.99 on the app store.  This is a good app and very easy to use, you can easily make your own control panels with it.  I will include the control panel file I use for the [ESports Studio Demo](https://youtu.be/0zIN-2Crgkg) as an example.  The Touch OSC also works with MIDI devices.  Right now you can control camera switching, 3 TV screen blueprints (see below), play a "flying logo" opening title and take screenshots.  For sending commands back to your OSC device the IP address has to be setup in "create OSCClient" in the VPPlayerController  I will try to make this easier in a future release.
-
-* Any function currently controlled by a keyboard key can also be controlled by an OSC message.  Look near the top of the VPPlayerController blueprint to see how the OSC events for switching cameras are setup.  You can add this to any other function in VPStudio.  Note that you can setup more than one OSC controller if, for example, you want a different set of controls for the presenter's phone and a director's tablet
-
-* There is a blueprint for the moving TV screens as seen in [my ESports studio demo](https://youtu.be/0zIN-2Crgkg) with this you can make any number of screens that you can control from an OSC (OpenSoundControl) app on a phone or PC.  The screen can move between two locations at the touch of a button and has both automatic and manual volume control support.  How to setup a video to play on this will be shown in a future tutorial.
-
-* For demoing the TV screen I didn't want to put a large video in the project, so right now the screen links to a public domain video on a NASA site online.  Hopefully this will work ok for you.  If you want to use a video from your computer's disk (recommended!)go into the VideoStreams folder and setup the "LocalVideo" asset to point to a video on your disk, then go into the world outliner, select "FlyingScreen" and use the popup menu to change "My Media Source" from InternetVideo to LocalVideo
-
-* There is a blueprint for playing a "flying logo" this uses the new 3dText feature of Unreal 4.25 to draw and animate the text.  It can also play a file with music to go with the title.  Currently it plays a 2 second sound sample that comes with unreal, to play your own sound just add your sound resource to the content folder and choose it in the "Play Sound 2d" item in the flying logo controller.
-
-* The TouchOSC setup file I use for this project is included in the "TouchOSC" directory, if you have the touch OSC app you can just install this into it and it should work for you.  There is a readme inside the TouchOSC directory with a screenshot of the layout and a description of the OSC messages I use in case you want to setup some other OSC controler to send them.
+* In CameraRigs there is an AutoRig actor intended to be used with the MeasuringGadget actor.  The "measured" entries in this actor are for your rig measurements.  The "adjust" entries are for making small adjustments, for example if the tracker is slightly twisted or tilted on the rig.  This is usually easier than getting the physical rig exactly right. 
 
 # Features
 
