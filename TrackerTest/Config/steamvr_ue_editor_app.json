@@ -2,7 +2,7 @@
 	"source": "UE",
 	"applications": [
 		{
-			"app_key": "application.generated.ue.trackertest-11590370.ue4editor.exe",
+			"app_key": "application.generated.ue.trackertest-14469661.ue4editor.exe",
 			"launch_type": "url",
 			"url": "steam://launch/",
 			"action_manifest_path": "C:/Users/Greg/Documents/GitHub/UE4VirtualProduction/TrackerTest/Config/SteamVRBindings/steamvr_manifest.json",
@@ -10,7 +10,7 @@
 			{
 				"en_us":
 				{
-					"name": "TrackerTest-11590370 [UE Editor]"
+					"name": "TrackerTest-14469661 [UE Editor]"
 				}
 			}
 		}

@@ -1,22 +1,42 @@
-# VPStudio Virtual Production sample project
+# VPStudio Virtual Production project
 
-VPStudio is my latest Unreal Virtual Production example and is the one you should use.  Feel free to use anything you find here in your own projects, if you can please credit me, Greg Corson, for helping you out.  Tested on unreal 4.25, not tried on 4.26 yet.
+VPStudio is my latest project, all the features of my older projects are in here now so please use this one. Feel free to use anything here in your own projects, if you can please credit me, Greg Corson, for helping you out.  Tested on unreal 4.25, not tried on 4.26 yet.
 
-Please subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) I always post to YouTube when something new is available and there are a lot of tutorials there too.  You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc).
+Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for updates, tutorials and demos of virtual production. You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
 
-The github is updated FREQUENTLY. Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest release tag to make sure you are not getting an untested work-in-progress.  
+# What's new in Release 5 (COMING SOON)
 
-Remember to KEEP BACKUP copies of all your projects!
+For past releases check out the [releases page](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
+
+* Added a way to view tracker data, handy for debugging tracking problems like dropouts or jitter.  This uses a Java program [telemetry viewer](http://farrellf.com/TelemetryViewer/) see the [the author's channel](https://www.youtube.com/channel/UC_vO52hFzjMd2bPQA5AaHhg) for info and tutorials on it.  [This](https://youtu.be/FqfgBnCdrTo) is the most recent one.  You can use telemetry viewer on the same computer you are running Unreal on, or any other machine on your network (including Raspberry Pi 4). I include a copy of v0.7 of telemetry viewer, you need to install a Java [JRE](https://adoptopenjdk.net/) if you don't already have one installed. See the "tracker telemetry" level for an example.
+
+* You can now record stats on your trackers like the standard deviation (a measure of jitter) min/max and other info by attaching a TrackerStats actor to your tracker.  Just add a TrackerStats actor and use the "attach to" function to attach it to a VivePuck actor. You can get stats from multiple trackers, just attach a TrackerStats actor to each one. See the "tracker stats" level for an example of getting stats from 4 trackers.  
+
+* In MeasuringGuides there is a "MeasuringGrid" actor that draws a grid of squares to help you align cameras with a real world object like a checkerboard or cutting mat with a grid on it.  You set the size of the squares in cm and the number of squares horizontal and vertical.  To use just drop into the level.  You can attach it to a VivePuck actor and the grid will go wher ever the Vive Puck goes.  The "Grid Adjustment" node inside the actor lets you rotate or shift the grid.
+
+* In MeasuringGuides there is a "MeasuringGadget" actor.  This uses a second vive tracker to get a quick measurement of your camera rig.  This can save setup time since you don't have to measure and build your own camera rig actor.  To use first setup a VivePuck actor, attach an AutoRig actor to it and a VPCamera actor to the AutoRig.  Then setup another VivePuck actor for doing measurements.  The sample level has a MeasureingGadget and Camera 2 in VPStudio setup for this.  To do a measurement PUT THE LENSCAP ON your camera and hold the vive tracker centered on it, then press V.  It will take 100 samples from both trackers and load the offset into the AutoRig's "Measured" values.  You will still need to figure out your lens's entrance pupil and tweek the rig for that, but this saves a lot of time.
+
+* In CameraRigs there is an AutoRig actor for use with the MeasuringGadget actor.  The "measured" entries in this actor are for your rig measurements.  The "adjust" entries are for making small adjustments, for example if the tracker is slightly twisted or tilted on the rig.  This is usually easier than getting the physical rig exactly right. The "MeasuringGadget" will automatically set the measurements or you can put them in manually.
+
+* The experimental "MeasureMe" actor has been removed and replaced by "MeasuringGadget"
+
+* The old entrance pupil map has been removed, it was just used for filming a tutorial and was way out of date.
+
+* Removed the old tracker and non-rotating tracker as they were out of date.  If you need to make an actor that copies only the position and not rotation from a tracker, see the "plumb line" actor for an example.
 
 # Updating to New Releases
 
-If you have customized VPStudio for your own hardware, I don't know of a good way to update it without wiping out the changes you have made.  So please KEEP BACKUPS of all your projects and a record of what you changed so you can apply the same changes to a new release.  If anyone knows of a good way to solve this problem, please let me know.
+Always keep KEEP BACKUP copies your projects BEFORE you try to update!!!
 
-ALWAYS get VPStudio working on your hardware first and save a copy of the working version before trying to use it with your own Unreal levels and assets!  Use the Epic launcher "clone" function to make a copy of any project.
+The github is updated FREQUENTLY. Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest release tag.  If you just clone the project or download a ZIP from the main page, you may get a work in progress version that is not debugged yet.
 
-# Yes the sample level IS boaring!
+If you have customized an older VPStudio for your own hardware I don't know of a good way to update it without wiping out the changes you have made.  Please keep a record of the changes you made so you can apply them to each new release.  If anyone knows of a good way to solve this problem, please let me know.  Sorry but there are so many different setups people might have, I can't make the project plug-and-play with all of them.
 
-A lot of content, including Epic "free" stuff, is licensed so you can use it in games and videos but you CAN NOT redistribute it to other people.  My sample only uses Unreal builtin content to avoid licensing issues and keep the project small.  See the [use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel for help on using your own content.  Almost all the demos on my channel were done with Epic "free" content that you can download yourself and use with VPStudio.  Epic releases new free content every month..
+I recommend you start with a clean copy of VPStudio, get it running on your hardware and save it.  Don't add or change any content till the sample works for you.  Then save the running VPStudio and don't change it.  To add your own content, make a copy of this running VPStudio and migrate or import your content into it.
+
+# The sample level IS boaring!
+
+A lot of content, even "free" stuff, is licensed so you can use it in your own games and videos but you CAN NOT redistribute it to other people.  So I can't give you all the content used in my demos.  My sample project uses just the content built into Unreal.  See the [use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel for help on using your own content.  Almost all the demos on my channel were done with Epic "free" content that you can download yourself and use with VPStudio.  Epic releases new free content every month.
 
 If you are an artist and would like to help by contributing a better sample level under creative commons license, please let me know.
 
@@ -26,14 +46,13 @@ Right now VPStudio is setup for an AJA Kona HDMI video capture card and VIVE tra
 
 Follow [tutorial 1](https://youtu.be/wWPZjX29asM) and [tutorial 2](https://youtu.be/kRUbUaESw80) to make a rig in Unreal that shows how your camera and tracker are mounted.  There are sample rigs in VPStudio but if they don't match your camera/lens/tracker setup you won't get good alignment of real and virtual objects in your scene.  [Tutorial 3](https://youtu.be/4LjvekNocD4) shows how to setup VIVE controller buttons to control things.  Make sure your VIVE trackers are setup to Special_1, 2, etc. as shown here. [Tutorial 4](https://youtu.be/UGHjwZ6J13E) shows how to setup the studio and fine tune your camera and tracker alignment [totorial 5](https://youtu.be/trlpmm5gI6U) shows how to add your own sets and assets to a copy of VPStudio.
  
-
 # Using your own levels
 
 [Tutorial 5](https://youtu.be/trlpmm5gI6U) shows how to add your own sets and assets to a copy of VPStudio.
  
-The process is to make a copy of a working VPStudio project and then "migrate" your level into it.  Once you have your level migrated, you use the "levels" window in the editor to add VPStudioCore as a sublevel and you are ready to go, refer to the tutorial for more details.
+You make a copy of a working VPStudio project and then "migrate" your level into it.  Once you have your level migrated, you use the "levels" window in the editor to add VPStudioCore as a sublevel and you are ready to go, see the tutorial for more details.
 
-Some levels may do things with lighting that will make them appear too bright or too dark.  For now you're on your own about fixing this, I don't have any good advice (yet).
+Some levels may do things with lighting that make them appear too bright or too dark.  For now you're on your own about fixing this, I don't have any good advice (yet).
 
 # Known Problems
 
@@ -44,20 +63,6 @@ Every time you recompile a VPCamera asset, Unreal disconnects the cameras from t
 Right now to switch between "Virtual Production Filming" mode and just inspecting the set has to be done by going to the "VPStudio Comp" actor and setting the output pass to "Player Viewport" for filming or "none" for inspecting.  I haven't been able to find a way to do this with a keyboard key yet.
 
 The way my dual camera setup works is inefficient as it always rendering both camera views.  If you are only using one camera you should delete the composure passes and mattes for camera two and things will be faster.
-
-# Latest Revisions
-
-The release notes are on the releases page on github, please check there to see the release history of all versions.  From now on this file will only have release notes for the most recent release.
-
-Release 5
-
-* The experimental "MeasureMe" actor has been removed and replaced by "MeasuringGadget"
-
-* In MeasuringGuides there is a "MeasuringGrid" actor that draws a grid of squares to help you align cameras with a real world object like a checkerboard or cutting mat with a grid on it.  You get to set the size of the squares in cm and the number of squares horizontal and vertical.  You can just draw the square outline of the whole grid.  To use just drop into the level.  You can attach it to a VivePuck actor and the grid will go wherever the Vive Puck goes.  The "Grid Adjustment" node inside the actor lets you rotate or shift the grid.
-
-* In MeasuringGuides there is a "MeasuringGadget" actor.  This uses a second vive tracker to get a quick measurement of your camera rig.  This can save setup time since you don't have to measure and build your own camera rig actor.  To use first setup a VivePuck actor, attach an AutoRig actor to it and a VPCamera actor to the AutoRig.  Then setup another VivePuck actor for doing measurements.  The sample level has a MeasureingGadget and Camera 2 in VPStudio setup for this.  To do a measurement put the lenscap on your camera and hold the vive tracker centered on it, then press V.  It will take 100 samples from both trackers and load the offset into the AutoRig's "Measured" values.
-
-* In CameraRigs there is an AutoRig actor intended to be used with the MeasuringGadget actor.  The "measured" entries in this actor are for your rig measurements.  The "adjust" entries are for making small adjustments, for example if the tracker is slightly twisted or tilted on the rig.  This is usually easier than getting the physical rig exactly right. 
 
 # Features
 
@@ -93,7 +98,7 @@ Release 5
 
 * Adding or removing cameras requires editing the composure setup and PlayerController blueprints to add more.  I'm working on making this easier to do.  Right now it is setup for 2.
 
-* There is no setup for a "pro video output card", I don't have one to test.  You should be able to do this with minor changes.  See [step 6 here](https://docs.unrealengine.com/en-US/Engine/Composure/QuickStart/index.html) to see where to make the change in composure.  I capture output from my NVIDIA card's HDMI output.
+* There is no setup for a "pro video output card", because I don't have one.  See [step 6 here](https://docs.unrealengine.com/en-US/Engine/Composure/QuickStart/index.html) to see where to make the change in composure.  I capture output from my NVIDIA card's HDMI output.
 
 # Keyboard Keys
 
