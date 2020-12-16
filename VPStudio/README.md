@@ -8,6 +8,8 @@ Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for u
 
 For past releases check out the [releases page](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
+* The tracker telemetry system requires the TCP Socket Plugin available free on the Unreal marketplace from SpartanTools.  You should be automatically prompted to install this, if you don't install it everything else will still work, just no telemetry.
+
 * Added a way to view tracker data, handy for debugging tracking problems like dropouts or jitter.  This uses a Java program [telemetry viewer](http://farrellf.com/TelemetryViewer/) see the [the author's channel](https://www.youtube.com/channel/UC_vO52hFzjMd2bPQA5AaHhg) for info and tutorials on it.  [This](https://youtu.be/FqfgBnCdrTo) is the most recent one.  You can use telemetry viewer on the same computer you are running Unreal on, or any other machine on your network (including Raspberry Pi 4). I include a copy of v0.7 of telemetry viewer, you need to install a Java [JRE](https://adoptopenjdk.net/) if you don't already have one installed. See the "tracker telemetry" level for an example.
 
 * You can now record stats on your trackers like the standard deviation (a measure of jitter) min/max and other info by attaching a TrackerStats actor to your tracker.  Just add a TrackerStats actor and use the "attach to" function to attach it to a VivePuck actor. You can get stats from multiple trackers, just attach a TrackerStats actor to each one. See the "tracker stats" level for an example of getting stats from 4 trackers.  
