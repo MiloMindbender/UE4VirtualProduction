@@ -1,26 +1,44 @@
-# VPStudio Virtual Production project
+# VPStudio Virtual Production project for Unreal 4.25
 
-VPStudio is my latest project, all the features of my older projects are in here now so please use this one. Feel free to use anything here in your own projects, if you can please credit me, Greg Corson, for helping you out.  Tested on unreal 4.25, not tried on 4.26 yet.
+VPStudio is my latest project, all the features of my older projects are in here now so please use this one. Feel free to use anything here in your own projects, if you can please credit me, Greg Corson, for helping you out.  This is probably the last release for Unreal 4.25, the next will move to 4.26 which has a lot of useful new features.
 
 Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for updates, tutorials and demos of virtual production. You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
 
-# What's new in Release 5 (COMING SOON)
+# What's new in Release 5 (COMING SOON) [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
-For past releases check out the [releases page](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
+* A lot of renaming and reorganizing into folders to make the example easier to understand and change.  A lot of obsolete and test content was removed too.
 
-* The tracker telemetry system requires the TCP Socket Plugin available free on the Unreal marketplace from SpartanTools.  You should be automatically prompted to install this, if you don't install it everything else will still work, just no telemetry.
+* You may get a prompt asking you to install "TCP Socket Plugin", free on Unreal Marketplace from SpartanTools.  If you don't install it, everything but telemetry will still work.
 
-* Added a way to view tracker data, handy for debugging tracking problems like dropouts or jitter.  This uses a Java program [telemetry viewer](http://farrellf.com/TelemetryViewer/) see the [the author's channel](https://www.youtube.com/channel/UC_vO52hFzjMd2bPQA5AaHhg) for info and tutorials on it.  [This](https://youtu.be/FqfgBnCdrTo) is the most recent one.  You can use telemetry viewer on the same computer you are running Unreal on, or any other machine on your network (including Raspberry Pi 4). I include a copy of v0.7 of telemetry viewer, you need to install a Java [JRE](https://adoptopenjdk.net/) if you don't already have one installed. See the "tracker telemetry" level for an example.
+* ViveTracker actor was renamed "Tracker".  Now it works with Vive Tracker Pucks and Hand Controllers, displaying the right 3d model with tracking delay applied. There are some new settings in the tracker details, described below.
 
-* You can now record stats on your trackers like the standard deviation (a measure of jitter) min/max and other info by attaching a TrackerStats actor to your tracker.  Just add a TrackerStats actor and use the "attach to" function to attach it to a VivePuck actor. You can get stats from multiple trackers, just attach a TrackerStats actor to each one. See the "tracker stats" level for an example of getting stats from 4 trackers.  
+* ViveTracker's "Tracker Type" setting controls which tracker model is displayed.  It also adjusts the transform to have what most people consider the right "up" and "front" orientation for the type of tracker.  You can update this to support more types of trackers or different transform adjustments.
 
-* In MeasuringGuides there is a "MeasuringGrid" actor that draws a grid of squares to help you align cameras with a real world object like a checkerboard or cutting mat with a grid on it.  You set the size of the squares in cm and the number of squares horizontal and vertical.  To use just drop into the level.  You can attach it to a VivePuck actor and the grid will go wher ever the Vive Puck goes.  The "Grid Adjustment" node inside the actor lets you rotate or shift the grid.
+* If ViveTracker's "Tracker is Lockable" setting is checked the tracker can be turned off or "locked down" at any time by pressing a key.  If you are shooting with stationary cameras you can have everything unlocked while you setup your camera positions, then lock them to prevent any tracking jitter.  Don't check this for trackers attached to things you want to move during the shoot, like a hand-held camera or other object.
 
-* In MeasuringGuides there is a "MeasuringGadget" actor.  This uses a second vive tracker to get a quick measurement of your camera rig.  This can save setup time since you don't have to measure and build your own camera rig actor.  To use first setup a VivePuck actor, attach an AutoRig actor to it and a VPCamera actor to the AutoRig.  Then setup another VivePuck actor for doing measurements.  The sample level has a MeasureingGadget and Camera 2 in VPStudio setup for this.  To do a measurement PUT THE LENSCAP ON your camera and hold the vive tracker centered on it, then press V.  It will take 100 samples from both trackers and load the offset into the AutoRig's "Measured" values.  You will still need to figure out your lens's entrance pupil and tweek the rig for that, but this saves a lot of time.
+* ViveTracker's "Telemetry Order" is used for sending your tracking info to a program outside of Unreal for monitoring.
 
-* In CameraRigs there is an AutoRig actor for use with the MeasuringGadget actor.  The "measured" entries in this actor are for your rig measurements.  The "adjust" entries are for making small adjustments, for example if the tracker is slightly twisted or tilted on the rig.  This is usually easier than getting the physical rig exactly right. The "MeasuringGadget" will automatically set the measurements or you can put them in manually.
+* The "MotionStats" actor is for testing trackers. Add a MotionStats actor to the level and use the "attach to" function to attach it to a tracker.  Make sure the tracker is stationary, then press "play". MotionStats will record movement for a bit and then print out the average, minimum, maximum, spread and standard deviation values for X, Y, Z, Roll, Pitch and Yaw of the actor, these will appear on the screen and in Window->Developer Tools->Output Log.  Standard deviation is a measure of how much "jitter" the tracker has, lower is better.  If you want to test multiple trackers all at once, just create and attach a MotionStats actor to each one of them.  You can set the number of frames to record (1000 is the default, 15-40 seconds depending on frame rate).  MotionStats will work when attached to any actor but is mostly useful for testing trackers.
+
+* There a system for sending tracker and other information (Telemetry) to another program that graphs it in real time.  This is useful for detecting and troubleshooting problems with tracking.  See the VPStudio/TelemetryViewer folder for more detailed documentation on this and the SingleTlemetrySender and MultipleTrackerTelemetry actors.
+
+* The SingleTelemetrySender actor will send real-time X,Y,Z,Roll,Pitch,Yaw data to TelemetryViewer.  Add to your level and drop or "attach" it to the actor you want telemetry from.  Only create ONE of these or your telemetry may be corrupted.  See the SingleTelemetrySenderExample level for a sample.
+
+* The MultipleTrackerTelemetry actor will find all your Tracker actors and send their telemtry to TelemetryViewer at once.  Only create one of these.  See the MultipleTrackerTelemetryExample level for a sample.
+
+* The ExperimentalTelemetryTracker is not useful for you, it's for testing some ideas on filtering tracker data.
+
+* The "MeasuringGrid" actor draws a grid of squares to help you align cameras with a real world object like a checkerboard or cutting mat with a grid on it.  In the details set the size of the squares in cm and the number of squares horizontal and vertical.  To use just drop into the level.  You can attach it to a VivePuck actor and the grid will go wherever the Vive Puck goes.  The "Grid Adjustment" node inside the actor lets you rotate or shift the grid.  There are some checkboxes to turn drawing of the grid and the axis guide on and off.
+
+* The "AutoRig" actor is a generic camera rig you can quickly setup to work with most camera rigs.  The "measured" settings should be set to the measurements of your rig, then the "adjust" elements can be used to make fine adjustments if you find the measurements to be slightly off.  This also works with "MeasuringGadget" to automatically measure your rig.
+
+* The "MeasuringGadget" actor uses a second vive tracker to measure your camera rig and apply it's settings to an AutoRig.  This lets you setup your rig very quickly.  I will put a link to a video tutorial here when it's ready.
+
+* The "LaserPointer" actor projects a laser beam forward till it hits something.  To use, just attach it to a tracker actor.  The blueprint for this actor finds a lot of information about the actor it hits. You could add to the blueprint functions to select, change the target actor or turn the laser beam on and off.  You can set the maximum length of the beam in details.
 
 * The experimental "MeasureMe" actor has been removed and replaced by "MeasuringGadget"
+
+* The "Laser" actor was removed and replaced with "LaserPointer" which works better.
 
 * The old entrance pupil map has been removed, it was just used for filming a tutorial and was way out of date.
 
@@ -28,17 +46,19 @@ For past releases check out the [releases page](https://github.com/MiloMindbende
 
 # Updating to New Releases
 
-Always keep KEEP BACKUP copies your projects BEFORE you try to update!!!
+Always BACKUP your old VPStudio and other projects before trying to update them!
 
-The github is updated FREQUENTLY. Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest release tag.  If you just clone the project or download a ZIP from the main page, you may get a work in progress version that is not debugged yet.
+I don't use the number.number.number style of version numbering.  All my releases are numbered with integers starting at 1, the largest release number will be the latest one.  Changes may be large or small, check the release notes for details.
 
-If you have customized an older VPStudio for your own hardware I don't know of a good way to update it without wiping out the changes you have made.  Please keep a record of the changes you made so you can apply them to each new release.  If anyone knows of a good way to solve this problem, please let me know.  Sorry but there are so many different setups people might have, I can't make the project plug-and-play with all of them.
+The main branch of github is updated FREQUENTLY, cloning or downloading a ZIP from the main github page may get you unfinished and untested code.  Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest release tag.
 
-I recommend you start with a clean copy of VPStudio, get it running on your hardware and save it.  Don't add or change any content till the sample works for you.  Then save the running VPStudio and don't change it.  To add your own content, make a copy of this running VPStudio and migrate or import your content into it.
+VPStudio has to be customized for your hardware, so it's important to keep track of the changes you had to make for it to work on your setup.  Usually these are small and can be quickly copied over to the new VPStudio.
+
+I recommend you start with a clean copy of VPStudio, get it running on your hardware and save it.  Don't add or change anything but what you need to do to get it running.  Save this and don't change it.  To use it with your own content, make a copy of your working VPStudio and copy your own content to it. 
 
 # The sample level IS boaring!
 
-A lot of content, even "free" stuff, is licensed so you can use it in your own games and videos but you CAN NOT redistribute it to other people.  So I can't give you all the content used in my demos.  My sample project uses just the content built into Unreal.  See the [use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel for help on using your own content.  Almost all the demos on my channel were done with Epic "free" content that you can download yourself and use with VPStudio.  Epic releases new free content every month.
+A lot of content, even "free" stuff, is licensed so you can use it in your own games and videos but you CAN NOT redistribute it to other people.  So I can't give you all the content used in my demos.  My sample project uses just content built into Unreal.  See the [use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel for help on using your own content.  Almost all the demos on my channel were done with Epic "free" content that you can download yourself and use with VPStudio.  Epic releases new free content every month.
 
 If you are an artist and would like to help by contributing a better sample level under creative commons license, please let me know.
 
@@ -62,45 +82,34 @@ Under Edit->Project Settings->Project->Maps & Modes I provide a VPPlayerControll
 
 Every time you recompile a VPCamera asset, Unreal disconnects the cameras from the composure passes.  If you recompile these you will have to go back into VPStudioBackground 1 & 2 and the GarbageMatte 1 & 2  and set the "camera source" to override and the Target Camera Actor to VPCamera 1 & 2.
 
-Right now to switch between "Virtual Production Filming" mode and just inspecting the set has to be done by going to the "VPStudio Comp" actor and setting the output pass to "Player Viewport" for filming or "none" for inspecting.  I haven't been able to find a way to do this with a keyboard key yet.
+Switching between "Virtual Production Filming" mode and just inspecting the set has to be done by going to the "VPStudio Comp" actor and setting the output pass to "Player Viewport" for filming or "none" for inspecting.  I haven't been able to find a way to do this with a keyboard key yet.
 
-The way my dual camera setup works is inefficient as it always rendering both camera views.  If you are only using one camera you should delete the composure passes and mattes for camera two and things will be faster.
+My dual camera system is always rendering both camera views.  If you are having trouble hitting the frame rate you want, go into Window->Composure Compositing and turn off any composure passes you aren't using.  If you only have one camera turn off everything numbered "2".  Depending on what you are filming, you may not need to render all the foreground, background and garbage matte passes either.
 
 # Features
 
-* Keyboard, mouse and Vive commands go through Edit->Project Settings->Engine->Input so they can be changed. You can change the keyboard key functions and the speed of movement on this page.  You can also add support for any input device you have by adding it here, this would include things like PC game controllers, joysticks and VR controllers.  
+* All commands go through Edit->Project Settings->Engine->Input so they can be changed. You can change the keyboard keys assigned to functions and the speed of movement on this page.  A function can be mapped to almost any input device you have including PC game controllers, joysticks and VR controllers.  
 
 * Multiple cameras and video sources are supported.  This lets you have more than one camera view of your talent and live switch between them.  The project is setup for 2 cameras, adding more requires some blueprint and composure changes but I am working to make this simpler.
 
 * An "inspection camera" gives you a 3rd person view of your level with all the tracking running.  This is useful to see if your cameras and other tracked objects are appearing in the right places and tracking correctly.  This camera can be moved with the mouse and wasd keys.
 
-* Multiple "Talent Markers" are supported.  Position these markers where you want your talent to appear in the level.  When you have more than one you just press a key and your talent, cameras and other tracked objects will teleport to the new location in the level.  This is just a quick cut, no transition effects (like fade in/out) yet.  Add more talent markers just by dragging them into the level and naming them TalentMark1...TalentMark2...etc.
+* Multiple "Talent Marker" are supported.  Position one where you want your talent to appear in the level.  If you have more than one you just press a key and your talent, cameras and other tracked objects will teleport to the next location in the level.  
 
-* Tracking and tracker-delay functions are inside the "Tracker" actor.  Each tracker actor can have a different delay.  The output of the tracker automatically connects to any objects "attached-to" it in the world outliner.  The supplied tracker actor is for the Vive but you can make your own to support other tracking systems like optitrack, pan/tilt mechanical trackers or stationary cameras.
-
-* All the control and UI functions are inside the "PlayerController" now.  So everything is in one place and easy to change.
+* Tracking and tracker-delay functions are inside the "Tracker" actor.  Each tracker actor can have a different delay.  The output of the tracker automatically connects to any objects "attached-to" it in the world outliner.  The supplied tracker actor is for the Vive but you can make your own to support other tracking systems like optitrack, pan/tilt mechanical trackers...etc
 
 * You can move the talent markers around using keyboard key to get the right placement of them in your level.  This can be done live while the composite is running and you will see the talent moving through the level.
 
-* In the "Measuring Guides" folder there are several objects you can attach to trackers to make lining up the real/virtual parts of your level easier.  This includes a 1M cube, 1M square, a 2M high measuring scale, a plumbline that will always be vertical and some axis arrows.  The AxisGuideWorld will always point to the world X,Y,Z with no rotations.  TalentMarkMan is 193cm tall or about 6'3".
+* There are a number of measuring and setup guides to help you measure your real world studio and align it with your virtual set.  This includes a plumbline that always points straight down, "axis guide world" which is always lined up with the world and some tools to automatically measure your camera rig.  TalentMarkMan is 193cm tall or about 6'3", you can rescale it to match the size of your talent.
 
-* VPCamera1 and VPCamera2 are setup to be controlled by VIVE trackers set to Special_1 and Special_2.  If you want to use some other controller just change the source in the camera's motion controller component.  For example "left" or "right" if you want to use the hand controllers.
-
-* The setup should still work if you have only one camera.  Just don't use the "switch to camera 2" feature.
-
-* The camera "rig" actors I've provided have variables for making small adjustments to the joints of the rig.  This is to correct for minor tracker rotation issues such as the tracker being slightly rotated on it's 1/4-20 tripod thread or on a ballhead mount you couldn't get exactly straight.  It is meant for very small adjustments of a few degrees at most and is not perfect, but if your tracker is slightly out of alignment using this can bring it back without having to mess with the mount itself.  The ones I included represent my actual camera rigs and only have these adjustments at places that can move.
+* The "rig" your camera and trackers are mounted to can be modeled in the system to exactly match your real-world rig.  This includes things like multiple joints that could be moved by a tracker or might need to be "tweaked" if the rig is slightly out of alignment.  A few samples of different rigs are provided.
 
 * There is a garbage matte setup for use with a greenscreen that covers a wall and floor.  If your greenscreen has a different shape, you can model it and add your own mesh for a better fit.  There is a tutorial on my youtube channel that shows how to adjust the garbage matte to match the size of your greenscreen.
 
 * A HUD with guides useful for aligning cameras if your camera doesn't have guides or has no screen.
 
-# Planned (NOT done yet)
+* You can turn tracking of stationary objects on and off to avoid seeing the jitter that some trackers have when sitting still.
 
-* Since you can move the talent markers and inspection camera interactively, I will be adding a way to save their positions between runs of the project.
-
-* Adding or removing cameras requires editing the composure setup and PlayerController blueprints to add more.  I'm working on making this easier to do.  Right now it is setup for 2.
-
-* There is no setup for a "pro video output card", because I don't have one.  See [step 6 here](https://docs.unrealengine.com/en-US/Engine/Composure/QuickStart/index.html) to see where to make the change in composure.  I capture output from my NVIDIA card's HDMI output.
 
 # Keyboard Keys
 
@@ -131,6 +140,8 @@ When VPStudioComp output is set to "player viewport" you will see the full compo
 Press b or click the right VIVE controller trackpad down to take a screenshot.  This is the same as typing "shot" into the editor command window.
 
 The H key brings up the hud with camera alignment guides.
+
+The L key locks down all the trackers you have set to be "lockable"
 
 # Bugs and Suggestions
 
