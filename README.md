@@ -9,8 +9,8 @@ Below is me doing a product review from a Virtual Set.  The output is real-time 
 # In This Repository
 
 * VPStudio -- my Virtual Production Project, this is being improved regularly and is the project you should use.
-* UE4VirtualProduction -- Please use VPStudio, this is an earlier project kept here for reference.
-* TrackerTest -- Measures tracker jitter and reports it so you can test your setup, Release 5 of VPStudio has this built-in.
+* UE4VirtualProduction -- OBSOLETE now, this is an earlier project kept here for reference.
+* TrackerTest -- Measures tracker jitter.  OBSOLETE now release 5 of VPStudio has this built-in.
 
 # Getting Started
 

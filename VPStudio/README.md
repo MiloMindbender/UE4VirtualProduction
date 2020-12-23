@@ -4,7 +4,7 @@ VPStudio is my latest project, all the features of my older projects are in here
 
 Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for updates, tutorials and demos of virtual production. You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
 
-# What's new in Release 5 (COMING SOON) [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
+# What's new in Release 5 [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
 * A lot of renaming and reorganizing into folders to make the example easier to understand and change.  A lot of obsolete and test content was removed too.
 
