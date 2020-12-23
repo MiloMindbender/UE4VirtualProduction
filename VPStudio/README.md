@@ -10,11 +10,19 @@ Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for u
 
 * You may get a prompt asking you to install "TCP Socket Plugin", free on Unreal Marketplace from SpartanTools.  If you don't install it, everything but telemetry will still work.
 
-* ViveTracker actor was renamed "Tracker".  Now it works with Vive Tracker Pucks and Hand Controllers, displaying the right 3d model with tracking delay applied. There are some new settings in the tracker details, described below.
+* Added a VPStudioForeground pass to composure for both cameras and updated the compositing materials to handle them.  Any actors rendered in VPStudioForeground will appear in front of your talent.  To put an actor in the foreground pass, select it in the world outliner then go to Window->Layers, click ForegroundObjects then right click and choose "add selected objects to selected layers".
+
+* To improve your frame rate, be sure to turn off any composure passes you are NOT using.  If you only have one camera, turn off all the passes for camera 2, if you are not using the foreground pass turn it off.  If you have a large green screen and don't need the garbage matte, turn that off also.  Every pass costs a some rendering time even if there is very little in it, so this helps.  Just go to the Window->Composure Compositing and click the eyeball next to the passes to turn them on and off.
+
+* To reduce jittering, make sure you are running at a fixed frame rate and always hitting it.  Either set the project for a fixed frame rate (the same as the camera) or setup the project to synchronize to the camera frame rate if your device supports it.
+
+* ViveTracker actor was renamed "Tracker".  Now it works with Vive Tracker Pucks and Vive .Hand Controllers, displaying the right 3d model with tracking delay applied. There are some new settings in the tracker details, described below.
 
 * ViveTracker's "Tracker Type" setting controls which tracker model is displayed.  It also adjusts the transform to have what most people consider the right "up" and "front" orientation for the type of tracker.  You can update this to support more types of trackers or different transform adjustments.
 
 * If ViveTracker's "Tracker is Lockable" setting is checked the tracker can be turned off or "locked down" at any time by pressing a key.  If you are shooting with stationary cameras you can have everything unlocked while you setup your camera positions, then lock them to prevent any tracking jitter.  Don't check this for trackers attached to things you want to move during the shoot, like a hand-held camera or other object.
+
+* If the ViveTracker's "Draw Tracker" box is checked, the correct model for the tracker will be displayed.  This can be a big help seeing if your camera delay and camera alignment is correct.  The 3d model of the tracker should exactly cover the image of a tracker you hold in your hand and not be ahead of or behind when you move the tracker in the real world.
 
 * ViveTracker's "Telemetry Order" is used for sending your tracking info to a program outside of Unreal for monitoring.
 
@@ -27,6 +35,8 @@ Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for u
 * The MultipleTrackerTelemetry actor will find all your Tracker actors and send their telemtry to TelemetryViewer at once.  Only create one of these.  See the MultipleTrackerTelemetryExample level for a sample.
 
 * The ExperimentalTelemetryTracker is not useful for you, it's for testing some ideas on filtering tracker data.
+
+* The mattes have also changed.  Instead of the "flat green screen" there are now separate mattes for a greenscreen on the wall, one on the floor and one for a desktop.  The origin of each matte is now on the left hand corner. This makes lining them up with the world a little easier, just get the edge of the matte in the right place and adjust the size untill it's right.  Once you have the ones you want in your level, just add them to the "Garbage Matte Layer" in the Layers window and they will be used.
 
 * The "MeasuringGrid" actor draws a grid of squares to help you align cameras with a real world object like a checkerboard or cutting mat with a grid on it.  In the details set the size of the squares in cm and the number of squares horizontal and vertical.  To use just drop into the level.  You can attach it to a VivePuck actor and the grid will go wherever the Vive Puck goes.  The "Grid Adjustment" node inside the actor lets you rotate or shift the grid.  There are some checkboxes to turn drawing of the grid and the axis guide on and off.
 
