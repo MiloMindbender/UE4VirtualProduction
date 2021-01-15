@@ -1,6 +1,6 @@
 {
-	"name": "Default bindings for Cosmos",
-	"controller_type": "vive_cosmos_controller",
+	"name": "Default bindings for HPMixedRealityController",
+	"controller_type": "hpmotioncontroller",
 	"last_edited_by": "UnrealEngine",
 	"bindings":
 	{

@@ -1,112 +1,19 @@
 {
-	"name": "Default bindings for Vive Trackers",
+	"name": "Default bindings for Vive Tracker (Camera)",
 	"controller_type": "vive_tracker_camera",
 	"last_edited_by": "UnrealEngine",
 	"bindings":
 	{
 		"/actions/main":
 		{
-			"sources": [
-				{
-					"mode": "trigger",
-					"path": "/user/hand/right/input/trigger",
-					"inputs":
-					{
-						"click":
-						{
-							"output": "/actions/main/in/NextTalentMark"
-						}
-					}
-				},
-				{
-					"mode": "dpad",
-					"path": "/user/hand/right/input/trackpad",
-					"parameters":
-					{
-						"sub_mode": "click"
-					},
-					"inputs":
-					{
-						"west":
-						{
-							"output": "/actions/main/in/SwitchToVPCamera1"
-						}
-					}
-				},
-				{
-					"mode": "dpad",
-					"path": "/user/hand/right/input/trackpad",
-					"parameters":
-					{
-						"sub_mode": "click"
-					},
-					"inputs":
-					{
-						"east":
-						{
-							"output": "/actions/main/in/SwitchToVPCamera2"
-						}
-					}
-				},
-				{
-					"mode": "dpad",
-					"path": "/user/hand/right/input/trackpad",
-					"parameters":
-					{
-						"sub_mode": "click"
-					},
-					"inputs":
-					{
-						"south":
-						{
-							"output": "/actions/main/in/Screenshot"
-						}
-					}
-				}
-			],
 			"poses": [
 				{
-					"output": "/actions/main/in/special1",
-					"path": "/user/hand/left/pose/back",
-					"requirement": "optional"
-				},
-				{
-					"output": "/actions/main/in/special2",
-					"path": "/user/hand/right/pose/back",
-					"requirement": "optional"
-				},
-				{
-					"output": "/actions/main/in/special3",
-					"path": "/user/hand/left/pose/front",
-					"requirement": "optional"
-				},
-				{
-					"output": "/actions/main/in/special4",
-					"path": "/user/hand/right/pose/front",
-					"requirement": "optional"
-				},
-				{
-					"output": "/actions/main/in/special5",
-					"path": "/user/hand/left/pose/frontandrolled",
-					"requirement": "optional"
-				},
-				{
-					"output": "/actions/main/in/special6",
-					"path": "/user/hand/right/pose/frontandrolled",
-					"requirement": "optional"
-				},
-				{
-					"output": "/actions/main/in/special7",
-					"path": "/user/hand/left/pose/pistolgrip",
-					"requirement": "optional"
-				},
-				{
-					"output": "/actions/main/in/special8",
-					"path": "/user/hand/right/pose/pistolgrip",
+					"output": "/actions/main/in/tracker_camera",
+					"path": "/user/camera/pose/raw",
 					"requirement": "optional"
 				}
 			]
 		}
 	},
-	"description": "VPStudio-14469661"
+	"description": "VPStudio-14830424"
 }

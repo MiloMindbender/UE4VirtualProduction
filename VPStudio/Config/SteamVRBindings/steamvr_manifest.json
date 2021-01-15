@@ -11,42 +11,112 @@
 			"requirement": "optional"
 		},
 		{
-			"name": "/actions/main/in/special1",
+			"name": "/actions/main/in/tracker_camera",
 			"type": "pose",
 			"requirement": "optional"
 		},
 		{
-			"name": "/actions/main/in/special2",
+			"name": "/actions/main/in/tracker_chest",
 			"type": "pose",
 			"requirement": "optional"
 		},
 		{
-			"name": "/actions/main/in/special3",
+			"name": "/actions/main/in/tracker_shoulder_left",
 			"type": "pose",
 			"requirement": "optional"
 		},
 		{
-			"name": "/actions/main/in/special4",
+			"name": "/actions/main/in/tracker_shoulder_right",
 			"type": "pose",
 			"requirement": "optional"
 		},
 		{
-			"name": "/actions/main/in/special5",
+			"name": "/actions/main/in/tracker_elbow_left",
 			"type": "pose",
 			"requirement": "optional"
 		},
 		{
-			"name": "/actions/main/in/special6",
+			"name": "/actions/main/in/tracker_elbow_right",
 			"type": "pose",
 			"requirement": "optional"
 		},
 		{
-			"name": "/actions/main/in/special7",
+			"name": "/actions/main/in/tracker_knee_left",
 			"type": "pose",
 			"requirement": "optional"
 		},
 		{
-			"name": "/actions/main/in/special8",
+			"name": "/actions/main/in/tracker_knee_right",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_waist",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_foot_left",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_foot_right",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_keyboard",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_pose_left",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_pose_right",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_back_left",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_back_right",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_front_left",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_front_right",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_frontr_left",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_frontr_right",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_grip_left",
+			"type": "pose",
+			"requirement": "optional"
+		},
+		{
+			"name": "/actions/main/in/tracker_handed_grip_right",
 			"type": "pose",
 			"requirement": "optional"
 		},
@@ -92,6 +162,26 @@
 		{
 			"name": "/actions/main/in/Screenshot",
 			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/MoveForwardBack axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/StrafeRightLeft axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/TurnRightLeft axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/PitchUpDown axis",
+			"type": "vector1"
+		},
+		{
+			"name": "/actions/main/in/MoveUpDown axis",
+			"type": "vector1"
 		}
 	],
 	"action_sets": [
@@ -110,6 +200,10 @@
 			"binding_url": "holographic_controller.json"
 		},
 		{
+			"controller_type": "hpmotioncontroller",
+			"binding_url": "hpmotioncontroller.json"
+		},
+		{
 			"controller_type": "indexhmd",
 			"binding_url": "indexhmd.json"
 		},
@@ -142,52 +236,60 @@
 			"binding_url": "vive_pro.json"
 		},
 		{
-			"controller_type": "vive_tracker_camera",
-			"binding_url": "vive_tracker_camera.json"
-		},
-		{
-			"controller_type": "knuckles",
-			"binding_url": "knuckles.json"
-		},
-		{
-			"controller_type": "vive_controller",
-			"binding_url": "vive_controller.json"
-		},
-		{
-			"controller_type": "vive_cosmos_controller",
-			"binding_url": "vive_cosmos_controller.json"
-		},
-		{
-			"controller_type": "oculus_touch",
-			"binding_url": "oculus_touch.json"
-		},
-		{
-			"controller_type": "holographic_controller",
-			"binding_url": "holographic_controller.json"
-		},
-		{
-			"controller_type": "indexhmd",
-			"binding_url": "indexhmd.json"
-		},
-		{
-			"controller_type": "vive",
-			"binding_url": "vive.json"
-		},
-		{
-			"controller_type": "vive_pro",
-			"binding_url": "vive_pro.json"
-		},
-		{
-			"controller_type": "rift",
-			"binding_url": "rift.json"
+			"controller_type": "vive_tracker",
+			"binding_url": "vive_tracker.json"
 		},
 		{
 			"controller_type": "vive_tracker_camera",
 			"binding_url": "vive_tracker_camera.json"
 		},
 		{
-			"controller_type": "gamepad",
-			"binding_url": "gamepad.json"
+			"controller_type": "vive_tracker_chest",
+			"binding_url": "vive_tracker_chest.json"
+		},
+		{
+			"controller_type": "vive_tracker_handed",
+			"binding_url": "vive_tracker_handed.json"
+		},
+		{
+			"controller_type": "vive_tracker_keyboard",
+			"binding_url": "vive_tracker_keyboard.json"
+		},
+		{
+			"controller_type": "vive_tracker_left_elbow",
+			"binding_url": "vive_tracker_left_elbow.json"
+		},
+		{
+			"controller_type": "vive_tracker_left_foot",
+			"binding_url": "vive_tracker_left_foot.json"
+		},
+		{
+			"controller_type": "vive_tracker_left_knee",
+			"binding_url": "vive_tracker_left_knee.json"
+		},
+		{
+			"controller_type": "vive_tracker_left_shoulder",
+			"binding_url": "vive_tracker_left_shoulder.json"
+		},
+		{
+			"controller_type": "vive_tracker_right_elbow",
+			"binding_url": "vive_tracker_right_elbow.json"
+		},
+		{
+			"controller_type": "vive_tracker_right_foot",
+			"binding_url": "vive_tracker_right_foot.json"
+		},
+		{
+			"controller_type": "vive_tracker_right_knee",
+			"binding_url": "vive_tracker_right_knee.json"
+		},
+		{
+			"controller_type": "vive_tracker_right_shoulder",
+			"binding_url": "vive_tracker_right_shoulder.json"
+		},
+		{
+			"controller_type": "vive_tracker_waist",
+			"binding_url": "vive_tracker_waist.json"
 		}
 	],
 	"localization": [
@@ -195,14 +297,28 @@
 			"language_tag": "en_us",
 			"/actions/main/in/controllerleft": "Left Controller [Pose]",
 			"/actions/main/in/controllerright": "Right Controller [Pose]",
-			"/actions/main/in/special1": "Special 1 [Tracker]",
-			"/actions/main/in/special2": "Special 2 [Tracker]",
-			"/actions/main/in/special3": "Special 3 [Tracker]",
-			"/actions/main/in/special4": "Special 4 [Tracker]",
-			"/actions/main/in/special5": "Special 5 [Tracker]",
-			"/actions/main/in/special6": "Special 6 [Tracker]",
-			"/actions/main/in/special7": "Special 7 [Tracker]",
-			"/actions/main/in/special8": "Special 8 [Tracker]",
+			"/actions/main/in/tracker_camera": "Camera [Tracker]",
+			"/actions/main/in/tracker_chest": "Chest [Tracker]",
+			"/actions/main/in/tracker_shoulder_left": "Shoulder Left [Tracker]",
+			"/actions/main/in/tracker_shoulder_right": "Shoulder Right [Tracker]",
+			"/actions/main/in/tracker_elbow_left": "Elbow Left [Tracker]",
+			"/actions/main/in/tracker_elbow_right": "Elbow Right [Tracker]",
+			"/actions/main/in/tracker_knee_left": "Knee Left [Tracker]",
+			"/actions/main/in/tracker_knee_right": "Knee Right [Tracker]",
+			"/actions/main/in/tracker_waist": "Waist [Tracker]",
+			"/actions/main/in/tracker_foot_left": "Foot Left [Tracker]",
+			"/actions/main/in/tracker_foot_right": "Foot Right [Tracker]",
+			"/actions/main/in/tracker_keyboard": "Keyboard [Tracker]",
+			"/actions/main/in/tracker_handed_pose_left": "Raw Pose Left [Tracker]",
+			"/actions/main/in/tracker_handed_pose_right": "Raw Pose Right [Tracker]",
+			"/actions/main/in/tracker_handed_back_left": "Handed Back Left [Tracker]",
+			"/actions/main/in/tracker_handed_back_right": "Handed Back Right [Tracker]",
+			"/actions/main/in/tracker_handed_front_left": "Handed Front Left [Tracker]",
+			"/actions/main/in/tracker_handed_front_right": "Handed Front Right [Tracker]",
+			"/actions/main/in/tracker_handed_frontr_left": "Handed Front Rolled Left [Tracker]",
+			"/actions/main/in/tracker_handed_frontr_right": "Handed Front Rolled Right [Tracker]",
+			"/actions/main/in/tracker_handed_grip_left": "Handed Pistol Grip Left [Tracker]",
+			"/actions/main/in/tracker_handed_grip_right": "Handed Pistol Grip Right [Tracker]",
 			"/actions/main/in/skeletonleft": "Skeleton (Left)",
 			"/actions/main/in/skeletonright": "Skeleton (Right)",
 			"/actions/main/out/vibrateleft": "Haptic (Left)",
@@ -212,6 +328,11 @@
 			"/actions/main/in/SwitchToVPCamera1": "SwitchToVPCamera1",
 			"/actions/main/in/SwitchToVPCamera2": "SwitchToVPCamera2",
 			"/actions/main/in/Screenshot": "Screenshot",
+			"/actions/main/in/MoveForwardBack axis": "MoveForwardBack",
+			"/actions/main/in/StrafeRightLeft axis": "StrafeRightLeft",
+			"/actions/main/in/TurnRightLeft axis": "TurnRightLeft",
+			"/actions/main/in/PitchUpDown axis": "PitchUpDown",
+			"/actions/main/in/MoveUpDown axis": "MoveUpDown",
 			"/actions/main": "Main Game Actions"
 		}
 	]
