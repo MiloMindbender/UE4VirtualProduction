@@ -8,27 +8,11 @@ Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for u
 
 The Unreal Engine changes to use LiveLink seem to be a major improvement but it is still VERY NEW so please keep copies of your old projects to fall back on if you don't like the way it works.
 
-# What's new in Release 6 [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
+# What's new in Release 7 [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
-* If you are NOT ready to update to Unreal 4.26 yet don't download this, it won't work with earlier Unreal versions.
+* The LiveLinkMeasuringGadget was not working, returning measurements of zero. Should be fixed now.
 
-* Some internal changes to make sure everything works on Unreal 4.26
-
-* Added support for trackers using OpenXR and LiveLink.
-
-* The "LiveLinkTracker" actor works with anything that sends tracking over LiveLink, this should include any device that works with Steam as well as other LiveLink trackers like Optitrack. Right now it has settings for vive pucks and controllers, support for other LiveLink devices can be easily added to the blueprint.
-
-* Live Link Trackers and everything connected to them (rigs, cameras) update in the editor.  You can see everything moving without having to press play or use the inspection camera.  All your composure passes display correct previews so it is easier to adjust camera rigs, mattes and other elements of your virtual set.  There is no need to use the inspection camera or go back and forth between edit and play.
-
-* Live Link lets you set the tracking delay by fractions of a second instead of per frame.  One setting covers all your trackers.
-
-* The older "motion controller" tracker actors are still available if you don't want to use LiveLink.  All of your steam trackers must use one or the other, not both.
-
-* VPDemoMap is now setup to use LiveLink.  If you want to use the old motion controller setup, use VPMotionControllerMap and turn off the LiveLinkXR plugin.
-
-* I have had some problems with steam bindings when using 4.26, this release worked for me but you may have to re-make your steam bindings when you update.  I would recommend using LiveLink, you don't need to setup any steam bindings for it and it's nicer.
-
-* There is a different "Measuring Gadget" and "Multiple Tracker Telemetry" actor for use with LiveLink.  Both still require you to press play to use them.
+* The AxisGuideWorld and PlumbLine actors were only working after pressing play.  Now they will work when using LiveLink in the editor.
 
 # Updating to New Releases
 
