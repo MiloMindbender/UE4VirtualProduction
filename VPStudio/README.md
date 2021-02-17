@@ -8,11 +8,9 @@ Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for u
 
 The Unreal Engine changes to use LiveLink seem to be a major improvement but it is still VERY NEW so please keep copies of your old projects to fall back on if you don't like the way it works.
 
-# What's new in Release 7 [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
+# What's new in Release 8 (NOT COMPLETE) [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
-* The LiveLinkMeasuringGadget was not working, returning measurements of zero. Should be fixed now.
-
-* The AxisGuideWorld and PlumbLine actors were only working after pressing play.  Now they will work when using LiveLink in the editor.
+* The old LiveLinkTelemetrySender and MotionControllerTelemetrySender and their demo maps have been replaced with "ActorTransformTelemetry" which works with any type of actor.
 
 # Updating to New Releases
 

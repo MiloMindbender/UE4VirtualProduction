@@ -1,54 +1,36 @@
 # Live Monitoring of VIVE trackers and Unreal
 
-This is [TelemetryViewer](http://farrellf.com/TelemetryViewer/) From "Farrellf" or [upgrdman](https://www.youtube.com/user/upgrdman) on YouTube. A JRE (Java Runtime Environment) needs to be installed on your computer to run it.  There is a link to one on his website above.  Videos on how to use the tool are on his YouTube channel with the [latest one here](https://youtu.be/FqfgBnCdrTo)  It's useful for a lot of things, here I am using it to display real-time information from a VIVE tracker.
+This is [TelemetryViewer](http://farrellf.com/TelemetryViewer/) From "Farrellf" or [upgrdman](https://www.youtube.com/user/upgrdman) on YouTube. A JRE (Java Runtime Environment) needs to be installed on your computer to run it.  There is a link to one on his website above.  Videos on how to use the tool are on his YouTube channel with the [latest one here](https://youtu.be/FqfgBnCdrTo)  It's useful for a lot of things, here I am using it to display real-time transform information from a VIVE tracker or any other actor.
 
 For monitoring telemetry this is one of the best programs I have found but it has the limitation of only working with one source of data and the exact size and layout of the data has to be known in advance. If you want to be able to record telemetry from a lot of programs and computers all at once, or change what data is sent see "Advanced Telemetry" below.
 
-# What can I get Telemetry from?
+# What can I get Telemetry from and what do I get?
 
-I have built two actors for sending telemetry data to TelemetryViewer.  The first is "SingleTelemetrySender" that sends telemetry from ANY single Unreal actor, it works on VivePuck actors or other actors such as a game character or vehicle.
+You will get location and rotation information in world coordinates from a list of actors.  Coordinates are in centemeters and rotations in degrees.  For VPStudio LiveLinkTracker and MotionControlerTracker actors you will get the "output" transform after any adjustments/delays have been applied.  All other actors will send their root location and rotation. 
 
-The second is "MultipleTrackerTelemetry", this only works with VivePuck objects but automatically detects and sends telemetry from every VivePuck in your level.
-  
-VivePuck objects can be setup for VR hand controllers so you can send telemetry from those as well.
+You can select to get the raw transform information, a version that's "normalized" by subtracting the first transform seen when the program starts or "relative" data showing the change since the last reading.  The "normalized" and "relative" data help keep the graphs centered on 0.0 so they are easier to compare.  You can put several traces on the same graph without loosing too much precision when the graphs auto-range.
 
-All this stuff is in the VPStudioCore/TestAndTelemetry folder of the project.
-
-# What kind of telemetry do I get?
-
-Right now I send X, Y, Z in cm and Roll, Pitch, Yaw in degrees.  There are three versions you can select.  RawTracker is the data with no changes.  RawTrackerNormalized remembers the first position it sees and sends all the following data relative to that.  RawTrackerRelative sends only the change in position from the previous one.  
-
-The different types of telemetry are in a pop-up menu in the "details" window for the telemetry sender actor.
+All this  is in the VPStudioCore/TestAndTelemetry folder of the project.
 
 # Getting telemetry from your level
 
-__Important__ only put ONE SingleTelemetrySender or MultipleTrackerTelemetry actor in your level.  If you have both or more than one of either the telemetry will be corrupted. 
+Add only one ActorTransformTelemetry actor to your level, it can send telemetry from as many actors as you want.  Under the "default" parameters you can set the type of telemetry, the IP address and port of TelemetryViewer.  The defaults will send to TelemetryViewer running on the same computer as Unreal.  The last thing is the list of actors you want to send telemetry from.  __Important__ only put ONE MultipleTrackerTelemetry actor in your level or telemetry will be corrupted.
 
-## SingleTelemetrySender for one actor
+Telemetry Viewer expects to receive telemetry from a fixed numbe of actors, set by the configuration file you load when you start it up.  The data sent by unreal must be the same size as the one Telemetry Viewer expects to receive.  The "Telemetry Viewer Max Actors" value sets max number of actors to send and must match the config file you load in Telemetry Viewer.  You can send information from less than this number of actors but not more.  I've provided Telemetry Viewer config files for 4 and 8 actors.  You can send more but you will have to make your own config file for Telemetry Viewer to do it.
 
-You can see a sample for this in the SingleTelemetrySenderExample level.  To add to your own level just drop the SingleTelemetrySender actor into the level, go to to the world outliner and drag and drop the SingleTelemetrySender on the VivePuck or other actor you want data from.  You can also use the right-click "attach to" menu to attach SingleTelemetrySender to another actor.
-
-If you are running TelemetryViewer on the same computer as unreal, that's it, the defaults will get you started.
-
-## MultipleTrackerTelemetry to send all your trackers
-
-The MultipleTrackerTelemetryExample level shows this.  It sends data for ALL the VivePuck actors in your level.  The default is a maximum of 8, If you have more you will only get telemetry from the first 8, unless you customize your setup.
-
-To use just drop it into your level, use the defaults to get you started.
-
-MultipleTrackerTelemetry will automatically find your VivePuck actors and send data from all of them.  To organize things you need to number your VivePuck actors.  Go into each VivePuck object, under "details" and set "Telemetry Order" to 1, 2, 3 and so on for each VivePuck.
+The ActorTransformTelemetry actor must be in the same "sublevel" as the actors you want telemetry from.  This is set with the button in the lower right corner of the editor viewport.
 
 ## Running TelemetryViewer
 
-Just double click TelemetryViewer, if it does not launch you may not have a recent JRE (Java Runtime Environment) installed.  See Farrellf's site for more info if you don't know what this is.
+Double click TelemetryViewer, if it does not launch you may not have a recent JRE (Java Runtime Environment) installed.  See Farrellf's site for more info if you don't know what this is.
 
-Press the "Import" button in the lower left and navigate to the folder you launched TelemetryViewer from.  If you are using SingleTelemetrySender choose SingleTelemetryForOneActor.txt  For MultipleTrackerTelemtry choose MultipleTrackerTelemetryFor8Trackers.txt.
+Press the "Import" button in the lower left and navigate to the folder you launched TelemetryViewer from.  Select the file for 4 or 8 actors depending on how many you plan to send, remember you can send less but not more than this number.
 
 A green bar should appear at the top of the TelemetryViewer screen saying it is ready.  Now press "Play" in Unreal and you should see the graphs start updating.
 
 You can scroll back and forth in time using the scroll wheel of your mouse or zoom in and out by holding down the Ctrl key and turning the scroll wheel.
 
-When you "stop" your unreal app, it takes a few seconds for TelemetryViewer to reset, then you can just re-start unreal and it will reconnect.
+When you "stop" your unreal app, it takes a few seconds for TelemetryViewer to reset, if you press play again too soon TelemetryViewer may get out of sync.  To fix this just press stop in unreal, quit TelemetryViewer and restart it.
 
 # Testing your tracker setup
 
@@ -78,7 +60,7 @@ In MultipleTrackerTelemetry's "details" set "maximum pucks" to the number of puc
 
 ## Custom telemtry
 
-You may want to send telemtry from something else in your level like a lens tracker or a simulated vehicle.  If you take a closer look at my SingleTelemetrySender you can use it as an example of how to send other kinds of data to TelemetryViewer.  For example in a game you could send info on a vehicle's suspension system, where players were in the level...etc
+You may want to send telemtry from something else in your level like a lens tracker or a simulated vehicle.  If you take a closer look at my ActorTransformTelemetry you can use it as an example of how to send other kinds of data to TelemetryViewer.  For example in a game you could send info on a vehicle's suspension system, where players were in the level...etc
 
 ## Telemetry from lots of objects or multiple computers with COSMOS
 

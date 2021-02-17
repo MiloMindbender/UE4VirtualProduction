@@ -2,7 +2,7 @@
 	"source": "UE",
 	"applications": [
 		{
-			"app_key": "application.generated.ue.vpstudio-14830424.ue4editor.exe",
+			"app_key": "application.generated.ue.vpstudio-15228867.ue4editor.exe",
 			"launch_type": "url",
 			"url": "steam://launch/",
 			"action_manifest_path": "C:/Users/Greg/Documents/GitHub/UE4VirtualProduction/VPStudio/Config/SteamVRBindings/steamvr_manifest.json",
@@ -10,7 +10,7 @@
 			{
 				"en_us":
 				{
-					"name": "VPStudio-14830424 [UE Editor]"
+					"name": "VPStudio-15228867 [UE Editor]"
 				}
 			}
 		}
