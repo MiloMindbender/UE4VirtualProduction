@@ -1,9 +1,8 @@
 # VPStudio, my Virtual Production tutorials for Unreal 4.26
 
-VPStudio is my latest set of tutorials, all the features of my older work are in here now so please use this one. Feel free to use anything here in your own projects, if you can please credit me, Greg Corson, for helping you out.  This release REQUIRES Unreal 4.26 or higher.
+VPStudio is my latest tutorial project, all the features of my older work are in here now so please use this one. Feel free to use anything here in your own projects, if you can please credit me, Greg Corson, for helping you out.  This release REQUIRES Unreal 4.26 or higher.
 
 Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for updates, tutorials and demos of virtual production. You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
-
 
 # What's new in Release 8 (NOT COMPLETE) [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
@@ -11,6 +10,19 @@ Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for u
 * ActorTransformTelemetry is set to run "post physics" so it should output the current transform after all other updates and physics are complete.
 * See the readme file in the TelemetryViewer directory for more information
 * The "Telemetry Order" field in the tracker actors has been removed as it's no longer needed.
+* In models, the mattes for desk, floor and wall had some minor errors that might have caused them not to change size when height, width...etc were adjusted.  WallFloorGreenScreen is obsolete and shouldn't be used.
+* The tracker actors set the mesh for the tracker in the bluepring.  More efficient when there are more tracker types.
+* Autorig now sizes the rig to match entered measurements, polls re-colored to match unreal axis conventions, Variables now in "rig Measurements" and "rig adjustments"
+* Added a tracker category for Intel Realsense from Rassi Engineering
+
+# TODO
+
+* Remove image of tracker from the autorig, confusing now that we support several kinds of trackers
+* Need a mesh to represent the Intel Realsense
+* Change Motion Controller Tracker to match LiveLink tracker structure.
+* Make function to set correct tracker mesh for LiveLink tracker so code does not repeat.
+* Change autorig entrance pupil node to "output" for consistancy
+* Change motion controller tracker output node to "output" for consistancy.  Check telemetry code and fix if needed.
 
 # Updating to New Releases PLEASE BACKUP
 
