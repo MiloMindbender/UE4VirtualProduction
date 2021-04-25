@@ -6,15 +6,20 @@ Below is me doing a product review from a Virtual Set.  The output is real-time 
 
 [![Virtual Production](https://img.youtube.com/vi/1rVqjiNDPJU/0.jpg)](https://youtu.be/1rVqjiNDPJU "Virtual Production Example")
 
-# In This Repository
+# Active Projects In This Repository
 
-* VPStudio -- my Virtual Production tutorial, this is being improved regularly and is the project you should use.
-* UE4VirtualProduction -- OBSOLETE now, this is an earlier project kept here for reference.
-* TrackerTest -- OBSOLETE now release 5 of VPStudio has Tracker Testing built-in.
+* VPStudio -- my Virtual Production tutorial, this is the project you should use.
+
+# OBSOLETE items for reference
+
+These are still in the repository for future reference, but YOU SHOULD NOT use them.  Improved versions of all this stuff is now built-in to VPStudio.
+
+* UE4VirtualProduction -- Is my first Virtual Production project, kept here for reference
+* TrackerTest -- Some experiments at testing VIVE trackers
 
 # Getting Started
 
-Everyone has a different hardware and studio so none of this is "plug-and-play" you have to learn to customize the setup for the hardware you have.  The tutorials on [my youtube channel.](https://www.youtube.com/user/GregCorson) will help you get started.  If you have never used Unreal Engine you should  watch a couple of the getting started courses on the [Unreal Engine Learning Hub](https://www.unrealengine.com/en-US/onlinelearning-courses) to get familiar with how to use Unreal.
+None of this is "plug-and-play" you have to customize the setup for the hardware and studio you have.  The tutorials on [my youtube channel.](https://www.youtube.com/user/GregCorson) will help you get started.  If you have never used Unreal Engine you should  watch a couple of the getting started courses on the [Unreal Engine Learning Hub](https://www.unrealengine.com/en-US/onlinelearning-courses) to get familiar with how to use Unreal.
 
 Everything here was done as my hobby using consumer DSLR cameras, VIVE VR gear and a gaming PC.  You can get started using a webcam or smartphone camera and a laptop or scale this up to use professional studio equipment.  The same software is used for everything.
 
@@ -22,7 +27,7 @@ You will need to download of [Unreal Engine](https://www.unrealengine.com/) to r
 
 # This is an EDUCATIONAL project.
 
-I've always loved in movie special effects and started doing this as a hobby to learn have fun.  Virtual Production is new technology with new features coming out so quickly that official documentation can't keep up. So I decided to start releasing tutorials on YouTube to help other people get started and learn along with me.  Consider VPStudio is like a "workbook" to go with the tutorials, it's full of simple examples to help you learn the basics and get over the rough spots.
+I've always loved movie special effects and am doing this as a hobby to learn have fun.  Virtual Production is new technology with features coming out so quickly that official documentation can't keep up. I decided to start releasing tutorials on YouTube to help other people get started and learn along with me.  Consider VPStudio is like a "workbook" to go with the tutorials, it's full of simple examples to help you learn the basics and get over the rough spots.
 
 # Other Sources of help
 

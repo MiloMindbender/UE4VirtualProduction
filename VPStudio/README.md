@@ -1,32 +1,30 @@
 # VPStudio, my Virtual Production tutorials for Unreal 4.26
 
-VPStudio is my latest set of tutorials, all the features of my older work are in here now so please use this one. Feel free to use anything here in your own projects, if you can please credit me, Greg Corson, for helping you out.  This release REQUIRES Unreal 4.26.
+VPStudio is my latest set of tutorials, all the features of my older work are in here now so please use this one. Feel free to use anything here in your own projects, if you can please credit me, Greg Corson, for helping you out.  This release REQUIRES Unreal 4.26 or higher.
 
 Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for updates, tutorials and demos of virtual production. You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
 
-# PLEASE BE SURE TO BACKUP YOUR OLD PROJECTS!!
-
-The Unreal Engine changes to use LiveLink seem to be a major improvement but it is still VERY NEW so please keep copies of your old projects to fall back on if you don't like the way it works.
 
 # What's new in Release 8 (NOT COMPLETE) [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
-* The old LiveLinkTelemetrySender and MotionControllerTelemetrySender and their demo maps have been replaced with "ActorTransformTelemetry" which works with any type of actor.
+* ActorTransformTelemetry replaces ALL the other telemetry sending blueprints.  It will send the transform of ANY actor you put in it's TelemetryActors list.  TelemetryViewer expects a fixed-size message so in ActorTransformTelemetry be sure Max Trackers matches the number of trackers you have setup TelemetryViewer to receive or you may get corrupted results.
+* ActorTransformTelemetry is set to run "post physics" so it should output the current transform after all other updates and physics are complete.
+* See the readme file in the TelemetryViewer directory for more information
+* The "Telemetry Order" field in the tracker actors has been removed as it's no longer needed.
 
-# Updating to New Releases
+# Updating to New Releases PLEASE BACKUP
 
-BACKUP your old VPStudio and other projects before trying to update them!
+BACKUP your old VPStudio and related projects before trying to update them!  Every release of VPStudio may have significant changes!  Releases are numbered with integers starting at 1, the largest release number will be the latest one.  
 
-All my releases are numbered with integers starting at 1, the largest release number will be the latest one.  Changes may be large or small, check the release notes for details.
+The main branch of github is updated FREQUENTLY, cloning the repository or downloading a ZIP from the main github page may get you unfinished and untested code.  Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest release tag.
 
-The main branch of github is updated FREQUENTLY, cloning or downloading a ZIP from the main github page may get you unfinished and untested code.  Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest release tag.
-
-VPStudio is NOT A FINISHED PRODUCT, it is an example that has to be customized for your hardware and uses.  Keep track of the changes you had to make to previous versions.  Usually these are small and can be quickly copied over to the new VPStudio.
+VPStudio is NOT A PRODUCT, it is an example that has to be customized for your hardware and studio.  Keep track of the changes you had to make to previous versions.  Usually these are small and can be quickly copied over to the new VPStudio.
 
 I recommend you start with a clean copy of VPStudio, get it running on your hardware and save it.  Don't add or change anything but what you need to do to get it running.  Save this and don't change it.  To use it with your own content, make a copy of your working VPStudio and copy your own content to it. 
 
 # The sample level IS boaring!
 
-A lot of content, even "free" stuff, is licensed so you can use it in your own games and videos but you CAN NOT redistribute it to other people.  So I can't give you all the content used in my demos.  My samples uses just content built into Unreal.  See the [use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel for help on using your own content.  Almost all the demos on my channel were done with Epic free content that you can download yourself and use with VPStudio.  Epic releases new free content every month.
+A lot of content, even "free" stuff, is licensed so you can use it in your own games and videos but you CAN NOT redistribute it to other people.  So I can't give you the content used in my demo videos.  VPStudio uses only content built into Unreal.  See the [use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel for help on using your own content.  Most demos on my channel were done with Epic free content that you can download yourself from their marketplace and use with VPStudio.  Epic releases new free content every month.
 
 If you are an artist and would like to help by contributing a better sample level under creative commons license, please let me know.
 
@@ -46,9 +44,9 @@ Some levels may do things with lighting that make them appear too bright or too 
 
 # Known Problems
 
-Under Edit->Project Settings->Project->Maps & Modes I provide a VPPlayerController that manages all user input and controls everything.  This is required or nothing will work.  If you want to use this project with a level that requires it's own PlayerController you will need to figure out how to combine mine and yours. I also provide a VPGameState and VPGameMode which are currently EMPTY and not required.  Though in the future this may change.  
+Under Edit->Project Settings->Project->Maps & Modes I provide a VPPlayerController that manages all user input and controls everything.  This is required or nothing will work.  If you want to use this project with a level that requires it's own PlayerController you will need to figure out how to combine mine and yours. I also provide a VPGameState and VPGameMode which are currently EMPTY and not required. 
 
-Every time you recompile a VPCamera asset, Unreal disconnects the cameras from the composure passes.  If you recompile these you will have to go back into VPStudioBackground 1 & 2 and the GarbageMatte 1 & 2  and set the "camera source" to override and the Target Camera Actor to VPCamera 1 & 2.
+If you change and recompile the VPCamera blueprint, Unreal may remove the cameras from the composure passes.  If your CG cameras stop working after changing something, check each of the VPStudioBackground, GarbageMatte and VPStudioForeground actors and make sure the "camera source" is override and the Target Camera Actor is VPCamera 1 & 2.
 
 My dual camera system is always rendering both camera views.  If you are having trouble hitting the frame rate you want, go into Window->Composure Compositing and turn off any composure passes you aren't using.  If you only have one camera turn off everything numbered "2".  Depending on what you are filming, you may not need to render all the foreground, background and garbage matte passes either.
 

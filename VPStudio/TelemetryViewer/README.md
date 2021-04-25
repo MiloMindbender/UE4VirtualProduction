@@ -14,9 +14,9 @@ All this  is in the VPStudioCore/TestAndTelemetry folder of the project.
 
 # Getting telemetry from your level
 
-Add only one ActorTransformTelemetry actor to your level, it can send telemetry from as many actors as you want.  Under the "default" parameters you can set the type of telemetry, the IP address and port of TelemetryViewer.  The defaults will send to TelemetryViewer running on the same computer as Unreal.  The last thing is the list of actors you want to send telemetry from.  __Important__ only put ONE MultipleTrackerTelemetry actor in your level or telemetry will be corrupted.
+Add only one ActorTransformTelemetry actor to your level, it can send telemetry from as many actors as you want.  Under the "default" parameters you can set the type of telemetry, the IP address and port of TelemetryViewer.  The defaults will send to TelemetryViewer running on the same computer as Unreal.  The last thing is the list of actors you want to send telemetry from.  __Important__ only put ONE ActorTransformTelemetry actor in your level or telemetry will be corrupted.
 
-Telemetry Viewer expects to receive telemetry from a fixed numbe of actors, set by the configuration file you load when you start it up.  The data sent by unreal must be the same size as the one Telemetry Viewer expects to receive.  The "Telemetry Viewer Max Actors" value sets max number of actors to send and must match the config file you load in Telemetry Viewer.  You can send information from less than this number of actors but not more.  I've provided Telemetry Viewer config files for 4 and 8 actors.  You can send more but you will have to make your own config file for Telemetry Viewer to do it.
+Telemetry Viewer expects to receive telemetry from a fixed numbe of actors, set by the configuration file you load after you start it up.  The data sent by unreal must be the same size as the one Telemetry Viewer expects to receive.  In ActorTransformTelemetry "Max Actors"  sets max number of actors you can send and must match the config file you load in Telemetry Viewer.  You can send information from less than this number of actors but not more.  I've provided Telemetry Viewer config files for 1, 4 and 8 actors.  You can send more but you will have to make your own config file for Telemetry Viewer to do it.
 
 The ActorTransformTelemetry actor must be in the same "sublevel" as the actors you want telemetry from.  This is set with the button in the lower right corner of the editor viewport.
 
@@ -24,21 +24,23 @@ The ActorTransformTelemetry actor must be in the same "sublevel" as the actors y
 
 Double click TelemetryViewer, if it does not launch you may not have a recent JRE (Java Runtime Environment) installed.  See Farrellf's site for more info if you don't know what this is.
 
-Press the "Import" button in the lower left and navigate to the folder you launched TelemetryViewer from.  Select the file for 4 or 8 actors depending on how many you plan to send, remember you can send less but not more than this number.
+Press the "Import" button in the lower left and navigate to the folder you launched TelemetryViewer from.  Select the file for 1, 4 or 8 actors depending on how you have Max Actors setup in ActorTransformTelemetry
 
 A green bar should appear at the top of the TelemetryViewer screen saying it is ready.  Now press "Play" in Unreal and you should see the graphs start updating.
 
 You can scroll back and forth in time using the scroll wheel of your mouse or zoom in and out by holding down the Ctrl key and turning the scroll wheel.
 
-When you "stop" your unreal app, it takes a few seconds for TelemetryViewer to reset, if you press play again too soon TelemetryViewer may get out of sync.  To fix this just press stop in unreal, quit TelemetryViewer and restart it.
+When you "stop" your unreal app, it takes a few seconds for TelemetryViewer to reset the network connection. If you press play again too soon TelemetryViewer may get out of sync and appear to run very slowly.  To fix this just press stop in unreal, quit TelemetryViewer and restart it.
 
 # Testing your tracker setup
 
 Sometimes the base stations may not be fully covering your room or there can be reflections of the tracking lasers from shiny objects, windows or monitors.  Or people may walk between the tracker and base station.  This can cause low quality or complete drop-outs of tracking in some parts of the room.
 
-The best way to debug this is to use the MultipleTrackerTelemetryExample map setup to see data from all your trackers.  Then move trackers around the room and watch the screen to see exactily where in the room you have problems.  You may want to set TelemtryType to "Raw Tracker Relative" this will make it easier to see glitches.
+The best way to debug this is to use the ActorTransformTelemetry map setup to see data from all your trackers.  Then move them around the room and watch the screen to see exactily where in the room you have problems.  You may want to set TelemtryType to "Raw Tracker Relative" this will make it easier to see glitches.
 
 To see the amount of noise your tracker receives, put it on a table, the floor or tripod and let it sit.  The wiggling of the charts is the noise.  It's normal to see noise in the X,Y,Z values of about 0.02 (two hundredths of a centemeter).  If yours is worse you might have a problem.
+
+VIVE base stations can be very sensitive to vibration, this will show up as jitter in your videos.  To check for this, make sure all your trackers are stationary and let them run till you can see the noise.  Then try doing things like jumping, walking around the room and knocking on walls.  If the vibration is getting into your tracking data it should show up really clearly on the telemetry graphs.
 
 It may make it easier to test if you hookup a webcam to TeletryViewer so you can see where you were in the room when problems happened.
 
@@ -56,7 +58,7 @@ TelemetryViewer can also capture video from a webcam or network camera along wit
 
 To support more than 8 VivePucks you will need to customize TelemetryGrapher.  By pressing the disconnect and connect buttons in the lower left corner you can see a screen with the layout of the message I send.  To make a setup for more than 8 trackers you will need to add more lines to this table, 6 float32's for each additional tracker.  You will also need to change the layout of the screen so it can display more than 8 sets of graphs.
 
-In MultipleTrackerTelemetry's "details" set "maximum pucks" to the number of pucks you setup in TelemetryViewer.  The value of maximum pucks must match your TelemetryViewer setup.
+In ActorTransformTelemetry set "maximum pucks" to the number of pucks you setup in TelemetryViewer.  The value of maximum pucks must match your TelemetryViewer setup.
 
 ## Custom telemtry
 
