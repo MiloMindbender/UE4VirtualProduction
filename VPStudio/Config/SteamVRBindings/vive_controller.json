@@ -62,6 +62,17 @@
 							"output": "/actions/main/in/Screenshot"
 						}
 					}
+				},
+				{
+					"mode": "trigger",
+					"path": "/user/hand/left/input/trigger",
+					"inputs":
+					{
+						"click":
+						{
+							"output": "/actions/main/in/Take Measurement"
+						}
+					}
 				}
 			],
 			"poses": [
@@ -97,5 +108,5 @@
 			]
 		}
 	},
-	"description": "VPStudio-14830424"
+	"description": "VPStudio-15973114"
 }

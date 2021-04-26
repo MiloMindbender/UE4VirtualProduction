@@ -4,7 +4,7 @@ VPStudio is my latest tutorial project, all the features of my older work are in
 
 Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for updates, tutorials and demos of virtual production. You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
 
-# What's new in Release 8 (NOT COMPLETE) [older releases here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
+# What's new in Release 8 (WORK IN PROGRESS) [latest stable release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
 * ActorTransformTelemetry replaces ALL the other telemetry sending blueprints.  It will send the transform of ANY actor you put in it's TelemetryActors list.  TelemetryViewer expects a fixed-size message so in ActorTransformTelemetry be sure Max Trackers matches the number of trackers you have setup TelemetryViewer to receive or you may get corrupted results.
 * ActorTransformTelemetry is set to run "post physics" so it should output the current transform after all other updates and physics are complete.
@@ -14,15 +14,25 @@ Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for u
 * The tracker actors set the mesh for the tracker in the bluepring.  More efficient when there are more tracker types.
 * Autorig now sizes the rig to match entered measurements, polls re-colored to match unreal axis conventions, Variables now in "rig Measurements" and "rig adjustments"
 * Added a tracker category for Intel Realsense from Rassi Engineering
+* More efficent switching of tracker meshes and visibility in LiveLinkTracker and MotionControllerTracker
+* Changed DelayedOutput to just Output in MotionControllerTracker for consistancy with LiveLinkTracker
+* The tracker mesh was removed from autorig.  The LiveLink or other tracker actor displays this mesh already, so doing it in autorig was just confusing.
+* Added "Thinaxis" object to make it easier to see where the origin of a tracker is.  Just attach to tracker.
+* vive controller buttons work when in livelink, unreal window needs to have focus
+* Change autorig entrance pupil node to "output" for consistancy
+* Added RecordMeasurements a way to measure your studio using the VIVE controllers/trackers
+* Added MeasurementMarker actor, displays an axis marker and current position, used by RecordMeasurements
+* Added Relative offsets to live link tracker
 
 # TODO
 
-* Remove image of tracker from the autorig, confusing now that we support several kinds of trackers
+* test telemetry and motion controller trackers
 * Need a mesh to represent the Intel Realsense
-* Change Motion Controller Tracker to match LiveLink tracker structure.
-* Make function to set correct tracker mesh for LiveLink tracker so code does not repeat.
-* Change autorig entrance pupil node to "output" for consistancy
-* Change motion controller tracker output node to "output" for consistancy.  Check telemetry code and fix if needed.
+* Need to see if socket snapping can be used to connect things to rigs and trackers now.  See my UDN example.
+* Calibrate the tracking center on the standard vive trackers.  Document how to do it for the knuckles trackers.
+* Need to borrow vive index controllers, office may have a free set now.
+* Need a modular autorig or one that supports a ballhead for tuning.
+* single camera submap setup
 
 # Updating to New Releases PLEASE BACKUP
 
@@ -123,3 +133,4 @@ The L key locks down all the trackers you have set to be "lockable"
 
 I welcome suggestions on how to make this simpler or more efficient.  You can use the github issues tracker or post to my YouTube channel if you find bugs or have feature requests.
 
+(X=-405.085236,Y=272.884674,Z=-0.000031)

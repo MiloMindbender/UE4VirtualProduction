@@ -164,6 +164,10 @@
 			"type": "boolean"
 		},
 		{
+			"name": "/actions/main/in/Take Measurement",
+			"type": "boolean"
+		},
+		{
 			"name": "/actions/main/in/MoveForwardBack axis",
 			"type": "vector1"
 		},
@@ -290,6 +294,106 @@
 		{
 			"controller_type": "vive_tracker_waist",
 			"binding_url": "vive_tracker_waist.json"
+		},
+		{
+			"controller_type": "knuckles",
+			"binding_url": "knuckles.json"
+		},
+		{
+			"controller_type": "vive_controller",
+			"binding_url": "vive_controller.json"
+		},
+		{
+			"controller_type": "vive_cosmos_controller",
+			"binding_url": "vive_cosmos_controller.json"
+		},
+		{
+			"controller_type": "oculus_touch",
+			"binding_url": "oculus_touch.json"
+		},
+		{
+			"controller_type": "holographic_controller",
+			"binding_url": "holographic_controller.json"
+		},
+		{
+			"controller_type": "hpmotioncontroller",
+			"binding_url": "hpmotioncontroller.json"
+		},
+		{
+			"controller_type": "indexhmd",
+			"binding_url": "indexhmd.json"
+		},
+		{
+			"controller_type": "vive",
+			"binding_url": "vive.json"
+		},
+		{
+			"controller_type": "vive_pro",
+			"binding_url": "vive_pro.json"
+		},
+		{
+			"controller_type": "rift",
+			"binding_url": "rift.json"
+		},
+		{
+			"controller_type": "vive_tracker",
+			"binding_url": "vive_tracker.json"
+		},
+		{
+			"controller_type": "vive_tracker_camera",
+			"binding_url": "vive_tracker_camera.json"
+		},
+		{
+			"controller_type": "vive_tracker_waist",
+			"binding_url": "vive_tracker_waist.json"
+		},
+		{
+			"controller_type": "vive_tracker_left_foot",
+			"binding_url": "vive_tracker_left_foot.json"
+		},
+		{
+			"controller_type": "vive_tracker_right_foot",
+			"binding_url": "vive_tracker_right_foot.json"
+		},
+		{
+			"controller_type": "vive_tracker_left_shoulder",
+			"binding_url": "vive_tracker_left_shoulder.json"
+		},
+		{
+			"controller_type": "vive_tracker_right_shoulder",
+			"binding_url": "vive_tracker_right_shoulder.json"
+		},
+		{
+			"controller_type": "vive_tracker_left_elbow",
+			"binding_url": "vive_tracker_left_elbow.json"
+		},
+		{
+			"controller_type": "vive_tracker_right_elbow",
+			"binding_url": "vive_tracker_right_elbow.json"
+		},
+		{
+			"controller_type": "vive_tracker_left_knee",
+			"binding_url": "vive_tracker_left_knee.json"
+		},
+		{
+			"controller_type": "vive_tracker_right_knee",
+			"binding_url": "vive_tracker_right_knee.json"
+		},
+		{
+			"controller_type": "vive_tracker_chest",
+			"binding_url": "vive_tracker_chest.json"
+		},
+		{
+			"controller_type": "vive_tracker_keyboard",
+			"binding_url": "vive_tracker_keyboard.json"
+		},
+		{
+			"controller_type": "vive_tracker_handed",
+			"binding_url": "vive_tracker_handed.json"
+		},
+		{
+			"controller_type": "gamepad",
+			"binding_url": "gamepad.json"
 		}
 	],
 	"localization": [
@@ -328,6 +432,7 @@
 			"/actions/main/in/SwitchToVPCamera1": "SwitchToVPCamera1",
 			"/actions/main/in/SwitchToVPCamera2": "SwitchToVPCamera2",
 			"/actions/main/in/Screenshot": "Screenshot",
+			"/actions/main/in/Take Measurement": "Take Measurement",
 			"/actions/main/in/MoveForwardBack axis": "MoveForwardBack",
 			"/actions/main/in/StrafeRightLeft axis": "StrafeRightLeft",
 			"/actions/main/in/TurnRightLeft axis": "TurnRightLeft",
