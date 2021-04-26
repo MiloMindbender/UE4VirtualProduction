@@ -6,23 +6,25 @@ Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for u
 
 # What's new in Release 8 (WORK IN PROGRESS) [latest stable release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
-* ActorTransformTelemetry replaces ALL the other telemetry sending blueprints.  It will send the transform of ANY actor you put in it's TelemetryActors list.  TelemetryViewer expects a fixed-size message so in ActorTransformTelemetry be sure Max Trackers matches the number of trackers you have setup TelemetryViewer to receive or you may get corrupted results.
-* ActorTransformTelemetry is set to run "post physics" so it should output the current transform after all other updates and physics are complete.
-* See the readme file in the TelemetryViewer directory for more information
-* The "Telemetry Order" field in the tracker actors has been removed as it's no longer needed.
-* In models, the mattes for desk, floor and wall had some minor errors that might have caused them not to change size when height, width...etc were adjusted.  WallFloorGreenScreen is obsolete and shouldn't be used.
-* The tracker actors set the mesh for the tracker in the bluepring.  More efficient when there are more tracker types.
-* Autorig now sizes the rig to match entered measurements, polls re-colored to match unreal axis conventions, Variables now in "rig Measurements" and "rig adjustments"
-* Added a tracker category for Intel Realsense from Rassi Engineering
-* More efficent switching of tracker meshes and visibility in LiveLinkTracker and MotionControllerTracker
-* Changed DelayedOutput to just Output in MotionControllerTracker for consistancy with LiveLinkTracker
-* The tracker mesh was removed from autorig.  The LiveLink or other tracker actor displays this mesh already, so doing it in autorig was just confusing.
-* Added "Thinaxis" object to make it easier to see where the origin of a tracker is.  Just attach to tracker.
-* vive controller buttons work when in livelink, unreal window needs to have focus
-* Change autorig entrance pupil node to "output" for consistancy
+* ActorTransformTelemetry replaces ALL the other telemetry sending blueprints.  Sends telemetry on ANY actor in it's TelemetryActors list.  TelemetryViewer expects a fixed-size message so in ActorTransformTelemetry be sure Max Trackers matches the number of trackers for the TelemetryViewer setup file you are using or you may get corrupted results.
+* ActorTransformTelemetry runs "post physics tick" it should output data after all other processing is done on actors.
+* TelemetryViewer has a [readme file](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TelemetryViewer/README.md)with more details.
+* Removed "Telemetry Order" in the tracker actors, no longer needed.
+* Renamed DelayedOutput to just Output in MotionControllerTracker for consistancy with LiveLinkTracker
+* Added Intel Realsense tracker type for software from Rassi Engineering
+* Tracker actors set the tracker mesh more efficiently now and can handle any number of meshes.
+* LiveLinkTracker has an offset for use with relative trackers, leave all zeros for everything else (like VIVE)
+* Trackers have a [readme file](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/Tracking.md) with more information.
+* Fixed desk, floor and wall matte actors so the size parameters work right.
+* Autorig no longer displays a vive puck at the top.  This is unnessary because the trackers draw the tracker mesh.
+* Autorig sizes it's rods to the exact rig measurements you enter.  Rods were re-colored to match unreal conventions for x, y, zeros
+* Renamed Autorig "entrance pupil" transform to "output" for consistancy with other rigs.
+* Added ThinAxis object, makes it easier to see the orign of some objects, just attach it.
+* Vive controller buttons work when using livelink.  They still need to be mapped in the Vive control panel and the Unreal 3d window has to have focus.
 * Added RecordMeasurements a way to measure your studio using the VIVE controllers/trackers
 * Added MeasurementMarker actor, displays an axis marker and current position, used by RecordMeasurements
-* Added Relative offsets to live link tracker
+* RecordMeasurements has a [readme file](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/RecordMeasurements.md) for more details.
+
 
 # TODO
 
@@ -132,5 +134,3 @@ The L key locks down all the trackers you have set to be "lockable"
 # Bugs and Suggestions
 
 I welcome suggestions on how to make this simpler or more efficient.  You can use the github issues tracker or post to my YouTube channel if you find bugs or have feature requests.
-
-(X=-405.085236,Y=272.884674,Z=-0.000031)

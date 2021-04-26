@@ -6,29 +6,27 @@ For monitoring telemetry this is one of the best programs I have found but it ha
 
 # What can I get Telemetry from and what do I get?
 
-You will get location and rotation information in world coordinates from a list of actors.  Coordinates are in centemeters and rotations in degrees.  For VPStudio LiveLinkTracker and MotionControlerTracker actors you will get the "output" transform after any adjustments/delays have been applied.  All other actors will send their root location and rotation. 
+You will get location and rotation in world coordinates from a list of actors.  Coordinates are in centemeters and rotations in degrees.  For VPStudio LiveLinkTracker and MotionControlerTracker actors you will get the "output" transform after any adjustments/delays have been applied.  All other actors will send their root transform. 
 
 You can select to get the raw transform information, a version that's "normalized" by subtracting the first transform seen when the program starts or "relative" data showing the change since the last reading.  The "normalized" and "relative" data help keep the graphs centered on 0.0 so they are easier to compare.  You can put several traces on the same graph without loosing too much precision when the graphs auto-range.
 
-All this  is in the VPStudioCore/TestAndTelemetry folder of the project.
+All the blueprints and sample maps for this are in the VPStudioCore/TestAndTelemetry folder in the content browser.
 
 # Getting telemetry from your level
 
-Add only one ActorTransformTelemetry actor to your level, it can send telemetry from as many actors as you want.  Under the "default" parameters you can set the type of telemetry, the IP address and port of TelemetryViewer.  The defaults will send to TelemetryViewer running on the same computer as Unreal.  The last thing is the list of actors you want to send telemetry from.  __Important__ only put ONE ActorTransformTelemetry actor in your level or telemetry will be corrupted.
+__Important__ only add ONE ActorTransformTelemetry actor to your level or telemetry will be corrupted, it will send telemetry from any number of other actors. Under the "default" parameters can set the type of telemetry, the IP address and port of TelemetryViewer.  The defaults will send to TelemetryViewer running on the same computer as Unreal.  The last thing is the list of actors you want to send telemetry from.  All the actors you want to send telemetry from must be in the same sublevel as the ActorTransformTelemetry actor. This is set with the button in the lower right corner of the editor viewport.
 
 Telemetry Viewer expects to receive telemetry from a fixed numbe of actors, set by the configuration file you load after you start it up.  The data sent by unreal must be the same size as the one Telemetry Viewer expects to receive.  In ActorTransformTelemetry "Max Actors"  sets max number of actors you can send and must match the config file you load in Telemetry Viewer.  You can send information from less than this number of actors but not more.  I've provided Telemetry Viewer config files for 1, 4 and 8 actors.  You can send more but you will have to make your own config file for Telemetry Viewer to do it.
 
-The ActorTransformTelemetry actor must be in the same "sublevel" as the actors you want telemetry from.  This is set with the button in the lower right corner of the editor viewport.
-
 ## Running TelemetryViewer
 
-Double click TelemetryViewer, if it does not launch you may not have a recent JRE (Java Runtime Environment) installed.  See Farrellf's site for more info if you don't know what this is.
+Double click TelemetryViewer, if it does not launch you may not have a recent JRE (Java Runtime Environment) installed.  See  [Farrellf's site](http://farrellf.com/TelemetryViewer/) for more info if you don't know what this is.
 
 Press the "Import" button in the lower left and navigate to the folder you launched TelemetryViewer from.  Select the file for 1, 4 or 8 actors depending on how you have Max Actors setup in ActorTransformTelemetry
 
 A green bar should appear at the top of the TelemetryViewer screen saying it is ready.  Now press "Play" in Unreal and you should see the graphs start updating.
 
-You can scroll back and forth in time using the scroll wheel of your mouse or zoom in and out by holding down the Ctrl key and turning the scroll wheel.
+You can scroll back and forth in time using the scroll wheel of your mouse or zoom in and out by holding down the Ctrl key and turning the scroll wheel.  See[the author's youtube site ](https://www.youtube.com/user/upgrdman) for videos on other features.
 
 When you "stop" your unreal app, it takes a few seconds for TelemetryViewer to reset the network connection. If you press play again too soon TelemetryViewer may get out of sync and appear to run very slowly.  To fix this just press stop in unreal, quit TelemetryViewer and restart it.
 
