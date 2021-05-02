@@ -4,17 +4,25 @@ VPStudio is my latest tutorial project, all the features of my older work are in
 
 Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for updates, tutorials and demos of virtual production. You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
 
+# CHANGES TO DEFAULT Setup and documents
+
+The default map is now setup for ONE camera.  If you were using the TWO camera setup read this to see how to get it back.
+
+The default map is setup for VIVE controllers coming in over LiveLink.  If you need to get tracking from "MotionController" components or custom tracking plugins instead they are covered in a section of [this document.](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/Tracking.md)
+
+The tracker debugger and telemetry viewer has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/TelemetryViewer/ReadMe.md)
+
+The new tool for measuring your studio has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/RecordMeasurements.md) 
+
 # What's new in Release 8 (WORK IN PROGRESS) [latest stable release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
 * ActorTransformTelemetry replaces ALL the other telemetry sending blueprints.  Sends telemetry on ANY actor in it's TelemetryActors list.  TelemetryViewer expects a fixed-size message so in ActorTransformTelemetry be sure Max Trackers matches the number of trackers for the TelemetryViewer setup file you are using or you may get corrupted results.
 * ActorTransformTelemetry runs "post physics tick" it should output data after all other processing is done on actors.
-* TelemetryViewer has a [readme file](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TelemetryViewer/README.md)with more details.
 * Removed "Telemetry Order" in the tracker actors, no longer needed.
 * Renamed DelayedOutput to just Output in MotionControllerTracker for consistancy with LiveLinkTracker
 * Added Intel Realsense tracker type for software from Rassi Engineering
 * Tracker actors set the tracker mesh more efficiently now and can handle any number of meshes.
 * LiveLinkTracker has an offset for use with relative trackers, leave all zeros for everything else (like VIVE)
-* Trackers have a [readme file](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/Tracking.md) with more information.
 * Fixed desk, floor and wall matte actors so the size parameters work right.
 * Autorig no longer displays a vive puck at the top.  This is unnessary because the trackers draw the tracker mesh.
 * Autorig sizes it's rods to the exact rig measurements you enter.  Rods were re-colored to match unreal conventions for x, y, zeros
@@ -23,7 +31,10 @@ Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for u
 * Vive controller buttons work when using livelink.  They still need to be mapped in the Vive control panel and the Unreal 3d window has to have focus.
 * Added RecordMeasurements a way to measure your studio using the VIVE controllers/trackers
 * Added MeasurementMarker actor, displays an axis marker and current position, used by RecordMeasurements
-* RecordMeasurements has a [readme file](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/RecordMeasurements.md) for more details.
+* Renamed all the parts of the AJA media bundles in a consistant way.
+* The default map is now SINGLE CAMERA.
+* Flying logo is now self contained in one actor.  Epic fixed a bug that prevented this in earlier versions
+* Flying logo can be started by pressing 9
 
 
 # TODO
