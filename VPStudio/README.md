@@ -10,7 +10,7 @@ The default map is now setup for ONE camera.  If you were using the TWO camera s
 
 The default map is setup for VIVE controllers coming in over LiveLink.  If you need to get tracking from "MotionController" components or custom tracking plugins instead they are covered in a section of [this document.](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/Tracking.md)
 
-The tracker debugger and telemetry viewer has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/TelemetryViewer/ReadMe.md)
+The tracker debugger and telemetry viewer has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TelemetryViewer/README.md)
 
 The new tool for measuring your studio has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/RecordMeasurements.md) 
 
