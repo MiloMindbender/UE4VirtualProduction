@@ -48,13 +48,12 @@ These are mostly changes to make the whole setup work better, simplify the inter
 # TODO
 
 * Allow record measurements to take measurements relative to another actor.
-* test telemetry and motion controller trackers
 * Need a mesh to represent the Intel Realsense
-* Need to see if socket snapping can be used to connect things to rigs and trackers now.  See my UDN example.
+* Need to see if socket snapping can be used to connect things to rigs and trackers now.  See my UDN bug report
 * Calibrate the tracking center on the standard vive trackers.  Document how to do it for the knuckles trackers.
 * Need to borrow vive index controllers, office may have a free set now.
 * Need a modular autorig or one that supports a ballhead for tuning.
-* single camera submap setup
+* Document how to change submaps for 1/2 cameras
 
 # Updating to New Releases PLEASE BACKUP
 
