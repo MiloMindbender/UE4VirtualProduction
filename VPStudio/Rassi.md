@@ -23,3 +23,5 @@ To use this for testing realsense.
 10. To see the finished composite, go into VPStudioComp again and set the output to player viewport.  Now when you press play you will see the results of the composite.
 
 12. Note that the level has several other LiveLinkController and LiveLinkTracker actors in it.  These shouldn't cause any problems, if you want you can remove them from the level.
+
+13. To get proper tracking you will need to go to the AutoRig object and set up the correct offset from your tracker to the entrance pupil of your lens.  Suggest you start by zeroing out all the numbers in there.  If your calibration system generates a tracking offset to the Entrance Pupil you can leave it this way.  If it generates an offset to the tracker, use the Rig Measurements section for the measurements from tracker to camera, the "adjustments" can be used to make small changes to get things to line up properly.  
