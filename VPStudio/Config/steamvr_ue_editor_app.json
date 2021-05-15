@@ -5,7 +5,7 @@
 			"app_key": "application.generated.ue.vpstudio-15973114.ue4editor.exe",
 			"launch_type": "url",
 			"url": "steam://launch/",
-			"action_manifest_path": "C:/Users/Greg/Documents/GitHub/UE4VirtualProduction/VPStudio/Config/SteamVRBindings/steamvr_manifest.json",
+			"action_manifest_path": "C:/Users/gcorson/Documents/GitHub/UE4VirtualProduction/VPStudio/Config/SteamVRBindings/steamvr_manifest.json",
 			"strings":
 			{
 				"en_us":
