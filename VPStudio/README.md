@@ -34,6 +34,7 @@ The new tool for measuring your studio has it's own document, [read it here](htt
 # Bug Fixes
 
 * Fixed desk, floor and wall matte actors so the size parameters work.  Note there is nothing special about these, they are just simple shapes with some blueprint code to make resizing them easier.  They must be added to Window->Layers->GarbageMatte to be recognized as part of the matte.
+* Fixed measuring grid so the display/don't display menu works in editor as well as play mode
 
 # Changes you won't notice unless you have customized my blueprints
 
