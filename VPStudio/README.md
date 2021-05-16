@@ -14,7 +14,7 @@ The tracker debugger and telemetry viewer has it's own document, [read it here](
 
 The new tool for measuring your studio has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/RecordMeasurements.md) 
 
-# What's new in Release 8 (WORK IN PROGRESS) [latest stable release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
+# What's new in Release 8 [latest release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
 * ActorTransformTelemetry replaces ALL the other telemetry sending blueprints.  See [this document](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TelemetryViewer/README.md) for datails on how to use it.
 * ActorTransformTelemetry runs "post physics tick" so all actors are updated before it sends their positions.
