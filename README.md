@@ -19,15 +19,15 @@ These are still in the repository for future reference, but YOU SHOULD NOT use t
 
 # Getting Started
 
-None of this is "plug-and-play" you have to customize the setup for the hardware and studio you have.  The tutorials on [my youtube channel.](https://www.youtube.com/user/GregCorson) will help you get started.  If you have never used Unreal Engine you should  watch a couple of the getting started courses on the [Unreal Engine Learning Hub](https://www.unrealengine.com/en-US/onlinelearning-courses) to get familiar with how to use Unreal.
+This is NOT "plug-and-play" you must customize the setup for your hardware and studio.  Tutorials on [my youtube channel.](https://www.youtube.com/user/GregCorson) will help you get started.  If you haven't used Unreal Engine before, watch a couple of the getting started courses on the [Unreal Engine Learning Hub](https://www.unrealengine.com/en-US/onlinelearning-courses) to get familiar with how to use it.
 
 Everything here was done as my hobby using consumer DSLR cameras, VIVE VR gear and a gaming PC.  You can get started using a webcam or smartphone camera and a laptop or scale this up to use professional studio equipment.  The same software is used for everything.
 
-You will need to download of [Unreal Engine](https://www.unrealengine.com/) to run these examples.
+You will need [Unreal Engine](https://www.unrealengine.com/) to run these examples.
 
 # This is an EDUCATIONAL project.
 
-I've always loved movie special effects and am doing this as a hobby to learn have fun.  Virtual Production is new technology with features coming out so quickly that official documentation can't keep up. I decided to start releasing tutorials on YouTube to help other people get started and learn along with me.  Consider VPStudio is like a "workbook" to go with the tutorials, it's full of simple examples to help you learn the basics and get over the rough spots.
+I've always loved movie special effects and am doing this as a hobby to learn and have fun.  Virtual Production is new technology with features coming out so quickly that official documentation can't keep up. I decided to start releasing tutorials on YouTube to help other people get started and learn along with me.  Consider VPStudio is like a "workbook" to go with the tutorials, it's full of simple examples to help you learn the basics and get over the rough spots.
 
 # Other Sources of help
 
@@ -35,23 +35,23 @@ There is a lot of virtual production info on social media, check #virtualproduct
 
 # Some other applications
 
-Virtual Production has taken on new importantance because of the COVID-19 pandemic.  While many TV and Movie productions stalled at first due to quaranteens, Virtual Production quickly allowed us to "teleport" people from their homes into virtual sets for making entertainment.  This allowed films to be made with groups of actors while everyone remained safe at home.  This could easily be used to do a classic game-show where all the participants stay at home.  It's also great for press conferences, product announcements, training videos and virtual trade shows.  
+Virtual Production took on new importantance with the COVID-19 pandemic.  Many TV and Movie productions stalled at first due to quaranteens. Virtual Production allows us to "teleport" people from their homes into virtual sets for making entertainment.  Now films can be made with groups of actors while everyone remains safe at home.  A game-show could be made where all the participants stay at home.  It's also great for press conferences, product announcements, training videos and virtual trade shows.  
 
 Unreal Engine render high quality animated productions like [this](https://youtu.be/6xbxA8tnlbY) or [this](https://youtu.be/cE0wfjsybIQ) very quickly.
 
 One person can even "perform" all the characters in a film by recording each performance separately and putting them all together!
 
-People even use Virtual Production to become a "virtual YouTuber" (VTuber) by replacing themselves with a virtual character.  This became really popular in Japan several years ago with VTubers earning big money as influencers today.  Check out hashtag #codemiko on twitch/youtube for a great example of this also using Unreal Engine!
+Virtual Production is used by VTubers (virtual YouTubers) to replacing themselves with a real-time animated CG character.  This became really popular in Japan several years ago with VTubers earning big money as influencers today.  Check out hashtag #codemiko on twitch/youtube for a great example of this using Unreal Engine!
 
 # Free software and 3d models
 
-Everything in this repository is free and public domain.  Use it however you wish.  All the examples and tutorials come the community and information in published documentation.
+Everything here is free and public domain.  Use it however you wish.  All the examples and tutorials come from the community and information in published documentation.
 
-Many CG assets I use in my demos come from the "free assets" section of Unreal Marketplace.  While the licenses on these assets don't let me distribute them here, you can get most of them for yourself by visiting the Unreal Marketplace free content section.  There are a lot of permanently free sets and characters available there.  Also every month they give away several pieces of great content for free, so visit the marketplace monthly and grab them!  They are yours to use forever!  The [Use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel explains how to create your own setup using the resources you make yourself, buy or get for free.
+Many CG assets I in my demos come from the "free assets" section of Unreal Marketplace.  The licenses on these assets don't let me distribute them here but you can get most of them by visiting the Unreal Marketplace free content section.  There are a lot of permanently free sets and characters available there.  Also every month they give away several pieces of great content for free, so visit the marketplace monthly and grab them, then they are yours to use forever!  The [Use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my channel explains how to create your own setup using the resources you make yourself, buy or get for free.
 
 # Contribute, help others and be an educator yourself!
 
-My tutorials will help you get started but remember Virtual Production is so new that even the "experts" are still learning.  You may come up with the next great idea which could land you a job working on a film or TV production!  Don't be afraid to get out there, talk about your ideas, put up demos and help other people get started!
+My tutorials will help you get started, remember Virtual Production is so new that even "experts" are still learning.  You may come up with the next great idea which could land you a job working on a film or TV production!  Don't be afraid to get out there, talk about your ideas, put up demos and help other people get started!
 
 If you use any of my stuff I would appreciate a credit and a link back to my channel, but you don't have to.  If you send me links to any cool Virtual Production stuff of yours, I'll feature it on my channel to help you get viewers.
 

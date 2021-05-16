@@ -1,14 +1,14 @@
 # VPStudio, my Virtual Production tutorials for Unreal 4.26
 
-VPStudio is my latest tutorial project, all the features of my older work are in here now so please use this one. Feel free to use anything here in your own projects, if you can please credit me, Greg Corson, for helping you out.  This release REQUIRES Unreal 4.26 or higher.
+VPStudio is my latest tutorial project, all my older work is in here now. Feel free to use anything here in your own projects, please credit me, Greg Corson, for helping you if you can.  This release REQUIRES Unreal 4.26 or higher.
 
 Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for updates, tutorials and demos of virtual production. You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
 
 # CHANGES TO DEFAULT Setup and documents
 
-The default map is now setup for ONE camera.  If you were using the TWO camera setup read this to see how to get it back.
+The default is now ONE camera.  If you need TWO cameras [read this](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TwoCamera.md) to see how to get the old setup back.
 
-The default map is setup for VIVE controllers coming in over LiveLink.  If you need to get tracking from "MotionController" components or custom tracking plugins instead they are covered in a section of [this document.](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/Tracking.md)
+The default is VIVE trackers coming in over LiveLink.  If you need to get tracking from "MotionController" components or custom tracking plugins instead they are covered in a section of [this document.](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/Tracking.md)
 
 The tracker debugger and telemetry viewer has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TelemetryViewer/README.md)
 
@@ -17,11 +17,12 @@ The new tool for measuring your studio has it's own document, [read it here](htt
 # What's new in Release 8 (WORK IN PROGRESS) [latest stable release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
 * ActorTransformTelemetry replaces ALL the other telemetry sending blueprints.  See [this document](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TelemetryViewer/README.md) for datails on how to use it.
-* ActorTransformTelemetry runs "post physics tick" to make sure all actors have been updated before it sends telemetry on them.
+* ActorTransformTelemetry runs "post physics tick" so all actors are updated before it sends their positions.
 * LiveLinkTracker supports trackers that send relative data.  Select tracker type "relative tracker" and supply "Relative Tracker Offset" to align tracking to the coordinate system of the Talent Mark.
-* Autorig no longer displays a vive puck at the top.  This is unnessary because the trackers draw the tracker mesh.
-* Autorig sizes it's rods to the exact rig measurements you enter.  Rods were re-colored to match unreal conventions for x, y, z
-* Added ThinAxis object, makes it easier to see the orign of some objects, just attach it.
+* Autorig no longer displays a vive puck at the top.  This is unnessary because the LiveLinkTracker draws the tracker mesh.
+* Autorig sizes it's rods to the exact rig measurements you enter so they don't stick out.
+* Autorig's rods are now colored to match unreal conventions for x, y, z
+* Added ThinAxis actor, makes it easier to see the orign of smaller objects, just attach it.
 * Vive controller buttons work when using livelink.  They still need to be mapped in the Vive control panel and the Unreal 3d window has to have focus.
 * Added RecordMeasurements a way to measure your studio using the VIVE controllers/trackers
 * Added MeasurementMarker actor, displays an axis marker and current position, used by RecordMeasurements
@@ -32,7 +33,7 @@ The new tool for measuring your studio has it's own document, [read it here](htt
 
 # Bug Fixes
 
-* Fixed desk, floor and wall matte actors so the size parameters work.  Note there is nothing special about these, they are just simple shapes with some blueprint code to make resizing them easier.  They must be added to Window->Layers->GarbageMatte to be recognized.
+* Fixed desk, floor and wall matte actors so the size parameters work.  Note there is nothing special about these, they are just simple shapes with some blueprint code to make resizing them easier.  They must be added to Window->Layers->GarbageMatte to be recognized as part of the matte.
 
 # Changes you won't notice unless you have customized my blueprints
 
@@ -47,35 +48,30 @@ These are mostly changes to make the whole setup work better, simplify the inter
 
 # TODO
 
-* Allow record measurements to take measurements relative to another actor.
-* Need a mesh to represent the Intel Realsense
-* Need to see if socket snapping can be used to connect things to rigs and trackers now.  See my UDN bug report
-* Calibrate the tracking center on the standard vive trackers.  Document how to do it for the knuckles trackers.
-* Need to borrow vive index controllers, office may have a free set now.
-* Need a modular autorig or one that supports a ballhead for tuning.
-* Document how to change submaps for 1/2 cameras
+* An Unreal bug with socket snapping that prevented using it to attach things to camera rigs and trackers has supposedly been fixed.  Need to test this as it would simplify the blueprints used for trackers and rigs.
+* Need an autorig that supports ballheads better, the current one doesn't have a pivot point below tracker where a ballhead's ball would be.
 
 # Updating to New Releases PLEASE BACKUP
 
-BACKUP your old VPStudio and related projects before trying to update them!  Every release of VPStudio may have significant changes!  Releases are numbered with integers starting at 1, the largest release number will be the latest one.  
+PLEASE make BACKUP copies of all your work before trying to update to a new VPStudio!  Every release of VPStudio may have significant changes so you want backups of everything you have customized in case one of these changes breaks things.  Releases are numbered with integers starting at 1, the largest release number will be the latest one.  
 
-The main branch of github is updated FREQUENTLY, cloning the repository or downloading a ZIP from the main github page may get you unfinished and untested code.  Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest release tag.
+The main branch of github is updated FREQUENTLY as I work on it. Using the green button to clone or download a ZIP of the repository from the main github page may get you unfinished and untested code.  Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest numbered release tag.
 
 VPStudio is NOT A PRODUCT, it is an example that has to be customized for your hardware and studio.  Keep track of the changes you had to make to previous versions.  Usually these are small and can be quickly copied over to the new VPStudio.
 
-I recommend you start with a clean copy of VPStudio, get it running on your hardware and save it.  Don't add or change anything but what you need to do to get it running.  Save this and don't change it.  To use it with your own content, make a copy of your working VPStudio and copy your own content to it. 
+I recommend you start with a clean copy of VPStudio, get it running on your hardware and save it.  Don't add or change anything but what you need to do to get it running.  To use it with your own content, make a copy of your working VPStudio and migrate your own content to it. 
 
 # The sample level IS boaring!
 
-A lot of content, even "free" stuff, is licensed so you can use it in your own games and videos but you CAN NOT redistribute it to other people.  So I can't give you the content used in my demo videos.  VPStudio uses only content built into Unreal.  See the [use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel for help on using your own content.  Most demos on my channel were done with Epic free content that you can download yourself from their marketplace and use with VPStudio.  Epic releases new free content every month.
+A lot of "free" content, is licensed so you can use it in your own games and videos but you CAN NOT redistribute it to other people.  So I can't give you the content used in my demo videos.  VPStudio uses only content built into Unreal.  See the [use your own sets tutorial](https://youtu.be/trlpmm5gI6U) on my YouTube channel for help on using your own content.  Most demos on my channel were done with Epic free content that you can download yourself from their marketplace and use with VPStudio.
 
 If you are an artist and would like to help by contributing a better sample level under creative commons license, please let me know.
 
 # Setup VPStudio
 
-Right now VPStudio is setup for an AJA Kona HDMI video capture card and VIVE trackers.  If you have a BlackMagic DeckLink or other card/webcam you will need to replace the assets found in the Aja folder with ones for your hardware.  Look at [Unreal Pro Video](https://docs.unrealengine.com/en-US/Engine/ProVideoIO/index.html) for how to set up different BlackMagic and Aja cards. [Using WebCams](https://docs.unrealengine.com/en-US/Engine/MediaFramework/HowTo/UsingWebCams/index.html) shows how to use most USB webcams.  If you are not using VIVE hardware, you will have to make your own tracker actors.  See VPStudioCore->Trackers folder for examples.
+Right now VPStudio is setup for an AJA Kona HDMI video capture card and VIVE trackers.  If you have a BlackMagic DeckLink or other card/webcam you will need to replace the assets found in the Aja folder with ones for your hardware.  Look at [Unreal Pro Video](https://docs.unrealengine.com/en-US/Engine/ProVideoIO/index.html) for how to set up different BlackMagic and Aja cards. [Using WebCams](https://docs.unrealengine.com/en-US/Engine/MediaFramework/HowTo/UsingWebCams/index.html) shows how to use most USB webcams.  The actors in VPStudioCore->Trackers show how to use both LiveLink and MotionControler trackers, if your trackers use a custom plugin you will have to modify one of these. 
 
-Follow [tutorial 1](https://youtu.be/wWPZjX29asM) and [tutorial 2](https://youtu.be/kRUbUaESw80) to make a rig in Unreal that shows how your camera and tracker are mounted.  There are sample rigs in VPStudio but if they don't match your camera/lens/tracker setup you won't get good alignment of real and virtual objects in your scene.  [Tutorial 3](https://youtu.be/4LjvekNocD4) shows how to setup VIVE controller buttons to control things.  Make sure your VIVE trackers are setup to Special_1, 2, etc. as shown here. [Tutorial 4](https://youtu.be/UGHjwZ6J13E) shows how to setup the studio and fine tune your camera and tracker alignment [totorial 5](https://youtu.be/trlpmm5gI6U) shows how to add your own sets and assets to a copy of VPStudio.
+Follow [tutorial 1](https://youtu.be/wWPZjX29asM) and [tutorial 2](https://youtu.be/kRUbUaESw80) to make a rig in Unreal that shows how your camera and tracker are mounted.  There is also an "AutoRig" to make this easier to setup.  I recommend VIVE users use LiveLink support as it avoids a lot of complicated STEAM setup.  If you need to setup buttons on controllers the older [Tutorial 3](https://youtu.be/4LjvekNocD4) shows how to setup VIVE controller buttons to control things.   [Tutorial 4](https://youtu.be/UGHjwZ6J13E) shows how to setup the studio and fine tune your camera and tracker alignment 
  
 # Using your own levels
 
@@ -90,8 +86,6 @@ Some levels may do things with lighting that make them appear too bright or too 
 Under Edit->Project Settings->Project->Maps & Modes I provide a VPPlayerController that manages all user input and controls everything.  This is required or nothing will work.  If you want to use this project with a level that requires it's own PlayerController you will need to figure out how to combine mine and yours. I also provide a VPGameState and VPGameMode which are currently EMPTY and not required. 
 
 If you change and recompile the VPCamera blueprint, Unreal may remove the cameras from the composure passes.  If your CG cameras stop working after changing something, check each of the VPStudioBackground, GarbageMatte and VPStudioForeground actors and make sure the "camera source" is override and the Target Camera Actor is VPCamera 1 & 2.
-
-My dual camera system is always rendering both camera views.  If you are having trouble hitting the frame rate you want, go into Window->Composure Compositing and turn off any composure passes you aren't using.  If you only have one camera turn off everything numbered "2".  Depending on what you are filming, you may not need to render all the foreground, background and garbage matte passes either.
 
 # Features
 
