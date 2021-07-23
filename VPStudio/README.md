@@ -1,18 +1,18 @@
-# VPStudio, my Virtual Production tutorials for Unreal 4.26
+# VPStudio, my Unreal Virtual Production tutorial project
 
-VPStudio is my latest tutorial project, all my older work is in here now. Feel free to use anything here in your own projects, please credit me, Greg Corson, for helping you if you can.  This release REQUIRES Unreal 4.26 or higher.
+VPStudio is a tutorial (for you) and learning (for me!) project.  Everything in my older projects is in here. Feel free to use anything in your own projects without license or restrictions. Please credit me, Greg Corson, for helping you if you can.  
 
-Subscribe to [my youtube channel](https://www.youtube.com/user/GregCorson) for updates, tutorials and demos of virtual production. You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
+For updates, tutorials and demos please [subscribe to my youtube channel](https://www.youtube.com/user/GregCorson). You can also ask for help on [this discord channel](https://discord.gg/ReEhkhc)or this [facebook group](https://www.facebook.com/groups/virtualproduction)
 
-# CHANGES TO DEFAULT Setup and documents
+# Compatibility
 
-The default is now ONE camera.  If you need TWO cameras [read this](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TwoCamera.md) to see how to get the old setup back.
+This release REQUIRES Unreal 4.26 or higher.
 
-The default is VIVE trackers coming in over LiveLink.  If you need to get tracking from "MotionController" components or custom tracking plugins instead they are covered in a section of [this document.](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/Tracking.md)
+It MIGHT work on 4.27 preview but has NOT BEEN TESTED
 
-The tracker debugger and telemetry viewer has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TelemetryViewer/README.md)
+In 5.0.0 early access video input does not seem to work yet, so you can't do Virtual Production on it.
 
-The new tool for measuring your studio has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/RecordMeasurements.md) 
+# What's new in Release 9 [latest release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
 # What's new in Release 8 [latest release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
@@ -33,8 +33,6 @@ The new tool for measuring your studio has it's own document, [read it here](htt
 
 # Bug Fixes
 
-* Fixed desk, floor and wall matte actors so the size parameters work.  Note there is nothing special about these, they are just simple shapes with some blueprint code to make resizing them easier.  They must be added to Window->Layers->GarbageMatte to be recognized as part of the matte.
-* Fixed measuring grid so the display/don't display menu works in editor as well as play mode
 
 # Changes you won't notice unless you have customized my blueprints
 
@@ -51,12 +49,32 @@ These are mostly changes to make the whole setup work better, simplify the inter
 
 * An Unreal bug with socket snapping that prevented using it to attach things to camera rigs and trackers has supposedly been fixed.  Need to test this as it would simplify the blueprints used for trackers and rigs.
 * Need an autorig that supports ballheads better, the current one doesn't have a pivot point below tracker where a ballhead's ball would be.
+* How to rotate/scale the live camera or do simple billboard stuff.
+* Fix problem with editor window displaying non-square pixels when play is pressed.
+* Test with 4.27
+* Need workflow for still pictures
+* Test syncing of external video image sequence
+* Virtual clapper for scene sync, where are assets for take recorder?
+* Checkout new TouchOSC
+* Make touchOSC layout that works with VPStudio default
+* Layered recording tutorial
+* Neuron mocap recording tutorial
 
-# Updating to New Releases PLEASE BACKUP
+# Important changes starting with Release 8
 
-PLEASE make BACKUP copies of all your work before trying to update to a new VPStudio!  Every release of VPStudio may have significant changes so you want backups of everything you have customized in case one of these changes breaks things.  Releases are numbered with integers starting at 1, the largest release number will be the latest one.  
+Since release 8 I've made a few changes to the default setup and documentation.  The default is now ONE camera.  If you need TWO [read this](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TwoCamera.md) to see how to get the old setup back.
 
-The main branch of github is updated FREQUENTLY as I work on it. Using the green button to clone or download a ZIP of the repository from the main github page may get you unfinished and untested code.  Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest numbered release tag.
+The default setup is VIVE trackers coming in over LiveLink.  If you need to get tracking from "MotionController" components or custom tracking plugins instead they are covered in a section of [this document.](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/Tracking.md)
+
+The tracker debugger and telemetry viewer has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/TelemetryViewer/README.md)
+
+The new tool for measuring your studio has it's own document, [read it here](https://github.com/MiloMindbender/UE4VirtualProduction/blob/master/VPStudio/RecordMeasurements.md) 
+
+# Updating to New Releases BACKUP!
+
+This is a learning and teaching project, not a commercial product so a new release may not do everything the same way as previous the last one. ALWAYS make a copy of your project before updating it to a new VPStudio so if something doesn't work like you expect you can fall back to that working copy.  My release numbers are always whole numbers, the largest one will be the latest.  
+
+The main branch on github is ALWAYS A WORK IN PROGRESS and may have unfinished or broken features!  Almost everyone should get the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) main branch of github is updated FREQUENTLY as I work on it. Using the green button to clone or download a ZIP of the repository from the main github page may get you unfinished and untested code.  Please use the [latest release from the releases section](https://github.com/MiloMindbender/UE4VirtualProduction/releaseshere) or clone the repository from the latest numbered release tag.
 
 VPStudio is NOT A PRODUCT, it is an example that has to be customized for your hardware and studio.  Keep track of the changes you had to make to previous versions.  Usually these are small and can be quickly copied over to the new VPStudio.
 

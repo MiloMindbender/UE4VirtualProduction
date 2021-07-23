@@ -1,0 +1,33 @@
+Checklist Items
+
+* Check camera and lens settings to make sure they are correct!
+
+Setup Guide
+
+* Try to avoid wrinkles or folds in the screen, keep it as flat as you can.
+* Use stretcher clamps or strings to keep the screen flat
+* Adding eyelets to the edges of the screen make it much easier to keep flat
+* Avoid overlighting your green screen, the lighting of the screen needs to be even but it does NOT have to be bright.  If you light the screen too brightly the green will "spill" onto your talent and make keying difficult.
+* Place the talent as far away from the green screen as is practical.  Ideally you want enough space so you can light the talent and the green screen separately, this will help avoid green spill.  
+* If you have room for side or back lighting of the talent it will also help, this doesn't have to be very bright to reduce spill.
+* If you were able to setup your greenscreen lighting so it doesn't shine on the talent, consider putting green filters on them.  This will give your screen a more pure green color for better quality keying.
+* If you are having difficulty with green spill, you can fix this in wardrobe.  Wearing darker colors, blues or reds will be easier to key and not show spill.
+* If the talent will be shot full-length standing on green you may get more spill on the legs, consider wearing darker color shoes and pants to avoid this.
+* Harry arms can cause ragged keying, an easy fix is to wear long slieve shirts.
+
+* Magnets can be used to fasten green screens to suspended ceiling grids or existing metal beams.  You can get magnetic hooks or flat magnets for this.
+
+* Standard 550 Paracord is good for hanging things, it does not stretch and can hold several hundred pounds safely.  It also comes in a variety of colors including something close to chroma-key green.
+
+* Inexpensive curtain rods are good for hanging green screens, as little as $10 for a 12 foot one.
+
+* Buy a bunch of cheap velcro cable ties, Virtual Production uses a lot of cables having something to easily tie them into bundles will save your sanity.
+
+* Re-usable zip ties are also very useful particularly for securing heavier items.  If your green screen has eyelets, you can use these like shower curtain rings to hang the screen from a horizontal rod.  Remember regular zip ties have to be cut off, get the re-usable ones.  These have a small tab you can press to release them.  They cost about the same.
+
+* Electrical Metal Tubing (EMT) is available in up to 10 foot lengths in most home supply stores.  It's cheap and fairly rigid with a large number of fittings, hangers and other things for joining it together.  You can use this as curtain rods or to make a lighting grid.  This is thinwall steel pipe, lighter than plumbing pipe and stiffer than PVC pipe of the same diameter.
+
+* When you want to shoot talent full length, standing on green floor can cause a lot of problems with spill and lack of shadows.  The simplest solution is to give the talent a REAL floor to stand on.  This will allow them to cast real shadows and will make any slippage in tracking much less visible.  You can attempt to match were the real and virtual floors meet or you can create a natural deviding line using real or virtual set items.  See virtual star example with hay bales.
+
+
+
