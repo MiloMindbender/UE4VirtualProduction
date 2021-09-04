@@ -31,3 +31,55 @@ Setup Guide
 
 
 
+
+* Useful measuring tools to have (you don't need them all, but they are good to have)
+	* Unreal uses meters so having a metric tape measure is handy.  Get one long enough to measure your studio with.
+	* Something for measuring smaller distances.  A shorter ruler is good, dividers or calipers can make it easier to measure irregularly shaped things like cameras and lenses.
+	* A standard L shaped carpenters square
+	* If you are using VIVE or other VR system, having an extra tracker or hand controller (not the one on the camera) can be really handy for making measurements!
+* Leveling and reference tools (again, you don't need them all)
+	* A cutting mat with a grid on it or other flat object with grid marks that are easy to see (like white on black)
+	* A carpenter's level
+	* A circular bubble level or camera level (some cameras and tripods have one built in)
+	* A plumb bob and string, plus something to hang it from like a cheap tripod, mic stand...etc
+	* A laser level that projects horizontal and vertical level lines on the wall (like a big +)
+	* any objects with clean edges that you know the exact size of.  A piece of paper, a thin plywood sheet, a piece of foamboard or a box can all be helpful as references when you are setting up.
+* Talent substitutes, it is good to have some stuff you can put in front of your green screen to stand in for your talent while you are setting up the key and lights
+	* A dressmaker's dummy or mannequin you can put clothes on.
+	* Anything you can hang some clothes on like a tall back chair, coat rack, tall tripod, microphone stand, selfie stick...etc
+	* A foam head with a wig
+	* A spair chair or small table
+	
+Setup steps
+
+Without fancy software and hardware, setting up your camera and studio correctly can be tricky.  A lot of adjustments are related and it can be hard to know which is the right one to adjust.  You can make this easier by lining up, leveling and simplifying things as much as possible before you start.
+
+* Clean up the area, get everything unnecessary out of the way!
+
+* Build a rig to hold your camera and tracker.  This can be as simple as using a "shoe mount" to attach the tracker to the top of the camera or you can use a camera cage and other parts to do it.  There are a lot of ways to do this.  The most important thing is when the camera and tracker are attached to the rig they shouldn't move or twist accidentally.  Also try to pick a location for the tracker on the rig so the camera operator won't be blocking it.
+
+* Measure your camera rig.  Measure the horizontal and vertical distance from the zero point on the tracker (the tripod screw on a vive) to the center of the lens axis.  Then measure from that point to the front of the lens.
+
+* Choose a spot on the studio floor to be the center and mark it with something like a small piece of tape.  Measure the studio from this point.  It can be handy to have the positions of the walls or edges of the studio, the position and size of your green screen and the position of your camera tripod.
+
+* Position some reference objects of known size where the camera can see them.  Setting up a plumb-bob is an easy way to give you a perfect vertical reference.  A laser level "cross projector" can be handy for this too but is more expensive.
+
+* Setup your camera so it has a good view of the studio.  To start it is best to have a view that will see beyond the edges of the greenscreen a bit.  If you are using a zoom, set it to whatever angle you expect to be using.  Make sure the tripod is level, then adjust the camera head so the camera itself is level (some cameras have built in pan/tilt meters or you can stick a cheap bubble level on the camera.  Try to setup the camera so it is perpindicular to the surface of the greenscreen (or the wall behind it)
+
+* It can also be helpful to have a measurement to the camera, including the height that the lens axis is above the floor.
+
+* If the green screen is in front of a wall, it can be helpful to temporarily pull the green screen out of the way a bit so the spot where the wall and floor meet can be easily seen.  Alternately you can lay a straitedge of some kind at the base of the green screen to use as a temporary alignment mark.
+
+* Place your HMD on the spot you marked as the studio center (should be in view of the camera).  Do your best to line up the camera so the HMD is directly in front of it.
+
+* Save and quit unreal if it is running, then go into steam and do a "room setup" using the standing option and clicking next with all the defaults (hight above floor should be zero).
+
+* Restart unreal, open the livelink window and connect to all the VIVE livelink XR sources.
+
+* In the editor window you should see all your trackers and cameras in their proper places.  Try switching to the top view, then position your camera so it is looking straight at the 0,0,0 point.
+
+* Setup you video input so it goes to VPMediaPlate1, you should see your camera view if you click on this in the world outliner.  If the place where your wall meets the floor appears to be level, you are off to a good start.
+
+* If you press play now you should see a view of the studio as well as the 3d test world, it will probably be messed up and the key won't be right, but that's ok for now.
+
+

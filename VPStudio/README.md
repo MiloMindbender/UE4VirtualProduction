@@ -1,3 +1,6 @@
+# IMPORTANT  Work on release 9 is in progress.  DO NOT checkout from the repository, get release 8 from 
+https://github.com/MiloMindbender/UE4VirtualProduction/releases)
+
 # VPStudio, my Unreal Virtual Production tutorial project
 
 VPStudio is a tutorial (for you) and learning (for me!) project.  Everything in my older projects is in here. Feel free to use anything in your own projects without license or restrictions. Please credit me, Greg Corson, for helping you if you can.  
@@ -8,11 +11,13 @@ For updates, tutorials and demos please [subscribe to my youtube channel](https:
 
 This release REQUIRES Unreal 4.26 or higher.
 
-It MIGHT work on 4.27 preview but has NOT BEEN TESTED
+It appears to work on 4.27 preview but WILL NOT be fully tested till the release version.
 
-In 5.0.0 early access video input does not seem to work yet, so you can't do Virtual Production on it.
+In 5.0.0 early access 2 video input stops working when you press play, so you can't use it.
 
 # What's new in Release 9 [latest release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
+
+* Added roll adjustment to autorig.
 
 # What's new in Release 8 [latest release here](https://github.com/MiloMindbender/UE4VirtualProduction/releases)
 
@@ -41,24 +46,21 @@ These are mostly changes to make the whole setup work better, simplify the inter
 * Renamed media player assets that go with the Flying Screen actor
 * Renamed all the parts of the AJA media bundles in a consistant way.
 * Renamed Autorig "entrance pupil" transform to "output" for consistancy with other rigs.
-* Removed "Telemetry Order" in all tracker actors, no longer needed.
 * MotionControllerTracker, DelayedOutput has been renamed to "Output" for consistancy with LiveLinkTracker
 * All tracker actors use a more efficient way of setting the correct mesh for the tracker.
 
-# TODO
+# TODO for 9
 
 * An Unreal bug with socket snapping that prevented using it to attach things to camera rigs and trackers has supposedly been fixed.  Need to test this as it would simplify the blueprints used for trackers and rigs.
 * Need an autorig that supports ballheads better, the current one doesn't have a pivot point below tracker where a ballhead's ball would be.
 * How to rotate/scale the live camera or do simple billboard stuff.
 * Fix problem with editor window displaying non-square pixels when play is pressed.
-* Test with 4.27
 * Need workflow for still pictures
 * Test syncing of external video image sequence
 * Virtual clapper for scene sync, where are assets for take recorder?
-* Checkout new TouchOSC
 * Make touchOSC layout that works with VPStudio default
-* Layered recording tutorial
 * Neuron mocap recording tutorial
+* Test telemetry with new telemetry viewer
 
 # Important changes starting with Release 8
 
